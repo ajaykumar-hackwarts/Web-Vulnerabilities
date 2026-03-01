@@ -31,11 +31,11 @@ Here we are going to write the code which will call the print() from the target 
 - src=1 onerror=print()> - This is the page load we are going to send it's a image fails to load becasue src=1 hence it trigers the onerror and print.
 - '*' - Sends the message to the website regardless of the origin(http://abc.com:443 - protocol+Domain+port = origin)
 
-- <img width="1172" height="384" alt="image" src="https://github.com/user-attachments/assets/0fa9e8e9-43a1-4404-97d1-6530ff0d1a13" />
+<img width="1172" height="384" alt="image" src="https://github.com/user-attachments/assets/0fa9e8e9-43a1-4404-97d1-6530ff0d1a13" />
 
 ### Hence by posting this to exploit server we solve this. 
 <img width="1357" height="386" alt="image" src="https://github.com/user-attachments/assets/9e0bdf96-b1ec-4ba5-b0b2-5c598a2ea3e2" />
 
 
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------
