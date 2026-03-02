@@ -104,4 +104,5 @@ Here we are going to write the code which will call the print() from the target 
 
  ## Solving :
 
-- Let's click on the viewpost and inspect the code flow 
+- Let's click on the viewpost and we can see it has a redirection page like return page button back to blog that will be our vulnerable parameter
+- We will view the source code 
