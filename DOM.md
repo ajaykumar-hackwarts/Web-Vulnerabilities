@@ -1,4 +1,6 @@
-<img width="1191" height="398" alt="image" src="https://github.com/user-attachments/assets/369e78d7-e252-4052-829d-48f1933405f1" />**Definition** : DOM(Document Object Model) is a Tree-like structure that browser creates from the html. So that it can display and edit the page using javascript. 
+
+
+**Definition** : DOM(Document Object Model) is a Tree-like structure that browser creates from the html. So that it can display and edit the page using javascript. 
 
 # 1. DOM XSS using web messages
  <img width="778" height="113" alt="image" src="https://github.com/user-attachments/assets/48d7cc5b-af61-492f-8258-c50a7e9d3796" />
