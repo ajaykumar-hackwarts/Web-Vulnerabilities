@@ -1,4 +1,4 @@
-**Definition** : DOM(Document Object Model) is a Tree-like structure that browser creates from the html. So that it can display and edit the page using javascript. 
+<img width="1191" height="398" alt="image" src="https://github.com/user-attachments/assets/369e78d7-e252-4052-829d-48f1933405f1" />**Definition** : DOM(Document Object Model) is a Tree-like structure that browser creates from the html. So that it can display and edit the page using javascript. 
 
 # 1. DOM XSS using web messages
  <img width="778" height="113" alt="image" src="https://github.com/user-attachments/assets/48d7cc5b-af61-492f-8258-c50a7e9d3796" />
@@ -41,4 +41,67 @@ Here we are going to write the code which will call the print() from the target 
 # -----------------------------------------------------------------------------------------------
 
 
+# 2. DOM XSS using web messages and a JavaScript URL 
 
+<img width="762" height="122" alt="image" src="https://github.com/user-attachments/assets/2ca61e04-648a-4b61-9976-a14b7c3721b0" />
+
+- **Goal** : Send a message to the target site in that message we write a code to call print.
+
+### Ingredients : 
+
+<img width="1084" height="604" alt="image" src="https://github.com/user-attachments/assets/b9e36d71-c379-4d43-8d85-912fc8f2b504" />
+
+ - **Buttons** : We got exploit server, home and view post button.
+
+## Solving :
+
+- Everything is same as the previous lab except the pay load. Here we use javascript:print()//http: inside the post message like
+- <iframe src="" onload="this.contentWindow.postMessage('javascript:print()//http:','*')">
+- Becasue here we want to exploit DOM XSS using the JS Url. Hence we using this payload javascript:print()//http:
+- javascript: - Tells the broswer run the following as the JS code.
+- print() - Print
+- // - ignore the rest and http: -> protocol
+
+<img width="1236" height="424" alt="image" src="https://github.com/user-attachments/assets/07fc909f-87c6-4e3e-a71f-fc575a6c9492" />
+### Hence by posting this to exploit server we solve this. 
+
+# -----------------------------------------------------------------------------------------------
+
+
+# 3. DOM XSS using web messages and JSON.parse
+
+<img width="771" height="122" alt="image" src="https://github.com/user-attachments/assets/81ff46b7-796c-4589-b70b-dc8d1ea9fb7e" />
+
+ **Goal** : Send a message to the target site in that message we write a code to call print.
+
+ ### Ingredients :  Same as above. 
+
+ ## Solving :
+
+ - The difference in the pay load is \"type\":\"load-channel\",\"url\":\"javascript:print()\"
+ - Since Json uses the " for the strings and keys since our string already contains the " so system will show it as syntax error. Hence to neglect the error we using the escaping character \ before the "
+ - So normaly it would look like type : load-channel, url : javascipt: print()
+ - type : load-channel ---> Tells the reciver victim page what function to run.
+ - url : javascipt: print() ---> Print
+
+<img width="1191" height="398" alt="image" src="https://github.com/user-attachments/assets/94313d94-a265-43d1-af17-9013d8715e56" />
+
+### Hence by posting this to exploit server we solve this. 
+
+
+# -----------------------------------------------------------------------------------------------
+
+
+
+# 4. DOM-based open redirection
+
+<img width="760" height="76" alt="image" src="https://github.com/user-attachments/assets/d82353ab-0667-4bc2-beb9-334966dfb84c" />
+
+**Goal** : Redirect the victim to the exploit server
+
+### Ingredients :  
+
+
+ ## Solving :
+
+- Let's click on the viewpost and inspect the code flow 
