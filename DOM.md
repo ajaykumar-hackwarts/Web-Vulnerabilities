@@ -105,4 +105,16 @@ Here we are going to write the code which will call the print() from the target 
  ## Solving :
 
 - Let's click on the viewpost and we can see it has a redirection page like return page button back to blog that will be our vulnerable parameter
-- We will view the source code 
+- We will view the source code
+<img width="1135" height="192" alt="image" src="https://github.com/user-attachments/assets/bfa3d837-3d26-40fd-bf92-c4146e8928ce" />
+
+- We can see it redirecting by the return url Hence we can exploit that.
+- By placing url="" exploit server url after victim url seperating by # or &. It wil look like the following.
+
+<img width="1356" height="326" alt="image" src="https://github.com/user-attachments/assets/1374a18a-b096-4622-a7f4-e35ac473123f" />
+
+### Hence by posting this to exploit server we solve this. 
+
+
+# -----------------------------------------------------------------------------------------------
+
