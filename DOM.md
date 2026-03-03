@@ -1,4 +1,4 @@
-
+<img width="989" height="203" alt="image" src="https://github.com/user-attachments/assets/67767b07-253a-4924-8586-cb3bce01e003" /><img width="1264" height="535" alt="image" src="https://github.com/user-attachments/assets/d2d08288-9d1c-4778-9a91-f1a6b6bf55a9" />
 
 **Definition** : DOM(Document Object Model) is a Tree-like structure that browser creates from the html. So that it can display and edit the page using javascript. 
 
@@ -103,6 +103,7 @@ Here we are going to write the code which will call the print() from the target 
 
 ### Ingredients :  
 
+Same as above
 
  ## Solving :
 
@@ -127,4 +128,52 @@ Here we are going to write the code which will call the print() from the target 
 
 **Goal** :  Inject a cookie that will cause XSS on a different page and call print(). 
 
+### Ingredients :  
+We have the view details button. 
 
+<img width="1332" height="450" alt="image" src="https://github.com/user-attachments/assets/53862ff2-0f69-42da-bc77-d1b2cc9db762" />
+
+After visiting the page and returning to list we can see it has last viewed product. 
+
+<img width="1283" height="501" alt="image" src="https://github.com/user-attachments/assets/d751e28f-b406-4f53-924e-a7c75fc6c4d8" />
+
+<img width="1264" height="535" alt="image" src="https://github.com/user-attachments/assets/5e89ff31-b807-4cfe-8bc1-423096b9d3a4" />
+
+ ## Solving :
+
+ - That last viewed product is our vulnerable parameter.
+
+ - When we intercept the response and we can see in the value after the id is appendable we can able to modify and still it gives the 200 response.
+ - Also in the response side we can see cookie is set to lastViewedProduct and samesite is set to none so it exploitable to cross site. 
+
+<img width="1365" height="462" alt="image" src="https://github.com/user-attachments/assets/38af96d0-aa21-4f2d-825c-59c2d0b5a1fe" />
+
+- When we see the click the lastviewedproduct we can it is returning to the same url in the <a 
+
+<img width="1360" height="406" alt="image" src="https://github.com/user-attachments/assets/5d9a7614-c939-48c0-9340-c73c4262b00f" />
+
+- We have to break the tag like close the tag and open a new script and put a print payload there.
+
+<img width="989" height="203" alt="image" src="https://github.com/user-attachments/assets/c2a1bbb0-9a3f-42d5-80f2-1f9fd35ab9bb" />
+
+<img width="991" height="315" alt="image" src="https://github.com/user-attachments/assets/255f5ef4-18f9-4dcd-a458-b861f0e2caa8" />
+
+- These payload will only print but we have to put the XSS payload so  we put the complete payload as follows. 
+
+<iframe src="&'><script>print()</script>" onload="if(!window.x)this.src='https://YOUR-LAB-ID.web-security-academy.net';window.x=1;">
+
+- onload ---> after loading the iframe 
+- if(!window.x) ----> if windows doesn't have the x element then source will set to this url which is home page so the before payload print is set and return to home page immediately.
+- window.x=1 ---> then x is set to 1 so it will run only one time avoiding the loop.
+
+
+### Hence by posting this to exploit server we solve this. 
+
+
+# -----------------------------------------------------------------------------------------------
+
+
+
+
+6. 
+ 
