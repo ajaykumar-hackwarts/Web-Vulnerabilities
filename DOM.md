@@ -173,7 +173,12 @@ After visiting the page and returning to list we can see it has last viewed prod
 # -----------------------------------------------------------------------------------------------
 
 
+6. Exploiting DOM clobbering to enable XSS
+
+<img width="783" height="121" alt="image" src="https://github.com/user-attachments/assets/41a93177-8fe7-4fcc-8476-5751a5e0b3f4" />
 
 
-6. 
+**Goal** :  Injecting a html that clobbers the variable and use XSS to call alert(). 
+
+
  
