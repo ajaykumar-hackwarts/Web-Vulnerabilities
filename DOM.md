@@ -120,3 +120,11 @@ Here we are going to write the code which will call the print() from the target 
 
 # -----------------------------------------------------------------------------------------------
 
+
+5. DOM-based cookie manipulation
+
+<img width="770" height="108" alt="image" src="https://github.com/user-attachments/assets/9bed505c-a34b-43af-87e4-88b02e0e432a" />
+
+**Goal** :  Inject a cookie that will cause XSS on a different page and call print(). 
+
+
