@@ -228,8 +228,50 @@ The last comment is to load the avatar again to call the alert()
 
 
 
+# 7. Clobbering DOM attributes to bypass HTML filters
+
+<img width="797" height="139" alt="image" src="https://github.com/user-attachments/assets/58cd4c9e-9acf-413a-9830-f6ce6e5224e9" />
+
+**Goal** : Construct a vector to bypass html filters and using DOM clobbering inject a vector that calls print(). 
+
+### Ingredients :  
+
+<img width="957" height="487" alt="image" src="https://github.com/user-attachments/assets/62090b1b-7386-48f8-b218-494c959cb0b1" />
+
+Since the app is using the Html filtering we can't use the html tags here. 
+
+<img width="850" height="579" alt="image" src="https://github.com/user-attachments/assets/cdb9f088-8200-4144-868c-b3c5f6a9472e" />
+
+- When we look into the source code we can see it is using two js file htmlJanitor.js and loadCommentsWithJanitor.js 
+
+<img width="699" height="193" alt="image" src="https://github.com/user-attachments/assets/d9787390-fb10-465d-bd3e-d102b7ea5712" />
+
+- In the htmlJanitor.js inside the santize attributes it is cleaning the attribues like int, src etc...
+
+<img width="481" height="200" alt="image" src="https://github.com/user-attachments/assets/da70dcf7-21e2-45c2-8110-8a02df3e3093" />
+
+- Hence we create a payload in a form and post in the comment as html is not allowed. Like the following. 
+
+<img width="770" height="555" alt="image" src="https://github.com/user-attachments/assets/3e02eb85-e42f-45a1-a6a8-d71dcbc81a8c" />
+
+- <form id=x tabindex=0 onfocus=print()><input id=attributes>
+- id=x ---> we creating a id named x
+- tabindex=0 ---> We make it focusable first as the index is 0 first it will be focused.
+- onfocus=print() --> when the tabindex is focused it will print().
+- <input id=attributes> --> It clobbers the real attribute and replace our payload and no neglect the print().
+
+It will result like this. 
+<img width="870" height="346" alt="image" src="https://github.com/user-attachments/assets/2303bc35-f73a-4ffe-9b55-22241a3bca04" />
+
+- After that we will post the following in the exploit server. 
+<iframe src=https://YOUR-LAB-ID.web-security-academy.net/post?postId=3 onload="setTimeout(()=>this.src=this.src+'#x',500)">
+
+- <iframe src=https://YOUR-LAB-ID.web-security-academy.net/post?postId=3 ---> First it will load the normal url.
+-  onload="setTimeout(()=>this.src=this.src+'#x',500) --> after loading the normal url it will wait for 500ms then append the src to #x making the print() to execute.
+
+<img width="1240" height="440" alt="image" src="https://github.com/user-attachments/assets/0cbcc106-6a2e-4619-aadf-9571657013a4" />
 
 
+### Hence by posting this to exploit server we solve this.
 
-
- 
+# -----------------------------------------------------------------------------------------------
