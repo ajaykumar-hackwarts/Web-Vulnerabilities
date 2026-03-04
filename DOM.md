@@ -1,4 +1,4 @@
-<img width="989" height="203" alt="image" src="https://github.com/user-attachments/assets/67767b07-253a-4924-8586-cb3bce01e003" /><img width="1264" height="535" alt="image" src="https://github.com/user-attachments/assets/d2d08288-9d1c-4778-9a91-f1a6b6bf55a9" />
+<img width="1258" height="434" alt="image" src="https://github.com/user-attachments/assets/5996b4cc-c888-48f7-96cd-9955e1923e0f" /><img width="989" height="203" alt="image" src="https://github.com/user-attachments/assets/67767b07-253a-4924-8586-cb3bce01e003" /><img width="1264" height="535" alt="image" src="https://github.com/user-attachments/assets/d2d08288-9d1c-4778-9a91-f1a6b6bf55a9" />
 
 **Definition** : DOM(Document Object Model) is a Tree-like structure that browser creates from the html. So that it can display and edit the page using javascript. 
 
@@ -179,6 +179,57 @@ After visiting the page and returning to list we can see it has last viewed prod
 
 
 **Goal** :  Injecting a html that clobbers the variable and use XSS to call alert(). 
+
+### Ingredients :  
+We have the view post button. 
+
+<img width="888" height="483" alt="image" src="https://github.com/user-attachments/assets/013141fe-ec3b-4849-baa8-26f97bebf1c0" />
+
+- In comment section when we see the previous comments we can see it has an avatar and it says HTML is allowed. 
+
+<img width="812" height="459" alt="image" src="https://github.com/user-attachments/assets/9045984b-c6b1-4f95-8335-ca753b770e1e" />
+
+- The loadCommentsWithDomClobbering.js looks good. Hence we look into that and we can see it has this.  
+
+<img width="1364" height="516" alt="image" src="https://github.com/user-attachments/assets/d64d9c18-71d8-41e7-87b6-3798265d659b" />
+
+let defaultAvatar = window.defaultAvatar || {avatar: '/resources/images/avatarDefault.svg'}
+
+- They setting the defaultAvatar to window.defaultAvatar or it will use the pre defined value '/resources/images/avatarDefault.svg'. It will check in window.defaultAvatar is any avatar available. There were we will inject our malicious payload to clobber.
+- <a id=defaultAvatar><a id=defaultAvatar name=avatar href="cid:&quot;onerror=alert(1)//">
+- To clobber a value we should set an ID/variable with the same name after that inside the href value we will give this as
+- cid: --> Content ID which is used in email to attach the image/files. Since it not go out on a web it is used inside the html the DOMpurify takes it as non malicious and it allows it.
+- &quot; ---> It is encoded format of " hence when run time it will be decoded as href="cid:"onerror=alert(1)//" Making the code execute and the alert will be triggered. 
+
+- This will be our first malicious comment. 
+
+<img width="775" height="586" alt="image" src="https://github.com/user-attachments/assets/aa0a876a-8e44-4fc9-b9d5-1f47edd3840a" />
+
+- Out next comment would be normal random comment this is to set window.defaultAvatar to our malicious payload and it don't use /resources/images/avatarDefault.svg
+
+<img width="768" height="566" alt="image" src="https://github.com/user-attachments/assets/7c15b9ae-6fb6-4e56-b9f4-13c06b8c8790" />
+
+The window.defaultAvatar is set our payload. 
+
+<img width="692" height="312" alt="image" src="https://github.com/user-attachments/assets/fb25c5ad-a352-4261-8e82-f07b3a58cef6" />
+
+The last comment is to load the avatar again to call the alert()
+
+<img width="883" height="569" alt="image" src="https://github.com/user-attachments/assets/8b0aaf69-5c6e-4674-94cf-ab3194d84201" />
+
+
+
+### Hence by doing this to exploit server we solve this. 
+
+<img width="1328" height="377" alt="image" src="https://github.com/user-attachments/assets/5121eed0-2450-4aa0-afe4-bce34f376b12" />
+
+
+# -----------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
  
