@@ -49,7 +49,7 @@ Scripting --> attackers code runs on the victims browser.
 <img width="791" height="555" alt="image" src="https://github.com/user-attachments/assets/8b7f3854-483d-4928-a671-d95bd8a77c1e" />
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 # 3. DOM XSS in document.write sink using source location.search
@@ -85,7 +85,7 @@ Scripting --> attackers code runs on the victims browser.
 <img width="778" height="401" alt="image" src="https://github.com/user-attachments/assets/a5ca35c4-3562-4e0b-b416-8e8e10f806be" />
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 
