@@ -52,9 +52,47 @@ Scripting --> attackers code runs on the victims browser.
 # -------------------------------------------------------------------------------
 
 
+# 3. DOM XSS in document.write sink using source location.search
+
+<img width="731" height="175" alt="image" src="https://github.com/user-attachments/assets/89f0fe30-ad5d-4473-9a0b-beba35b870da" />
+
+### Goal : To perform cross-site scripting attack and call alert function. It uses DOM based XSS. 
+
+### Ingrediants : Home, Search, View post.  
+
+<img width="799" height="579" alt="image" src="https://github.com/user-attachments/assets/07b7ff8c-03e7-420f-bf9d-875baa581d6a" />
+
+<img width="821" height="337" alt="image" src="https://github.com/user-attachments/assets/3a5782cd-9b27-4f0d-b91c-a03941abe5de" />
 
 
-  
+### Solving :
+
+- Since we got description that it has document.write in the location.search function script we will search something in the search tag and look the code flow. 
+
+<img width="828" height="235" alt="image" src="https://github.com/user-attachments/assets/e415510a-8a0b-4d8c-b5cf-d79e4535bf15" />
+
+<img width="903" height="423" alt="image" src="https://github.com/user-attachments/assets/d55d858c-2c58-455f-969c-a6ccf7d7cd62" />
+
+
+- We can see it has 2 results inside the DOM if it were only one we may think it is reflected xss which is echoes immediately. Here one one result is used normallt to display the search result and another is used inside the image attribute in the searchTerms variable.
+- We can we see it is getting the search string in a query and append to the img src's atrribute  in the document.write function. 
+- Here only we have to write out malicious payload and call alert().
+- src="/resources/images/tracker.gif?searchTerms=sdadasd" We have to close src attribute and should come out put a new attribute and we can call alert().
+- We can write payload like sdadasd" onload="alert() so the first double quote " will close src attribute and last " will close the new attribute we introduced.
+
+<img width="1108" height="354" alt="image" src="https://github.com/user-attachments/assets/6f18c638-49a1-4176-aad2-51c65bc0bf12" />
+
+<img width="778" height="401" alt="image" src="https://github.com/user-attachments/assets/a5ca35c4-3562-4e0b-b416-8e8e10f806be" />
+
+
+# -------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 
