@@ -74,7 +74,7 @@ Scripting --> attackers code runs on the victims browser.
 <img width="903" height="423" alt="image" src="https://github.com/user-attachments/assets/d55d858c-2c58-455f-969c-a6ccf7d7cd62" />
 
 
-- We can see it has 2 results inside the DOM if it were only one we may think it is reflected xss which is echoes immediately. Here one one result is used normallt to display the search result and another is used inside the image attribute in the searchTerms variable.
+- We can see wehen we search it has 2 results inside the DOM if it were only one we may think it is reflected xss which is echoes immediately. Here one one result is used normallt to display the search result and another is used inside the image attribute in the searchTerms variable.
 - We can we see it is getting the search string in a query and append to the img src's atrribute  in the document.write function. 
 - Here only we have to write out malicious payload and call alert().
 - src="/resources/images/tracker.gif?searchTerms=sdadasd" We have to close src attribute and should come out put a new attribute and we can call alert().
@@ -88,6 +88,40 @@ Scripting --> attackers code runs on the victims browser.
 # ------------------------------------------------------------------------------
 
 
+# 4. DOM XSS in innerHTML sink using source location.search 
+
+<img width="738" height="150" alt="image" src="https://github.com/user-attachments/assets/0bddefd4-2a73-4861-a232-ee74652cfc25" />
+
+### Goal :  To perform cross-site scripting attack and call alert function. It uses DOM based XSS. 
+
+### Ingrediants : Same as above. 
+
+### Solving : 
+
+<img width="937" height="414" alt="image" src="https://github.com/user-attachments/assets/c056749f-25d5-4cf0-bf2e-4792909a3f9f" />
+
+<img width="985" height="271" alt="image" src="https://github.com/user-attachments/assets/807435cd-bd19-405e-b5b4-7e3b6ce39633" />
+
+- Unlike the previous lab we can see only one result is found when we search this is because it is using the innerhtml not the document.write.
+- document.write ---> When we reload it replaces the whole page with the new input given.
+- innerhtml ----> We can abe to change specific element without replace the entire page.
+- We can try to print a alert by <script>alert(1)</script>
+
+<img width="823" height="221" alt="image" src="https://github.com/user-attachments/assets/104ee325-57af-4cb9-bc09-b865d4569794" />
+
+<img width="992" height="479" alt="image" src="https://github.com/user-attachments/assets/a401930f-bfd3-4d0a-b461-540450c2b282" />
+
+- It is injected but not executed. This is because in the innerhtml sink it restrict script tag it is part of it's security.
+- Hence we can try to inject a img tag like <img src=1 onerror="alert(1)">
+
+<img width="1103" height="441" alt="image" src="https://github.com/user-attachments/assets/a3667336-7091-4411-b348-6d70a638e233" />
+
+- We can see it is executed.
+
+# ------------------------------------------------------------------------------
+
+
+5. 
 
 
 
