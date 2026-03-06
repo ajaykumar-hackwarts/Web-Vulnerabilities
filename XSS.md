@@ -121,7 +121,44 @@ Scripting --> attackers code runs on the victims browser.
 # ------------------------------------------------------------------------------
 
 
-5. 
+5. DOM XSS in jQuery anchor href attribute sink using location.search source
+
+<img width="716" height="139" alt="image" src="https://github.com/user-attachments/assets/5b40b526-bbcf-48b6-954d-21044f7f6495" />
+
+### Goal :  To make the alert as document.cookie when we click back button. It is using the Jquery sink. 
+
+### Ingrediants : Home, Submit feedback and view post button. 
+
+<img width="939" height="503" alt="image" src="https://github.com/user-attachments/assets/9cf52bb5-57c0-4b2a-a5d8-f20cacb9e3f4" />
+
+<img width="948" height="425" alt="image" src="https://github.com/user-attachments/assets/f48a7dd8-1350-4b01-8ab0-124d86f9729b" />
+
+### Solving : 
+
+- Lets check the is there any back button the page.
+
+<img width="941" height="424" alt="image" src="https://github.com/user-attachments/assets/f46b6092-657c-4c54-8e5c-c49c6bafb1dd" />
+
+<img width="916" height="480" alt="image" src="https://github.com/user-attachments/assets/8fbcd1f4-7677-484a-855a-f5f21d591681" />
+
+- When we inspect the back button elemet we see that it has a function that taking the query parameter and setting the href tag. So this is the vulnerable area we can exploit this.
+- Hence we put javascript:alert(document.cookie) this in the return path as query.
+- javascript: It will tells the browser to execute this JavaScript instead of opening a normal page.
+
+<img width="1301" height="449" alt="image" src="https://github.com/user-attachments/assets/8d52d35d-035b-4f68-9954-91b7a9eb9ada" />
+
+Hence by doing this we solve the lab. 
+
+
+# ------------------------------------------------------------------------------
+
+
+6. 
+
+
+
+
+
 
 
 
