@@ -164,6 +164,42 @@ Hence by doing this we solve the lab.
 <img width="1067" height="609" alt="image" src="https://github.com/user-attachments/assets/656095c0-e98c-4e3d-b3b9-ea0e303dfd58" />
 
 
+### Solving : 
+
+<img width="989" height="227" alt="image" src="https://github.com/user-attachments/assets/1806e2f2-debe-4731-8dc8-9c426a0ba6d2" />
+
+- We can see it is using the jquery select libary $() and write as function for hash change as whenever we enter the post title after the # in the url it is scroll to that post and it is only one time if we want to get that again for the same post we have to make a change like add number hit enter and again remove it and hit enter. 
+
+<img width="1008" height="445" alt="image" src="https://github.com/user-attachments/assets/3b975569-4d20-4f81-a12d-a929f029a8ce" />
+
+- We can see since it is using the $() it is also creating the html element in the location.hash
+
+<img width="494" height="164" alt="image" src="https://github.com/user-attachments/assets/e6b31dbf-8f71-462b-9156-22de2612b6a6" />
+
+- Hence anything given inside that is saved in the location.hash
+
+<img width="947" height="457" alt="image" src="https://github.com/user-attachments/assets/0a7fea8c-e155-43a9-80cb-e7fb9d33ac05" />
+
+- By pasting this we can able to print. 
+
+<img width="1251" height="489" alt="image" src="https://github.com/user-attachments/assets/d80ce6eb-22b0-4b29-a420-e892d600043a" />
+
+- Let's paste this in the exploit server so the victim will click on this. 
+
+<img width="1165" height="152" alt="image" src="https://github.com/user-attachments/assets/699bf14c-067d-4df3-a110-be1e53e79c94" />
+
+- Hence by uploading this we can solve the lab. 
+
+# ------------------------------------------------------------------------------
+
+
+7. 
+
+
+
+
+
+
 
 
 
