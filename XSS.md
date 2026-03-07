@@ -153,7 +153,20 @@ Hence by doing this we solve the lab.
 # ------------------------------------------------------------------------------
 
 
-6. 
+6. DOM XSS in jQuery selector sink using a hashchange event
+
+<img width="754" height="176" alt="image" src="https://github.com/user-attachments/assets/aba587ee-e9ca-49f5-9c68-5a11581f3877" />
+
+### Goal : To deliver an exploit to the victim that calls print().
+
+### Ingrediants : Home, Expliot server and view post button. 
+
+<img width="1067" height="609" alt="image" src="https://github.com/user-attachments/assets/656095c0-e98c-4e3d-b3b9-ea0e303dfd58" />
+
+
+
+
+
 
 
 
