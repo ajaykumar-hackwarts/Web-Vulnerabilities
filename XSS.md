@@ -261,7 +261,32 @@ Hence by doing this we solve the lab.
 # ------------------------------------------------------------------------------
 
 
-9. 
+9. Reflected XSS into a JavaScript string with angle brackets HTML encoded
+
+<img width="763" height="145" alt="image" src="https://github.com/user-attachments/assets/0368fb37-034e-4487-b77e-856fea2e6211" />
+
+### Goal : Perform XSS which breaks out of Javascript string and call alert(). 
+
+### Ingrediants : View post, home button. 
+
+<img width="933" height="602" alt="image" src="https://github.com/user-attachments/assets/38f2daab-cdec-4c7e-bd7a-4444be0b5cb9" />
+
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
+
+<img width="1050" height="497" alt="image" src="https://github.com/user-attachments/assets/3289f32f-cfba-462f-ba38-5de5e2094ddd" />
+
+- We will try to inject ' + alert() + '  
+  
+<img width="1312" height="527" alt="image" src="https://github.com/user-attachments/assets/65d26004-1bbb-4a73-b501-31ae889881ff" />
+
+- It worked it comes out of the string as it take it as the 3 seperate value '' one set and then alert() pop up comes then ''
+
+
+# ------------------------------------------------------------------------------
+
+
+
+
 
 
 
