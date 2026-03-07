@@ -227,7 +227,47 @@ Hence by doing this we solve the lab.
 # ------------------------------------------------------------------------------
 
 
-8. 
+8. Stored XSS into anchor href attribute with double quotes HTML-encoded 
+
+<img width="764" height="97" alt="image" src="https://github.com/user-attachments/assets/78d7e274-052a-4d96-8503-d7ce36c861bb" />
+
+### Goal :  To submit a commment that call alert() when user name is clicked. 
+
+### Ingrediants : View post, home button. 
+
+<img width="829" height="333" alt="image" src="https://github.com/user-attachments/assets/c775cbaa-b156-4414-a4b9-8f058fd92066" />
+
+### Solving : 
+
+- Lets put a ramdom comment and check how the comment tag works. 
+
+<img width="751" height="543" alt="image" src="https://github.com/user-attachments/assets/4b15c56e-d8b2-4be2-8a6a-d906d7693339" />
+
+- We can see the comment and the name is a hyperlink academy url and append value of our given website in the comment. 
+
+<img width="867" height="603" alt="image" src="https://github.com/user-attachments/assets/28fe3c04-2e57-4031-a584-082d65189179" />
+
+<img width="1056" height="215" alt="image" src="https://github.com/user-attachments/assets/7e1b0bc9-3c24-4606-b2c1-3ba7d2413a75" />
+
+- Also we can see it is collecting the website in the href in <a tag. This is our vulernable spot where we can inject malicious payload that can cause alert. 
+
+<img width="1056" height="215" alt="image" src="https://github.com/user-attachments/assets/e42d2e84-adb0-4451-ad82-499954a384b1" />
+
+- In the href tag the value we will provide need not to be a url link it can be javascript hence we do this and solve the lab. 
+
+<img width="797" height="574" alt="image" src="https://github.com/user-attachments/assets/8bebe0ad-9303-4b24-8a9b-10e926435b59" />
+
+
+# ------------------------------------------------------------------------------
+
+
+9. 
+
+
+
+
+
+
 
 
 
