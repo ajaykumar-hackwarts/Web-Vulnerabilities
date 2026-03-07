@@ -193,7 +193,45 @@ Hence by doing this we solve the lab.
 # ------------------------------------------------------------------------------
 
 
-7. 
+7. Reflected XSS into attribute with angle brackets HTML-encoded
+
+<img width="762" height="112" alt="image" src="https://github.com/user-attachments/assets/1dac4c9d-4279-4ba0-a082-e9a5b567d649" />
+
+### Goal : To perform a XSS by injecting an attribute and calls the alert(). 
+
+### Ingrediants : Home, search and view post button. 
+
+<img width="914" height="473" alt="image" src="https://github.com/user-attachments/assets/82946709-c201-4fd2-bb06-824c3ef9463d" />
+
+### Solving :
+
+<img width="1083" height="523" alt="image" src="https://github.com/user-attachments/assets/abca7634-6286-4e19-a04c-a3043e959a8a" />
+
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
+
+<img width="994" height="615" alt="image" src="https://github.com/user-attachments/assets/f711ef27-e9f4-42d1-94ba-6fd1c01a77e8" />
+
+- Since our search value is found inside the input tag in the value attribute we will try to break out the atribute by introducing the onmouseover attribute and call alert
+
+<img width="1150" height="466" alt="image" src="https://github.com/user-attachments/assets/d78b391a-f36c-4eb2-9020-c3186bda45fe" />
+
+- When user hover it we can see the alert funtion.
+
+<img width="905" height="417" alt="image" src="https://github.com/user-attachments/assets/aea841a1-89c1-4148-8d4e-bd8bdedd6423" />
+
+- We can see it is comes out. 
+
+<img width="872" height="130" alt="image" src="https://github.com/user-attachments/assets/1b30e18c-78d8-44e8-8b16-df1258958fcf" />
+
+
+# ------------------------------------------------------------------------------
+
+
+8. 
+
+
+
+
 
 
 
