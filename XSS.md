@@ -284,6 +284,49 @@ Hence by doing this we solve the lab.
 
 # ------------------------------------------------------------------------------
 
+10. DOM XSS in document.write sink using source location.search inside a select element. 
+
+<img width="780" height="238" alt="image" src="https://github.com/user-attachments/assets/9497ca74-0fd7-40cf-81b6-62759ff7d601" />
+
+### Goal : Perform XSS which breaks out of select element string and call alert().
+
+Ingredients : View details, check stock, return to list and home button, . 
+
+<img width="1305" height="597" alt="image" src="https://github.com/user-attachments/assets/e07e9fa3-b04b-4fbd-a09d-9bcfccdd0455" />
+
+<img width="1245" height="239" alt="image" src="https://github.com/user-attachments/assets/0ff27f72-5146-4039-ab42-d6ecd876a73c" />
+
+
+### Solving : 
+
+- We can see it is loading a script which has the function of getting the location.search value from the storeId and writing it. 
+
+<img width="1100" height="262" alt="image" src="https://github.com/user-attachments/assets/ff60b3a6-cc49-4624-887a-ce49b007819e" />
+
+- location.search is sink in JS which is the string from this ?
+
+<img width="1142" height="523" alt="image" src="https://github.com/user-attachments/assets/d7ad721e-3e30-490a-bd0b-50a66f9cd913" />
+
+- Since it uses the storeID we try to give a random value to the store ID and sees where it goes and we can see it is added to the list. 
+
+<img width="1219" height="644" alt="image" src="https://github.com/user-attachments/assets/387a200d-f1c4-4985-8a4e-e519237ff1cc" />
+
+- Now we want to get out of the tag. By doing the following. 
+
+<img width="1295" height="657" alt="image" src="https://github.com/user-attachments/assets/d40b84b2-1c9e-48a5-85b8-1dd3a2d591db" />
+
+- Then we can put our malicious payload and the lab is solved. 
+
+<img width="1174" height="679" alt="image" src="https://github.com/user-attachments/assets/80ec2816-0143-4a02-85f7-12966a633e17" />
+
+
+# ------------------------------------------------------------------------------
+
+
+11. 
+
+
+
 
 
 
