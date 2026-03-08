@@ -372,6 +372,73 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 ### Solving : 
 
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
+
+<img width="1142" height="343" alt="image" src="https://github.com/user-attachments/assets/0afabd9d-8938-4942-bf3b-7e3252ed734e" />
+
+- When we examine the .js file. we can see it is uses the eval function which is very dangerous function because whatever inside it is runs first and executed without the permission. 
+
+<img width="938" height="310" alt="image" src="https://github.com/user-attachments/assets/5d77df9e-9f95-4d94-afe9-e2e90d212cb4" />
+
+- Since our search object is going to that we try to modify the according execute an alert() using the burp suite.
+
+ <img width="833" height="282" alt="image" src="https://github.com/user-attachments/assets/7415c97e-cc0c-4796-9475-b3c4688a5e86" />
+
+ - We can see it is represented as JSON. When we are giving the " it is trying to neglect that using backslash
+
+<img width="911" height="313" alt="image" src="https://github.com/user-attachments/assets/002f1a3a-92a7-4b4d-aa80-a39d3d7e37e0" />
+
+- We trying many possibilities. 
+
+<img width="945" height="324" alt="image" src="https://github.com/user-attachments/assets/3f49ec00-bb3c-4453-8d68-3c9a6a0b748c" />
+
+- We can see the alert() escaped from the \ and also we can it to escape from the } also hence we using an arithmetic operations
+  
+<img width="961" height="262" alt="image" src="https://github.com/user-attachments/assets/7c9c3e52-d121-49c6-988e-03ab46977e33" />
+
+<img width="923" height="246" alt="image" src="https://github.com/user-attachments/assets/e344354b-2da3-4578-bdf1-234f6507b5a9" />
+
+- Hence by pasting this is search we can solve the lab. \"*alert(1)}//
+
+<img width="1075" height="407" alt="image" src="https://github.com/user-attachments/assets/299c4e72-72fd-4c52-99e3-c8ed5e250dd2" />
+
+
+# ------------------------------------------------------------------------------
+
+
+13. Reflected XSS into HTML context with most tags and attributes blocked
+
+<img width="792" height="311" alt="image" src="https://github.com/user-attachments/assets/925eb379-52f1-4e4b-b8a5-a4aff3a2490a" />
+
+### Goal : To perform a cross-site scripting attack that bypasses the WAF and calls print().
+
+### Ingredients : Exploit server, home, search, view post button.
+
+<img width="868" height="527" alt="image" src="https://github.com/user-attachments/assets/d3729d88-9b9f-4f33-87a4-6dda139184e9" />
+
+
+### Solving : 
+
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
+
+<img width="1095" height="562" alt="image" src="https://github.com/user-attachments/assets/e64b6598-0fbd-4ebd-b956-d20062dd85f9" />
+
+- Since the serach result is not used anywhere or no script is involved. Trying to inject normal xss. <img src=1 onerror="alert(1)"> We can these tags are blocked by WAF(Web application Firewall).
+
+<img width="1179" height="357" alt="image" src="https://github.com/user-attachments/assets/67e0d4de-35be-4c25-b35e-4d7a7344dbc4" />
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
