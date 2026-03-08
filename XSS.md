@@ -362,7 +362,20 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 # ------------------------------------------------------------------------------
 
-12. 
+# 12. Reflected DOM XSS
+
+<img width="762" height="171" alt="image" src="https://github.com/user-attachments/assets/97bd2fde-5688-48e1-ae08-71ebfef3040e" />
+
+### Goal : To create an injection that calls the alert(). 
+
+### Ingredients : Same as above. 
+
+### Solving : 
+
+
+
+
+
 
 
 
