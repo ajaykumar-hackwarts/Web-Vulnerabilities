@@ -1,4 +1,4 @@
-Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
+<img width="818" height="281" alt="image" src="https://github.com/user-attachments/assets/185f1c4a-2df0-4b07-9dc0-7ed4ab23cb7e" />Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
 Cross ---> Code from outside source
 Site ---> runs inside a trusted site
 Scripting --> attackers code runs on the victims browser. 
@@ -121,7 +121,7 @@ Scripting --> attackers code runs on the victims browser.
 # ------------------------------------------------------------------------------
 
 
-5. DOM XSS in jQuery anchor href attribute sink using location.search source
+# 5. DOM XSS in jQuery anchor href attribute sink using location.search source
 
 <img width="716" height="139" alt="image" src="https://github.com/user-attachments/assets/5b40b526-bbcf-48b6-954d-21044f7f6495" />
 
@@ -153,7 +153,7 @@ Hence by doing this we solve the lab.
 # ------------------------------------------------------------------------------
 
 
-6. DOM XSS in jQuery selector sink using a hashchange event
+# 6. DOM XSS in jQuery selector sink using a hashchange event
 
 <img width="754" height="176" alt="image" src="https://github.com/user-attachments/assets/aba587ee-e9ca-49f5-9c68-5a11581f3877" />
 
@@ -193,7 +193,7 @@ Hence by doing this we solve the lab.
 # ------------------------------------------------------------------------------
 
 
-7. Reflected XSS into attribute with angle brackets HTML-encoded
+# 7. Reflected XSS into attribute with angle brackets HTML-encoded
 
 <img width="762" height="112" alt="image" src="https://github.com/user-attachments/assets/1dac4c9d-4279-4ba0-a082-e9a5b567d649" />
 
@@ -227,7 +227,7 @@ Hence by doing this we solve the lab.
 # ------------------------------------------------------------------------------
 
 
-8. Stored XSS into anchor href attribute with double quotes HTML-encoded 
+# 8. Stored XSS into anchor href attribute with double quotes HTML-encoded 
 
 <img width="764" height="97" alt="image" src="https://github.com/user-attachments/assets/78d7e274-052a-4d96-8503-d7ce36c861bb" />
 
@@ -261,7 +261,7 @@ Hence by doing this we solve the lab.
 # ------------------------------------------------------------------------------
 
 
-9. Reflected XSS into a JavaScript string with angle brackets HTML encoded
+# 9. Reflected XSS into a JavaScript string with angle brackets HTML encoded
 
 <img width="763" height="145" alt="image" src="https://github.com/user-attachments/assets/0368fb37-034e-4487-b77e-856fea2e6211" />
 
@@ -284,13 +284,13 @@ Hence by doing this we solve the lab.
 
 # ------------------------------------------------------------------------------
 
-10. DOM XSS in document.write sink using source location.search inside a select element. 
+# 10. DOM XSS in document.write sink using source location.search inside a select element. 
 
 <img width="780" height="238" alt="image" src="https://github.com/user-attachments/assets/9497ca74-0fd7-40cf-81b6-62759ff7d601" />
 
 ### Goal : Perform XSS which breaks out of select element string and call alert().
 
-Ingredients : View details, check stock, return to list and home button, . 
+### Ingredients : View details, check stock, return to list and home button, . 
 
 <img width="1305" height="597" alt="image" src="https://github.com/user-attachments/assets/e07e9fa3-b04b-4fbd-a09d-9bcfccdd0455" />
 
@@ -323,38 +323,46 @@ Ingredients : View details, check stock, return to list and home button, .
 # ------------------------------------------------------------------------------
 
 
-11. 
+# 11. DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
 
+<img width="750" height="271" alt="image" src="https://github.com/user-attachments/assets/fa2a0730-9e09-481e-a489-d27811e79c19" />
 
+### Goal : To perform XSS that executes Angular JS expressions and calls alert(). 
 
+### Ingredients : Home, Search and view post button. 
 
+<img width="854" height="587" alt="image" src="https://github.com/user-attachments/assets/1b66be4d-876b-48fb-adf3-441aa4b0e7b3" />
 
+### Solving : 
 
+- Since it has the search box we will try to inject our usual payload and see the source code where it is used. 
 
+<img width="818" height="281" alt="image" src="https://github.com/user-attachments/assets/34068522-4aca-4638-9bdb-3f7e2cba29d7" />
 
+- And noticed that it is URL encoding so it is blocking "<" tag its using the angularjs file and out search is placed inside the <ng-app>
 
+<img width="774" height="461" alt="image" src="https://github.com/user-attachments/assets/3b5cec71-1b61-4465-a79c-6fbcaae8cff8" />
 
+<img width="1110" height="405" alt="image" src="https://github.com/user-attachments/assets/a40514fc-f0e7-4065-b4c9-57a7515a9e3a" />
 
+- So it is using the Angular JS so < will be blocked and when we give inside the {{ }} it will be executed even the url is encoded.
 
+<img width="871" height="235" alt="image" src="https://github.com/user-attachments/assets/efa3496e-21eb-427d-a0e5-be08b1aceee1" />
 
+- Before that we need to know what scope is.
+- Scope is a bridge which connects JS and the html. So we can call a function from the html like a clicking a button, hovering and it is executed. We can also use a default scope functions in the html and call them. 
+- These are the default scope functions. 
+$new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $apply(), $applyAsync(), $eval(), $evalAsync(), $on(), $emit(), $broadcast()
+- Since it is using the AngularJS it will block if we use like example $new.Function('alert()'). Hence we will use this $new.contructor because every function has the contructor 
+- So it will be {{$new.contructor('alert()')()}} It will create this alert function and by giving () this it will call the function.
 
+<img width="1098" height="394" alt="image" src="https://github.com/user-attachments/assets/133de5f0-c658-4a41-9035-cb2a840ecdb8" />
 
+- Hence we solve the lab.
 
+# ------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+12. 
 
 
 
