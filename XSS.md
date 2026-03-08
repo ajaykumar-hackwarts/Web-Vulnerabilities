@@ -1,4 +1,4 @@
-<img width="818" height="281" alt="image" src="https://github.com/user-attachments/assets/185f1c4a-2df0-4b07-9dc0-7ed4ab23cb7e" />Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
+<img width="792" height="578" alt="image" src="https://github.com/user-attachments/assets/492ab1b0-0119-43fb-adf2-1b2d3902e9f2" /><img width="1210" height="273" alt="image" src="https://github.com/user-attachments/assets/3ed04328-a9ac-4892-b992-3d997a43cbc9" /><img width="818" height="281" alt="image" src="https://github.com/user-attachments/assets/185f1c4a-2df0-4b07-9dc0-7ed4ab23cb7e" />Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
 Cross ---> Code from outside source
 Site ---> runs inside a trusted site
 Scripting --> attackers code runs on the victims browser. 
@@ -446,6 +446,62 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 <img width="333" height="139" alt="image" src="https://github.com/user-attachments/assets/af61f9a8-1f7f-4de7-b817-98bcf82aa032" />
 
 - Hence we are trying to find which attribute is allowed by WAF. 
+
+<img width="657" height="365" alt="image" src="https://github.com/user-attachments/assets/329081ea-b925-483d-b154-581401a2cbda" />
+
+- We found some attribute that would bypass the WAF. We will choose the onresize attribute. We can see on changing the page size it triggers the print however we want to do it automatically when page is loaded hence we use the exploit server. 
+
+<img width="847" height="522" alt="image" src="https://github.com/user-attachments/assets/049668a9-8fb0-40bd-8aad-9c134f0c9236" />
+
+- Hence by uploading the following we can able to solve the lab. 
+
+<img width="1210" height="273" alt="image" src="https://github.com/user-attachments/assets/d343c22e-edb7-4725-8b30-2d4330a7990b" />
+
+# -------------------------------------------------------------------------------
+
+14. Stored DOM XSS 
+
+<img width="756" height="87" alt="image" src="https://github.com/user-attachments/assets/cd9e5ee2-942d-4ade-af00-d7bf3715172b" />
+
+### Goal :  To call alert(). 
+
+### Ingredients : Home and view post button. 
+
+<img width="1019" height="500" alt="image" src="https://github.com/user-attachments/assets/62508469-9449-4a06-95e9-1bcb39efb4df" />
+
+
+### Solving : 
+
+- We try to submit an html commment.  
+
+<img width="812" height="596" alt="image" src="https://github.com/user-attachments/assets/d7d42086-2933-45c3-8469-2bddfd8e62c2" />
+
+- It has the html tag escape functionality. But we can see it is encoded properly. it missed to encode the closing </h1>. 
+
+<img width="774" height="561" alt="image" src="https://github.com/user-attachments/assets/cba64d3d-729e-4186-8160-5f8532cedd63" />
+
+- Hence we try to exploit that.
+
+<img width="792" height="578" alt="image" src="https://github.com/user-attachments/assets/3753f1d1-4fb7-49ed-a8a2-a0eb1155098c" />
+
+- We can see it is worked. 
+
+<img width="754" height="434" alt="image" src="https://github.com/user-attachments/assets/8079fa15-6774-4a0b-a90f-74b02e697950" />
+
+- Now we post our alert malicious payload. 
+
+<img width="859" height="587" alt="image" src="https://github.com/user-attachments/assets/d035416b-d9cc-46ee-8c2c-2a31a991245c" />
+
+Hence by posting that we solve the lab. 
+
+
+# -------------------------------------------------------------------------------
+
+
+15. 
+
+
+
 
 
 
