@@ -423,9 +423,32 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 <img width="1095" height="562" alt="image" src="https://github.com/user-attachments/assets/e64b6598-0fbd-4ebd-b956-d20062dd85f9" />
 
-- Since the serach result is not used anywhere or no script is involved. Trying to inject normal xss. <img src=1 onerror="alert(1)"> We can these tags are blocked by WAF(Web application Firewall).
+- Since the search result is not used anywhere or no script is involved. Trying to inject normal xss. <img src=1 onerror="alert(1)"> We can these tags are blocked by WAF(Web application Firewall).
 
 <img width="1179" height="357" alt="image" src="https://github.com/user-attachments/assets/67e0d4de-35be-4c25-b35e-4d7a7344dbc4" />
+
+- Not all tags are restricted by the WAF(Web application Firewall). We can see <> tag is not restricted. We can find out which is tags are all not restricted by using intruder in burp. 
+
+<img width="964" height="323" alt="image" src="https://github.com/user-attachments/assets/2275d1de-eecf-4c7b-828d-44c8a924b7d7" />
+
+ <img width="1354" height="598" alt="image" src="https://github.com/user-attachments/assets/a8ddda41-f265-4fea-b6ad-8ab7a76921f6" />
+
+- We can see the the body and xss tag is getting the 200 response. 
+
+<img width="1062" height="416" alt="image" src="https://github.com/user-attachments/assets/37847a5d-79ee-4078-ae9d-2a9bf2ff9e59" />
+
+- When we tried to use this body and paste the code. 
+
+<img width="824" height="208" alt="image" src="https://github.com/user-attachments/assets/e9e6c158-5867-49c0-a430-798346f63489" />
+
+- It says attribute not allowed. 
+
+<img width="333" height="139" alt="image" src="https://github.com/user-attachments/assets/af61f9a8-1f7f-4de7-b817-98bcf82aa032" />
+
+- Hence we are trying to find which attribute is allowed by WAF. 
+
+
+
 
 
 
