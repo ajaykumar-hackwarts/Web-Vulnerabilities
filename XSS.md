@@ -406,7 +406,7 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 # ------------------------------------------------------------------------------
 
 
-13. Reflected XSS into HTML context with most tags and attributes blocked
+# 13. Reflected XSS into HTML context with most tags and attributes blocked
 
 <img width="792" height="311" alt="image" src="https://github.com/user-attachments/assets/925eb379-52f1-4e4b-b8a5-a4aff3a2490a" />
 
@@ -459,7 +459,7 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 # -------------------------------------------------------------------------------
 
-14. Stored DOM XSS 
+# 14. Stored DOM XSS 
 
 <img width="756" height="87" alt="image" src="https://github.com/user-attachments/assets/cd9e5ee2-942d-4ade-af00-d7bf3715172b" />
 
@@ -468,7 +468,6 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 ### Ingredients : Home and view post button. 
 
 <img width="1019" height="500" alt="image" src="https://github.com/user-attachments/assets/62508469-9449-4a06-95e9-1bcb39efb4df" />
-
 
 ### Solving : 
 
@@ -497,35 +496,34 @@ Hence by posting that we solve the lab.
 
 # -------------------------------------------------------------------------------
 
+# 15. Reflected XSS into HTML context with all tags blocked except custom ones 
 
-15. 
+<img width="716" height="125" alt="image" src="https://github.com/user-attachments/assets/72a5d00a-a241-4525-ad87-43e72155e515" />
 
+### Goal :   To perform XSS attack that injects a custom tag and automatically alerts document.cookie. 
 
+### Ingredients : Home, exploit server, search and view post button. 
 
+<img width="890" height="483" alt="image" src="https://github.com/user-attachments/assets/bcb549f7-72f2-4711-b4d3-098a29376e21" />
 
+As like previous apps mostly all tags '<>'  are blocked. 
 
+- We can see not all the tags are blocked the custom tag is still not blocked. 
 
+<img width="807" height="350" alt="image" src="https://github.com/user-attachments/assets/3b56268e-47fc-4619-90e7-f8067c3bc0af" />
 
+- We create the payload properly like. <custom-tag onfocus='alert()' id='x' tabindex=1> </custom-tag>
+- onfocus='alert()' --> It will trigger alert when onfocusing.
+- tabindex=1 --> so it always comes first. 
 
+<img width="1053" height="561" alt="image" src="https://github.com/user-attachments/assets/93775481-db80-4ee1-b88b-1fc148e5022e" />
 
+- We can see all are injected in the properly. We want it to run for the attacker hence submitting in the server.
 
+ <img width="818" height="176" alt="image" src="https://github.com/user-attachments/assets/7a3c6c1d-05e2-4b27-a59b-71eb9f3e1241" />
 
+- Hence by posting this we can solve the lab.
 
+# -------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 16. 
