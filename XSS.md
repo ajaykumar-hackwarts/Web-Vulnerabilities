@@ -1,4 +1,4 @@
-<img width="792" height="578" alt="image" src="https://github.com/user-attachments/assets/492ab1b0-0119-43fb-adf2-1b2d3902e9f2" /><img width="1210" height="273" alt="image" src="https://github.com/user-attachments/assets/3ed04328-a9ac-4892-b992-3d997a43cbc9" /><img width="818" height="281" alt="image" src="https://github.com/user-attachments/assets/185f1c4a-2df0-4b07-9dc0-7ed4ab23cb7e" />Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
+<img width="1107" height="506" alt="image" src="https://github.com/user-attachments/assets/8acd8782-53af-4fc5-a1fb-8e89099d60f7" /><img width="792" height="578" alt="image" src="https://github.com/user-attachments/assets/492ab1b0-0119-43fb-adf2-1b2d3902e9f2" /><img width="1210" height="273" alt="image" src="https://github.com/user-attachments/assets/3ed04328-a9ac-4892-b992-3d997a43cbc9" /><img width="818" height="281" alt="image" src="https://github.com/user-attachments/assets/185f1c4a-2df0-4b07-9dc0-7ed4ab23cb7e" />Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
 Cross ---> Code from outside source
 Site ---> runs inside a trusted site
 Scripting --> attackers code runs on the victims browser. 
@@ -11,8 +11,6 @@ Scripting --> attackers code runs on the victims browser.
 ### Ingrediants : Search, Home, view post button are there.
 
 <img width="859" height="599" alt="image" src="https://github.com/user-attachments/assets/41778bbf-a7c7-45b0-9db2-5d71b57c4430" />
-
-
 
 <img width="817" height="307" alt="image" src="https://github.com/user-attachments/assets/9932878a-1397-4ccf-a645-bfdde8d4a0ec" />
 
@@ -586,7 +584,37 @@ As like previous apps mostly all tags '<>'  are blocked.
 # ------------------------------------------------------------------------------
 
 
-# 18. 
+# 18.  Reflected XSS into a JavaScript string with single quote and backslash escaped
+
+<img width="731" height="173" alt="image" src="https://github.com/user-attachments/assets/65c5ff4f-2dcc-4747-8576-221981d78416" />
+
+### Goal : To perform xss that would break out of Javascript string and call alert().
+
+### Ingredients : Home, view post button. 
+
+<img width="887" height="536" alt="image" src="https://github.com/user-attachments/assets/0a4db7f0-0e32-4b67-a533-68eb0e6182f9" />
+
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
+
+<img width="1055" height="534" alt="image" src="https://github.com/user-attachments/assets/7a94ac64-fbdb-437b-a350-90a5bd8e6235" />
+
+- We can see it is collecting the value in the variabe called searchTerms. and when we try escape the string by using the ' it is escaping by using the /
+
+<img width="1065" height="485" alt="image" src="https://github.com/user-attachments/assets/a38cd1ec-414f-415a-b8b6-6e4da47347a8" />
+
+- Even though we string come out of the string using the \ it is also escaped using another \. Hence we should try to come out of the </script> itself.
+
+<img width="1192" height="521" alt="image" src="https://github.com/user-attachments/assets/6309f6f6-3b3b-40e2-b859-d4fde26fafe2" />
+
+- We can see it is worked. Why it is worked means usually it should consider the input as html but here it has the vulnerability which it consider this as script tag and close the tab and we can inject the payload in a new script tag. 
+
+# ------------------------------------------------------------------------------
+
+
+
+
+
+
 
 
 
