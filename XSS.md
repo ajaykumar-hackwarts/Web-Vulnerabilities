@@ -506,6 +506,8 @@ Hence by posting that we solve the lab.
 
 <img width="890" height="483" alt="image" src="https://github.com/user-attachments/assets/bcb549f7-72f2-4711-b4d3-098a29376e21" />
 
+### Solving : 
+
 As like previous apps mostly all tags '<>'  are blocked. 
 
 - We can see not all the tags are blocked the custom tag is still not blocked. 
@@ -526,4 +528,79 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 # ------------------------------------------------------------------------------
 
-# 16. 
+# 16. Reflected XSS with some SVG markup allowed
+
+<img width="722" height="106" alt="image" src="https://github.com/user-attachments/assets/ac6e0457-7cac-41b8-a2cc-a94607ca9668" />
+
+### Goal :  To call an alert() by using the allowed svg mark up. 
+
+### Ingredients : Search, Home and view post button. 
+
+<img width="941" height="426" alt="image" src="https://github.com/user-attachments/assets/c8548916-150a-4e9b-a6b2-da1d553d08e3" />
+
+### Solving : 
+
+- As usual we will try to inject the alert() via img tag. Its says tags not allowed.
+
+<img width="382" height="235" alt="image" src="https://github.com/user-attachments/assets/f9af976c-5da8-4e9f-854f-979d00a1d1a0" />
+
+- Hence we are intercepting the request in the burp and see which tag can be used. We can see these tags are allowed.
+
+<img width="877" height="176" alt="image" src="https://github.com/user-attachments/assets/7b7d700b-70fd-4ddb-b267-284ac932db68" />
+
+- We have the tag which is allowed we try to find the attribute which is allowed using intruder. 
+
+<img width="1254" height="422" alt="image" src="https://github.com/user-attachments/assets/d74cf748-4e73-4deb-b1dc-22e131b4bfd8" />
+
+- We can it is only allow the onbegin. What onbegin would do is execute the code on begining the animation. 
+
+<img width="640" height="274" alt="image" src="https://github.com/user-attachments/assets/ce702c97-1b1f-490a-b2ab-6a869da12b77" />
+
+- Hence by doing the following we solve the lab. 
+
+<img width="727" height="285" alt="image" src="https://github.com/user-attachments/assets/974b3a46-290b-4d1c-86e1-e9a71651ad04" />
+
+
+# ------------------------------------------------------------------------------
+
+# 17. Reflected XSS in canonical link tag
+
+<img width="789" height="359" alt="image" src="https://github.com/user-attachments/assets/c4b290e2-fe8c-4258-91b0-02f1d5fbfbc6" />
+
+### Goal :  To call alert() as they are using the canonical link tags. 
+
+### Ingredients : Home, view post button. 
+
+<img width="885" height="556" alt="image" src="https://github.com/user-attachments/assets/6d659a13-e980-4373-a345-27fce8ffe345" />
+
+### Solving : 
+
+- We can see the lab is reflected xss but can't see any reflecting element like search we can only see the url. We try to inject alert() there and when seeing the page source it is using the canonical tag. 
+
+ <img width="1142" height="386" alt="image" src="https://github.com/user-attachments/assets/be989b9e-79d3-4ed8-9c2f-c6790cd934c6" />
+
+- Even though have injected the code here we can't make click on this because it is reflected on the UI it is only in the url. Hence we are going to use the attribute called access key. It is used to create keyboard shortcuts for an element. So we can able submit, click or do some events by giving that.
+
+<img width="1238" height="431" alt="image" src="https://github.com/user-attachments/assets/d5cb6f16-b959-43bb-80be-259394a06ed0" />
+
+# ------------------------------------------------------------------------------
+
+
+# 18. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
