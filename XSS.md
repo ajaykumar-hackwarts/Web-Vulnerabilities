@@ -594,6 +594,8 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 <img width="887" height="536" alt="image" src="https://github.com/user-attachments/assets/0a4db7f0-0e32-4b67-a533-68eb0e6182f9" />
 
+### Solving : 
+
 - Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
 
 <img width="1055" height="534" alt="image" src="https://github.com/user-attachments/assets/7a94ac64-fbdb-437b-a350-90a5bd8e6235" />
@@ -611,12 +613,33 @@ As like previous apps mostly all tags '<>'  are blocked.
 # ------------------------------------------------------------------------------
 
 
+# 19. Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped
+
+<img width="744" height="176" alt="image" src="https://github.com/user-attachments/assets/c30fed6a-17fa-4072-9ee4-f46584ed18c4" />
+
+### Goal : To perform xss that would break out of Javascript string and call alert().
+
+### Ingredients : Same as above. 
+
+### Solving : 
+
+- We try the all the possibilty including the last lab solution. But here it is completely url encoded. 
+
+<img width="1084" height="563" alt="image" src="https://github.com/user-attachments/assets/68540566-024d-4454-9687-46e7d14e5e4a" />
+
+- We can escape the backslash using another backslash and using the - operator because + is url encoded in JS. Still we can't break out of the string which is closed by'  
+
+<img width="1150" height="603" alt="image" src="https://github.com/user-attachments/assets/defe96cf-eb37-415c-b854-e4700dcec5b6" />
+
+- We can break out of the string by using the forward double slash \\. And we can see it taken '//' as string and alert pop up and neglect the ' Hence lab solved. 
+
+<img width="1102" height="549" alt="image" src="https://github.com/user-attachments/assets/24c22968-8a35-48f7-b785-1696d49ae562" />
 
 
+# ------------------------------------------------------------------------------
 
 
-
-
+20. 
 
 
 
