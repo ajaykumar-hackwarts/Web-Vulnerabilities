@@ -639,7 +639,45 @@ As like previous apps mostly all tags '<>'  are blocked.
 # ------------------------------------------------------------------------------
 
 
-20. 
+# 20. Stored XSS into onclick event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped
+
+<img width="714" height="111" alt="image" src="https://github.com/user-attachments/assets/36d9a99d-9c51-4d22-9b3e-c0ffdf887de4" />
+
+### Goal : Submit a comment that calls an alert() when author name is clicked. 
+
+### Ingredients : Home, view post, comment section. 
+
+### Solving : 
+
+- Trying to submit a simple random comment and see the code flow
+
+<img width="774" height="592" alt="image" src="https://github.com/user-attachments/assets/8ef49eef-f0cd-4c85-84ed-ebb3291609c2" />
+
+- It is taking the website in a href in the author when clicking that it redirects to the page. Here may be the vulnerability we will try to exploit that. Inside the <a they have some javasrcipt to santize the input.   
+
+<img width="787" height="458" alt="image" src="https://github.com/user-attachments/assets/463c5da0-7577-4e45-8ab5-f40d986a2a93" />
+
+- Even though the angle brackets and double quotes HTML-encoded and single quote are backslash escaped. We will try to test that and we can see single quotes are back slash escaped. 
+
+<img width="1037" height="518" alt="image" src="https://github.com/user-attachments/assets/724a080f-5972-418d-acc0-7ee738bd6c89" />
+
+- We will try give the encoded value as the input and see what happens. We will try this http://foo?&apos;-alert(1)-&apos; . We can see it worked. 
+
+<img width="1204" height="484" alt="image" src="https://github.com/user-attachments/assets/a45eeef2-7eee-4b2d-b929-426a0c13ca4f" />
+
+- &apos --> url encoded value of ' and  We will what is happening in the code. It is html decoded from &apos to '.
+- The server sanitize the input where it will be &apos; only so there html decoding happening so no backslash for escaping ' but when in the browser it is getting html decoded and changed to ' and no backslash is escaping.  
+
+<img width="862" height="390" alt="image" src="https://github.com/user-attachments/assets/17a5058a-e2d5-44cd-a595-b3a4e841ef7a" />
+
+- When we are viewing the pagesource we can see that it is sending the input to the browser as normal string as we given only but it in the broswer only as a process it is html decoded.
+
+<img width="1246" height="202" alt="image" src="https://github.com/user-attachments/assets/17a5cad7-b1af-436c-bdb7-5c6e3c4b20dd" />
+ 
+# ------------------------------------------------------------------------------
+
+
+
 
 
 
