@@ -705,6 +705,53 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 # 22. Exploiting cross-site scripting to steal cookies
 
+<img width="763" height="143" alt="image" src="https://github.com/user-attachments/assets/27772f97-84bb-4e3a-8887-c8d5244cb004" />
+
+### Goal :  To perfrom XSS to steal cookie then use the cookie to impersonate the victim. 
+
+### Ingredients : Home, Myaccount, view post button. 
+
+<img width="930" height="507" alt="image" src="https://github.com/user-attachments/assets/4a319985-84a4-4993-b6b0-7a524565ee1f" />
+
+### Solving : 
+
+- Since the target server interacts with a url we will use burp collobarator to collect the request.
+
+ <img width="794" height="599" alt="image" src="https://github.com/user-attachments/assets/dbd355ab-3f74-4879-bbc2-e0bb8a4062ef" />
+
+- We can see the comment section is completely vulnerable no santisation is happening there. 
+
+ <img width="730" height="381" alt="image" src="https://github.com/user-attachments/assets/809dd2a1-4124-4cf5-a861-f965638a34e4" />
+
+- Hence we will try to make the victim send the cookie to our collobartor by submitting the following script.
+
+<img width="791" height="574" alt="image" src="https://github.com/user-attachments/assets/6c3a1fc0-636a-47c5-9a32-0efa4f01c1cd" />
+
+-  fetch --> Send request to this attaker server
+method: 'POST', -> so cookie is send
+mode: 'no-cors', -> it allow to read 
+body:document.cookie --> getting the session cookie.
+
+<img width="929" height="607" alt="image" src="https://github.com/user-attachments/assets/66b588f7-8330-4d5e-aa12-6a1ed4713175" />
+
+- We try to inject the cookie in the request.
+
+<img width="969" height="594" alt="image" src="https://github.com/user-attachments/assets/f82679ac-87a9-4825-a2e8-b4cc6a391c59" />
+
+<img width="1132" height="619" alt="image" src="https://github.com/user-attachments/assets/70714e38-0a28-4bdc-825a-636951232ad1" />
+
+
+# ------------------------------------------------------------------------------
+
+
+
+
+
+ 
+
+
+
+
 
 
 
