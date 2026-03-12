@@ -677,11 +677,33 @@ As like previous apps mostly all tags '<>'  are blocked.
 # ------------------------------------------------------------------------------
 
 
+# 21. Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped
 
+<img width="747" height="137" alt="image" src="https://github.com/user-attachments/assets/27d0e704-5a21-451a-8c86-3021c40cecc3" />
 
+### Goal : To perfrom XSS that calls alert() inside the template. 
 
+### Ingredients : Home, search and view post button. 
 
+<img width="920" height="556" alt="image" src="https://github.com/user-attachments/assets/f2790367-a8bf-4684-8911-7dda29c49a4a" />
 
+### Solving : 
+
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
+
+<img width="938" height="465" alt="image" src="https://github.com/user-attachments/assets/1cb4df49-42e7-469e-b9e5-ec5fae6c81e3" />
+
+- We can see it is used inside the <script> and inside the (`) which is called template literal.
+- Template literal is a template representation used to reduce the code length. If we are using a string and want to include a variable means its representation would be 'string' + myVar + 'string'. So we have break out of string every time we want to use a variable but in template literal we can just give like  ${myVar} inside a templete literal ` we can able to include the variable.
+- Since it is using te template variable we will try to call the alert inside the `` like ${alert(1)}.
+
+<img width="1075" height="461" alt="image" src="https://github.com/user-attachments/assets/742599a0-ca9a-46d5-838b-14bf5e829cf8" />
+
+- Hence by doing this we solved the lab. 
+
+# ------------------------------------------------------------------------------
+
+# 22. Exploiting cross-site scripting to steal cookies
 
 
 
