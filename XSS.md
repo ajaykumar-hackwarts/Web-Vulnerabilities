@@ -832,11 +832,14 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 - The search term is taken in angular module as the key value pair and search as key and the term we searching as the value. 
 
-<img width="1037" height="643" alt="image" src="https://github.com/user-attachments/assets/f99868d8-0cd5-4089-97c8-c6da863f616a" />
+<img width="1076" height="651" alt="image" src="https://github.com/user-attachments/assets/bf82a84d-7c0f-4676-8944-3d861ddecb69" />
 
-- We will try to add the second key value pair.
+- We will try to add the second key value pair and we can notice that before the result came it shows as {{value}} a poorly builted angular js expression. 
 
-![Uploading image.png…]()
+
+
+ 
+
 
 
 
