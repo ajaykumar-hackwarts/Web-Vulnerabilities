@@ -816,6 +816,32 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 # ------------------------------------------------------------------------------
 
-# 25.
+# 25. Reflected XSS with AngularJS sandbox escape without strings
+
+<img width="759" height="151" alt="image" src="https://github.com/user-attachments/assets/331c9375-3ca0-47b6-8c1c-2b30503abe2f" />
+
+### Goal : To perform xss that escape sandbox and call alert() without using $eval.
+
+### Ingredients : Search, Home button. 
+
+<img width="1015" height="563" alt="image" src="https://github.com/user-attachments/assets/8432f0df-78b1-475c-8f37-036ef5036318" />
+
+### Solving : 
+
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
+
+- The search term is taken in angular module as the key value pair and search as key and the term we searching as the value. 
+
+<img width="1037" height="643" alt="image" src="https://github.com/user-attachments/assets/f99868d8-0cd5-4089-97c8-c6da863f616a" />
+
+- We will try to add the second key value pair.
+
+![Uploading image.png…]()
+
+
+
+
+
+
 
 
