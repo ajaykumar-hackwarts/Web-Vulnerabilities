@@ -836,6 +836,27 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 - We will try to add the second key value pair and we can notice that before the result came it shows as {{value}} a poorly builted angular js expression. 
 
+<img width="988" height="372" alt="image" src="https://github.com/user-attachments/assets/2995ffc2-76a3-4d32-a687-3d0ecf058433" />
+
+- We will replace the second key value pair with the alert() and see what happens. We can see it is also taken as the key value and alert is not pop out because it doesn't brake the sandbox. 
+
+<img width="1046" height="663" alt="image" src="https://github.com/user-attachments/assets/ea692c1a-c03b-4a3b-9f8a-40cb2af67a61" />
+
+- Hence we will place the following. &toString().constructor.prototype.charAt%3d[].join;[1]|orderBy:toString().constructor.fromCharCode(120,61,97,108,101,114,116,40,49,41)=1
+
+- toString()   ---> Converts something into strings.
+- constructor  ---> Refers to string constructor.
+- .prototype   ---> Accesses built-in function of strings.
+- .charAt      ---> get a character from a string.
+- %3d --> Url encoded value of =.
+- [].join --> Replace charAt function with join.
+- |orderBy: ---> We can execute the expression here.
+- toString().constructor --> Access the java script constructor.
+- fromCharCode(120,61,97,108,101,114,116,40,49,41)=1 ---> ASCII value of x=alert(1).
+
+- Hence by submitting this we can solve the lab. 
+
+<img width="1291" height="473" alt="image" src="https://github.com/user-attachments/assets/d659bc08-854d-42ad-89c0-ebea77737602" />
 
 
  
