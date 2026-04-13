@@ -25,7 +25,7 @@ Scripting --> attackers code runs on the victims browser.
 # -------------------------------------------------------------------------------
 
 
-2. Stored XSS into HTML context with nothing encoded.
+# 2. Stored XSS into HTML context with nothing encoded.
 
 
 ### Goal :   To perform cross-site scripting attack and submit a comment that calls alert function. 
@@ -858,8 +858,45 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 <img width="1291" height="473" alt="image" src="https://github.com/user-attachments/assets/d659bc08-854d-42ad-89c0-ebea77737602" />
 
-
+# ------------------------------------------------------------------------------
  
+# 26. Reflected XSS with AngularJS sandbox escape and CSP. 
+
+<img width="748" height="134" alt="image" src="https://github.com/user-attachments/assets/96de70cd-d59e-42ac-a895-673b18768333" />
+
+### Goal : To perform xss that escapes csp, angular js sandbox and alerts document.cookie. 
+
+### Ingredients : Search, Home button and exploit server button. 
+
+<img width="877" height="403" alt="image" src="https://github.com/user-attachments/assets/f4eadb41-1792-4f0c-b8f2-429407a91c96" />
+
+### Solving : 
+
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
+
+<img width="1246" height="459" alt="image" src="https://github.com/user-attachments/assets/b2fd0216-4cd5-4749-a8c3-b88098e46119" />
+
+- We can see no script is used our search value is used no where and when we see the network we can notice it is having the CSP.
+
+<img width="1198" height="496" alt="image" src="https://github.com/user-attachments/assets/5d281923-fed8-45a4-b91f-b1c4ce8539c6" />
+
+- Let's try to create a input field and when write a scipt that will execute when the user focus on the field.
+
+<input id=a ng-focus=$event.composedPath()|orderBy:'(x=alert)(document.cookie)'>#a';
+
+- id name is a, ng-focus --> focuses on the tab ,  =$event.composedPath() --> list the elements the event passed, | orderBy: '(x=alert)(document.cookie)'  --> sort data, call alert and collecting cookie, #a --> make focus
+
+<img width="830" height="342" alt="image" src="https://github.com/user-attachments/assets/8786dd93-4558-428a-bc45-0d375e221b55" />
+
+- We can see it calls the alert. Now we tried to store in the exploit server.
+
+<img width="1211" height="379" alt="image" src="https://github.com/user-attachments/assets/4a353ee8-5608-47aa-8471-e08b7031494a" />
+
+- Hence by pasting this we solve the lab.
+
+<img width="1302" height="390" alt="image" src="https://github.com/user-attachments/assets/9001c6d5-db04-4855-b44a-40b85c5a8f71" />
+
+# ------------------------------------------------------------------------------
 
 
 
