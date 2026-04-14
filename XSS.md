@@ -904,7 +904,55 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 ### Goal : To perform a XSS by injecting a vector labeled click that calls alert. 
 
-### Ingrediants : 
+### Ingrediants : Home, search button. 
+
+<img width="948" height="564" alt="image" src="https://github.com/user-attachments/assets/732cc33e-9966-4dba-8785-97a834b528a3" />
+
+# Solving : 
+
+- We can see that the href attribute is blocked. However anker tag is not blocked. 
+
+<img width="859" height="290" alt="image" src="https://github.com/user-attachments/assets/6d71f699-a3cc-47d8-b35f-dc5692449ebe" />
+
+<img width="821" height="266" alt="image" src="https://github.com/user-attachments/assets/16b634db-7594-4287-b997-f99614e64ac0" />
+
+<img width="991" height="319" alt="image" src="https://github.com/user-attachments/assets/3b959a16-b38d-46ac-b0fd-f58c496abdcd" />
+
+- We <a> is allowed we can notice which tag is allowed by using burpsuite intruder and XSS cheat sheet.
+
+<img width="1161" height="472" alt="image" src="https://github.com/user-attachments/assets/f33bfd2b-f1d2-4488-96d2-93a1a2d09afa" />
+
+- We can animate and image tag is allowed.
+
+<img width="693" height="309" alt="image" src="https://github.com/user-attachments/assets/51d8e9cf-4be1-4579-96ef-8081f0f4e7a2" />
+
+- animate is an svg element hence we can test the svg tag.
+
+<img width="891" height="260" alt="image" src="https://github.com/user-attachments/assets/44581634-ac0e-41f4-b883-286fde94a08e" />
+
+- To render the text we should put text tag inside the svg with x and y attribute. 
+
+<img width="782" height="328" alt="image" src="https://github.com/user-attachments/assets/da271d25-193e-49f6-b1c8-33a711aa132b" />
+
+- Since we can't use the href we can use the animate tag to use href.
+
+<img width="777" height="389" alt="image" src="https://github.com/user-attachments/assets/3daccad1-bae9-4af8-866f-a1e20584d66e" />
+
+- Hence by pasting the follwing code we can solve the lab.
+
+<img width="968" height="520" alt="image" src="https://github.com/user-attachments/assets/e82b73b1-d442-4282-a01e-44b9302782d0" />
+
+# ------------------------------------------------------------------------------
+
+
+
+# 28. 
+
+
+
+
+
+
 
 
 
