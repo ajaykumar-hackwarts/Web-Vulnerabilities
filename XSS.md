@@ -898,6 +898,13 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 # ------------------------------------------------------------------------------
 
+# 27. Reflected XSS with event handlers and href attributes blocked.
+
+<img width="747" height="268" alt="image" src="https://github.com/user-attachments/assets/c8bb27b2-1824-4b0a-a533-4adbad059376" />
+
+### Goal : To perform a XSS by injecting a vector labeled click that calls alert. 
+
+### Ingrediants : 
 
 
 
