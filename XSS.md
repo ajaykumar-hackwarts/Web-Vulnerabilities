@@ -945,19 +945,36 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 # ------------------------------------------------------------------------------
 
 
+# 28. Reflected XSS in a JavaScript URL with some characters blocked
 
-# 28. 
+<img width="760" height="171" alt="image" src="https://github.com/user-attachments/assets/cb0bb46e-d6e0-4583-9490-213f6fb9783e" />
+
+### Goal : Perform xss and call alert which has the string 1337. 
+
+### Ingrediants : Home, View post button. 
+
+# Solving : 
+
+- Let's try a payload which call alert which has 1337. We can see we able to see that. 
+
+<img width="992" height="401" alt="image" src="https://github.com/user-attachments/assets/c7702d2b-45cd-4c84-ad04-043fe5b5cafe" />
+
+- Then we have to make javascript itself calls the alert by declaring in the varaible.
+
+<img width="1095" height="442" alt="image" src="https://github.com/user-attachments/assets/7dfd451f-4e63-48d3-be9d-a657eeaf0282" />
+
+- We have declared that variable in the x and assigned that to the toString varible. It's an inbuilt variable of java which converts other data types into string. Next we have to call that function by the javascript itself.
+
+- <img width="1102" height="375" alt="image" src="https://github.com/user-attachments/assets/5fbecac0-c1ed-473f-b6b6-1675bdddbdbd" />
+
+- By declaring window+'' it concatinating an empty string to the window. And for the url code by posting the following we can solve the lab. 
+
+- Url encodeed version of this '},x=x=>{throw/**/onerror=alert,1337},toString=x,window+'''
+- },  --> Break out the existing context.
+- {throw/**/onerror=alert,1337} --> First argument /**/ --> for gap.
 
 
+# ------------------------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
+# 29. 
