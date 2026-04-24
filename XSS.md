@@ -1014,10 +1014,38 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 - Dangling markup : Incomplete markup that might retrives the our desired value. Like this <div>   <p>Hello.
 
 
+# 30. Reflected XSS protected by CSP, with CSP bypass
 
+<img width="765" height="155" alt="image" src="https://github.com/user-attachments/assets/ece4c41d-bb0f-4332-b675-a5fbe95722ae" />
 
+### Goal : Perform xss that bypasses CSP and calls alert. 
 
+### Ingrediants : Search, view post and home button.  
 
+<img width="947" height="372" alt="image" src="https://github.com/user-attachments/assets/66365058-9c05-4737-977b-9d4f5c0314b3" />
 
+### Solving :  
 
+- Since it is using the reflected xss first thing we have to do is searching an orbitary value in the serach box and see where are all it is used.
 
+<img width="1322" height="592" alt="image" src="https://github.com/user-attachments/assets/0160ffb3-0362-4e0d-85d8-4e61a46b95fa" />
+
+- Our search value is in the url as the query parameter. It is using the CSP We will try to give a token value there and we can able to successfully inject that.
+
+<img width="1277" height="562" alt="image" src="https://github.com/user-attachments/assets/09454676-d03b-482f-9aa4-430b67165220" />
+
+- Since the script-src 'self' can't able to inject any script outside the origin. We will try to change that and inject the script. 
+
+<img width="1304" height="576" alt="image" src="https://github.com/user-attachments/assets/656be146-88d2-4442-9e12-2279d9672e1e" />
+
+<img width="1308" height="566" alt="image" src="https://github.com/user-attachments/assets/625a3022-28bb-4d1d-9457-d50183d1eb14" />
+
+- But this is not working and no alert is coming because it's replaces that it just added at the end It takes the first value script-src 'self'
+
+<img width="636" height="442" alt="image" src="https://github.com/user-attachments/assets/542016c1-fb56-4e6a-b0d4-dd5f115492e8" />
+
+- Since it has script-src 'self' first it allows only this hence we will use another csp directives can able to get new directives script-src-elem so we try to use that.
+
+<img width="1336" height="590" alt="image" src="https://github.com/user-attachments/assets/a1fe3681-8e42-46f8-b2eb-fbd5414802e1" />
+
+- Hence by posting that we solved the lab.
