@@ -1,4 +1,4 @@
-<img width="1357" height="557" alt="image" src="https://github.com/user-attachments/assets/86753927-3c87-4c50-adfc-0d984854e40a" />### Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
+<img width="1093" height="254" alt="image" src="https://github.com/user-attachments/assets/c016e085-131c-467e-a2f0-9d8acc2b9366" /><img width="1357" height="557" alt="image" src="https://github.com/user-attachments/assets/86753927-3c87-4c50-adfc-0d984854e40a" />### Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
 Cross ---> Code from outside source
 Site ---> runs inside a trusted site
 Scripting --> attackers code runs on the victims browser. 
@@ -979,4 +979,45 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 # ------------------------------------------------------------------------------
 
 
-# 29. 
+# 29. Reflected XSS protected by very strict CSP, with dangling markup attack
+
+<img width="752" height="320" alt="image" src="https://github.com/user-attachments/assets/8fd437fd-7b76-4100-bf31-974feb35c2d4" />
+
+### Goal : To perform form hijacking that Bypasses csp, exfiltrate csrf and use it to change change email to hacker@evil-user.net
+
+### Ingrediants : Home, My account, exploit server and View post button.  
+
+<img width="941" height="503" alt="image" src="https://github.com/user-attachments/assets/7ca62efc-23b5-48f8-a0e0-361355a3a000" />
+
+### Solving : 
+
+- Login as the normal user with the given credentials and we can update the email. 
+
+<img width="835" height="429" alt="image" src="https://github.com/user-attachments/assets/9d3d0a78-5715-4f27-a68d-2ff3771f6089" />
+
+- We will try to send the query string to the url and inspect the value in the DOM. We can also see the csrf token below out value. 
+
+<img width="1062" height="564" alt="image" src="https://github.com/user-attachments/assets/89a1600f-61d6-45db-b025-e9c6002f2de1" />
+
+- We will try to inject a href with title click me near the button and see in the DOM.  
+
+<img width="1093" height="254" alt="image" src="https://github.com/user-attachments/assets/e9f62a2b-adef-4885-a7e1-135c0a0b832a" />
+
+<img width="782" height="174" alt="image" src="https://github.com/user-attachments/assets/6e0f86e9-b7cb-4b72-a305-ddc99bf0a804" />
+
+- We can see it is injected perfectly and we don't need a extra ">.  Here we are use the dangling markup by using the base attribute. 
+
+<img width="1203" height="618" alt="image" src="https://github.com/user-attachments/assets/16f19e38-76f6-4578-bfba-76c0849f7a81" />
+
+- 
+
+- Dangling markup : Incomplete markup that might retrives the our desired value. Like this <div>   <p>Hello.
+
+
+
+
+
+
+
+
+
