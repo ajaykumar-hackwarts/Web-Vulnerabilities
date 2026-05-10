@@ -22,7 +22,7 @@ Scripting --> attackers code runs on the victims browser.
 <img width="1254" height="471" alt="image" src="https://github.com/user-attachments/assets/9544e5bd-2f04-46d6-a307-1a0b966bdd9a" />
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 # 2. Stored XSS into HTML context with nothing encoded.
