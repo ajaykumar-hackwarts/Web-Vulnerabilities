@@ -489,7 +489,7 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 Hence by posting that we solve the lab. 
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # 15. Reflected XSS into HTML context with all tags blocked except custom ones 
 
