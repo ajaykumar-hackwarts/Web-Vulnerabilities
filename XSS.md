@@ -1,4 +1,4 @@
-<img width="1093" height="254" alt="image" src="https://github.com/user-attachments/assets/c016e085-131c-467e-a2f0-9d8acc2b9366" /><img width="1357" height="557" alt="image" src="https://github.com/user-attachments/assets/86753927-3c87-4c50-adfc-0d984854e40a" />### Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
+### Cross-Site Scripting(XSS) is a attack where attacker injects malicious javascript into a trusted website so when another users visit the page the browser runs the script as if like it comes from the script. 
 Cross ---> Code from outside source
 Site ---> runs inside a trusted site
 Scripting --> attackers code runs on the victims browser. 
