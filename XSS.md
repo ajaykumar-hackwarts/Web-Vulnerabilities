@@ -34,10 +34,7 @@ Scripting --> attackers code runs on the victims browser.
 
 <img width="863" height="612" alt="image" src="https://github.com/user-attachments/assets/4dd1e679-173b-4cc8-8a0f-4fb8a2152a58" />
 
-
-
 <img width="877" height="230" alt="image" src="https://github.com/user-attachments/assets/10710bc8-359a-46ae-b5b3-24325242bfaf" />
-
 
 ### Solving : 
 
@@ -455,7 +452,7 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 <img width="1210" height="273" alt="image" src="https://github.com/user-attachments/assets/d343c22e-edb7-4725-8b30-2d4330a7990b" />
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # 14. Stored DOM XSS 
 
