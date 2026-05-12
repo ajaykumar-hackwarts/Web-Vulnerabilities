@@ -69,15 +69,15 @@ Scripting --> attackers code runs on the victims browser.
 <img width="903" height="423" alt="image" src="https://github.com/user-attachments/assets/d55d858c-2c58-455f-969c-a6ccf7d7cd62" />
 
 
-- We can see when we search it has 2 results inside the DOM if it were only one we may think it is reflected xss which is echoes immediately. Here one one result is used normal to display the search result and another is used inside the image attribute in the searchTerms variable.
-- We can we see it is getting the search string in a query and append to the img src's atrribute  in the document.write function. 
+- We can see when we search it has 2 results inside the DOM if it were only one we may think it is reflected xss which is echoes immediately. Here one result is used normally to display the search result and another is used inside the image attribute in the searchTerms variable.
+- It is getting the search string in a query and append to the img src's atrribute in the document.write function. 
 - Here only we have to write out malicious payload and call alert().
 - src="/resources/images/tracker.gif?searchTerms=sdadasd" We have to close src attribute and should come out put a new attribute and we can call alert().
 - We can write payload like sdadasd" onload="alert() so the first double quote " will close src attribute and last " will close the new attribute we introduced.
 
-<img width="1108" height="354" alt="image" src="https://github.com/user-attachments/assets/6f18c638-49a1-4176-aad2-51c65bc0bf12" />
-
 <img width="778" height="401" alt="image" src="https://github.com/user-attachments/assets/a5ca35c4-3562-4e0b-b416-8e8e10f806be" />
+
+<img width="1108" height="354" alt="image" src="https://github.com/user-attachments/assets/6f18c638-49a1-4176-aad2-51c65bc0bf12" />
 
 
 # ------------------------------------------------------------------------------
