@@ -68,6 +68,8 @@ Scripting --> attackers code runs on the victims browser.
 
 <img width="903" height="423" alt="image" src="https://github.com/user-attachments/assets/d55d858c-2c58-455f-969c-a6ccf7d7cd62" />
 
+Sinks : sinks are used to consume data from the user and make the browser acts on it(display, render or execute)
+document.write : Used to write content directly into web page. 
 
 - We can see when we search it has 2 results inside the DOM if it were only one we may think it is reflected xss which is echoes immediately. Here one result is used normally to display the search result and another is used inside the image attribute in the searchTerms variable.
 - It is getting the search string in a query and append to the img src's atrribute in the document.write function. 
@@ -96,6 +98,8 @@ Scripting --> attackers code runs on the victims browser.
 <img width="937" height="414" alt="image" src="https://github.com/user-attachments/assets/c056749f-25d5-4cf0-bf2e-4792909a3f9f" />
 
 <img width="985" height="271" alt="image" src="https://github.com/user-attachments/assets/807435cd-bd19-405e-b5b4-7e3b6ce39633" />
+
+innerhtml : Changes or reads the content inside the HTML element. 
 
 - Unlike the previous lab we can see only one result is found when we search this is because it is using the innerhtml not the document.write.
 - document.write ---> When we reload it replaces the whole page with the new input given.
