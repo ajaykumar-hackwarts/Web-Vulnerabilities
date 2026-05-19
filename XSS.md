@@ -420,8 +420,8 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 <img width="1095" height="562" alt="image" src="https://github.com/user-attachments/assets/e64b6598-0fbd-4ebd-b956-d20062dd85f9" />
 
-- Since the search result is not used anywhere or no script is involved. Trying to inject normal xss. <img src=1 onerror=alert(1)
-  > We can these tags are blocked by WAF(Web application Firewall).
+- Since the search result is not used anywhere or no script is involved. Trying to inject normal xss. <img src=1 onerror=
+- alert(1) >. We can these tags are blocked by WAF(Web application Firewall).
 
 <img width="1179" height="357" alt="image" src="https://github.com/user-attachments/assets/67e0d4de-35be-4c25-b35e-4d7a7344dbc4" />
 
@@ -473,7 +473,7 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 <img width="812" height="596" alt="image" src="https://github.com/user-attachments/assets/d7d42086-2933-45c3-8469-2bddfd8e62c2" />
 
-- It has the html tag escape functionality. But we can see it is encoded properly. it missed to encode the closing </h1>. 
+- It has the html tag escape functionality. But we can see it is not encoded properly it misses to encode the closing </h1>. 
 
 <img width="774" height="561" alt="image" src="https://github.com/user-attachments/assets/cba64d3d-729e-4186-8160-5f8532cedd63" />
 
@@ -550,7 +550,7 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 <img width="1254" height="422" alt="image" src="https://github.com/user-attachments/assets/d74cf748-4e73-4deb-b1dc-22e131b4bfd8" />
 
-- We can it is only allow the onbegin. What onbegin would do is execute the code on begining the animation. 
+- We can it is only allow the onbegin attribute. What onbegin would do is execute the code on begining the animation. 
 
 <img width="640" height="274" alt="image" src="https://github.com/user-attachments/assets/ce702c97-1b1f-490a-b2ab-6a869da12b77" />
 
