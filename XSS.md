@@ -355,7 +355,7 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 <img width="1098" height="394" alt="image" src="https://github.com/user-attachments/assets/133de5f0-c658-4a41-9035-cb2a840ecdb8" />
 
-- Hence we solve the lab.
+- Hence we solve the lab by doing this.
 
 # ------------------------------------------------------------------------------
 
