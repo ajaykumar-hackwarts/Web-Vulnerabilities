@@ -665,12 +665,12 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 <img width="1204" height="484" alt="image" src="https://github.com/user-attachments/assets/a45eeef2-7eee-4b2d-b929-426a0c13ca4f" />
 
-- &apos --> url encoded value of ' and  We will what is happening in the code. It is html decoded from &apos to '.
-- The server sanitize the input where it will be &apos; only so there html decoding happening so no backslash for escaping ' but when in the browser it is getting html decoded and changed to ' and no backslash is escaping.  
+- &apos --> url encoded value of ' and  We will see what is happening in the code. It is html decoded from &apos to '.
+- The server sanitize the input where it will be &apos; only so there no html decoding happening so there will be no backslash for escaping ' but when in the browser it is getting html decoded and changed to ' and no backslash is escaping.  
 
 <img width="862" height="390" alt="image" src="https://github.com/user-attachments/assets/17a5058a-e2d5-44cd-a595-b3a4e841ef7a" />
 
-- When we are viewing the pagesource we can see that it is sending the input to the browser as normal string as we given only but it in the broswer only as a process it is html decoded.
+- When we are viewing the page source we can see that it is sending the input to the browser as normal string as we given only but it in the broswer only as a process it is html decoded.
 
 <img width="1246" height="202" alt="image" src="https://github.com/user-attachments/assets/17a5cad7-b1af-436c-bdb7-5c6e3c4b20dd" />
  
