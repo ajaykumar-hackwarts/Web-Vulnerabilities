@@ -600,11 +600,11 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 <img width="1055" height="534" alt="image" src="https://github.com/user-attachments/assets/7a94ac64-fbdb-437b-a350-90a5bd8e6235" />
 
-- We can see it is collecting the value in the variabe called searchTerms. and when we try escape the string by using the ' it is escaping by using the /
+- We can see it is collecting the value in the variabe called searchTerms. and when we try escape the string by using the ' it is escaping by using the \
 
 <img width="1065" height="485" alt="image" src="https://github.com/user-attachments/assets/a38cd1ec-414f-415a-b8b6-6e4da47347a8" />
 
-- Even though we string come out of the string using the \ it is also escaped using another \. Hence we should try to come out of the </script> itself.
+- Hence we should try to come out of the </script> itself.
 
 <img width="1192" height="521" alt="image" src="https://github.com/user-attachments/assets/6309f6f6-3b3b-40e2-b859-d4fde26fafe2" />
 
@@ -623,7 +623,7 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 ### Solving : 
 
-- We try the all the possibilty including the last lab solution. But here it is completely url encoded. 
+- We will try the all the possibilty including the last lab solution. But here it is completely url encoded. 
 
 <img width="1084" height="563" alt="image" src="https://github.com/user-attachments/assets/68540566-024d-4454-9687-46e7d14e5e4a" />
 
@@ -653,7 +653,7 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 <img width="774" height="592" alt="image" src="https://github.com/user-attachments/assets/8ef49eef-f0cd-4c85-84ed-ebb3291609c2" />
 
-- It is taking the website in a href in the author when clicking that it redirects to the page. Here may be the vulnerability we will try to exploit that. Inside the <a they have some javasrcipt to santize the input.   
+- It is taking the website in a href in the author when clicking that it redirects to the page. Here may be the vulnerability we will try to exploit that. Inside the <a they have some javasrcipt to sanitize the input.   
 
 <img width="787" height="458" alt="image" src="https://github.com/user-attachments/assets/463c5da0-7577-4e45-8ab5-f40d986a2a93" />
 
