@@ -420,7 +420,8 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 <img width="1095" height="562" alt="image" src="https://github.com/user-attachments/assets/e64b6598-0fbd-4ebd-b956-d20062dd85f9" />
 
-- Since the search result is not used anywhere or no script is involved. Trying to inject normal xss. <img src=1 onerror="alert(1)"> We can these tags are blocked by WAF(Web application Firewall).
+- Since the search result is not used anywhere or no script is involved. Trying to inject normal xss. <img src=1 onerror=alert(1)
+  > We can these tags are blocked by WAF(Web application Firewall).
 
 <img width="1179" height="357" alt="image" src="https://github.com/user-attachments/assets/67e0d4de-35be-4c25-b35e-4d7a7344dbc4" />
 
