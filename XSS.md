@@ -385,11 +385,11 @@ $new(),  $destroy(), $watch(),  $watchGroup(), $watchCollection(), $digest(), $a
 
 <img width="911" height="313" alt="image" src="https://github.com/user-attachments/assets/002f1a3a-92a7-4b4d-aa80-a39d3d7e37e0" />
 
-- We trying many possibilities. 
+- We will try many possibilities. 
 
 <img width="945" height="324" alt="image" src="https://github.com/user-attachments/assets/3f49ec00-bb3c-4453-8d68-3c9a6a0b748c" />
 
-- We can see the alert() escaped from the \ and also we can it to escape from the } also hence we using an arithmetic operations
+- We can see the alert() escaped from the \ and also we can it to escape from the } we use an arithmetic operations to get executed. 
   
 <img width="961" height="262" alt="image" src="https://github.com/user-attachments/assets/7c9c3e52-d121-49c6-988e-03ab46977e33" />
 
