@@ -37,7 +37,7 @@ Here we are going to write the code which will call the print() from the target 
 <img width="1357" height="386" alt="image" src="https://github.com/user-attachments/assets/9e0bdf96-b1ec-4ba5-b0b2-5c598a2ea3e2" />
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 # 2. DOM XSS using web messages and a JavaScript URL 
@@ -64,7 +64,7 @@ Here we are going to write the code which will call the print() from the target 
 <img width="1236" height="424" alt="image" src="https://github.com/user-attachments/assets/07fc909f-87c6-4e3e-a71f-fc575a6c9492" />
 ### Hence by posting this to exploit server we solve this. 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 # 3. DOM XSS using web messages and JSON.parse
@@ -88,7 +88,7 @@ Here we are going to write the code which will call the print() from the target 
 ### Hence by posting this to exploit server we solve this. 
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 
@@ -116,7 +116,7 @@ Same as above
 ### Hence by posting this to exploit server we solve this. 
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 5. DOM-based cookie manipulation
@@ -173,7 +173,7 @@ After visiting the page and returning to list we can see it has last viewed prod
 ### Hence by posting this to exploit server we solve this. 
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 6. Exploiting DOM clobbering to enable XSS
@@ -227,7 +227,7 @@ The last comment is to load the avatar again to call the alert()
 <img width="1328" height="377" alt="image" src="https://github.com/user-attachments/assets/5121eed0-2450-4aa0-afe4-bce34f376b12" />
 
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
 
@@ -277,4 +277,4 @@ It will result like this.
 
 ### Hence by posting this to exploit server we solve this.
 
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
