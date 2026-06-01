@@ -1,5 +1,3 @@
-<img width="1258" height="434" alt="image" src="https://github.com/user-attachments/assets/5996b4cc-c888-48f7-96cd-9955e1923e0f" /><img width="989" height="203" alt="image" src="https://github.com/user-attachments/assets/67767b07-253a-4924-8586-cb3bce01e003" /><img width="1264" height="535" alt="image" src="https://github.com/user-attachments/assets/d2d08288-9d1c-4778-9a91-f1a6b6bf55a9" />
-
 **Definition** : DOM(Document Object Model) is a Tree-like structure that browser creates from the html. So that it can display and edit the page using javascript. 
 
 # 1. DOM XSS using web messages
@@ -142,6 +140,12 @@ After visiting the page and returning to list we can see it has last viewed prod
  ## Solving :
 
  - That last viewed product is our vulnerable parameter.
+
+<img width="1258" height="434" alt="image" src="https://github.com/user-attachments/assets/5996b4cc-c888-48f7-96cd-9955e1923e0f" />
+
+<img width="989" height="203" alt="image" src="https://github.com/user-attachments/assets/67767b07-253a-4924-8586-cb3bce01e003" />
+
+<img width="1264" height="535" alt="image" src="https://github.com/user-attachments/assets/d2d08288-9d1c-4778-9a91-f1a6b6bf55a9" />
 
  - When we intercept the response and we can see in the value after the id is appendable we can able to modify and still it gives the 200 response.
  - Also in the response side we can see cookie is set to lastViewedProduct and samesite is set to none so it exploitable to cross site. 
