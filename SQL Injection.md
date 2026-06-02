@@ -35,5 +35,37 @@
 
 # ------------------------------------------------------------------------------
 
-# 2.  
+
+# 2.  SQL injection vulnerability allowing login bypass
+
+<img width="749" height="115" alt="image" src="https://github.com/user-attachments/assets/1cb77178-0be9-4bde-9f0a-ab85493a240c" />
+
+### **Goal** : To perform SQLI that logs in to the application as the administrator user. 
+
+### **Ingrediants** : Home, My account and view details button. 
+
+<img width="1291" height="583" alt="image" src="https://github.com/user-attachments/assets/591ef804-5472-4194-beec-87c4b5a640ba" />
+
+### **Solving** : 
+
+ - First we will try to login with admin and see what hapens. We can notice that it is giving an non-verbose(Less Verbal) replay like invalid username or password. Which is good because if it where like invalid username alone or invalid password the attacker can enumerate username or password.     
+   
+<img width="1252" height="527" alt="image" src="https://github.com/user-attachments/assets/2f4995a0-a53f-4ddf-94de-7264bdc02cbe" />
+
+- When we tried to break the query by inputting the ' in the input field we can see it is showing the internal server error it means it is vulnerable to SQLI
+
+<img width="654" height="430" alt="image" src="https://github.com/user-attachments/assets/8b2b36cc-93f4-4da6-8e1d-94da4d926413" />
+
+- Example : The code will be like SELECT FisrtName FROM users where username='' and password='' like this when we giving ' in the input it will be like username=''' so internal error occurs.
+
+- Let's try to give username as administator and neglect the rest by giving like administator'--
+- SELECT FisrtName FROM users where username='administator'--' and password=''
+- Hence after -- everything is neglected. 
+
+<img width="1014" height="593" alt="image" src="https://github.com/user-attachments/assets/56f3c023-3bd0-4c7f-ba00-591723f43e48" />
+
+<img width="1047" height="528" alt="image" src="https://github.com/user-attachments/assets/1a9ebd40-a7d1-49c7-befd-a98a090ca7fc" />
+
+# ------------------------------------------------------------------------------
+
 
