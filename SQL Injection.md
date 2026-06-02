@@ -1,4 +1,4 @@
-**SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
+<img width="1024" height="485" alt="image" src="https://github.com/user-attachments/assets/23e18219-d12b-46f3-989f-180300e3076c" />**SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
 
 # 1. SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 
@@ -67,5 +67,52 @@
 <img width="1047" height="528" alt="image" src="https://github.com/user-attachments/assets/1a9ebd40-a7d1-49c7-befd-a98a090ca7fc" />
 
 # ------------------------------------------------------------------------------
+
+# 3. SQL injection attack, querying the database type and version on Oracle
+
+<img width="772" height="98" alt="image" src="https://github.com/user-attachments/assets/9686c1b9-93bd-470a-9b62-5a5f6bd2e956" />
+
+### **Goal** : To display database version string. 
+
+### **Ingrediants** : Home & Category button. 
+
+<img width="1239" height="500" alt="image" src="https://github.com/user-attachments/assets/c1383ac0-da30-4909-9475-58ac5f2268b6" />
+
+### **Solving** : 
+
+- Lets check it is vulnerable to SQLI or not by introducing ' in the query. And we can see it is vulnerable. 
+
+<img width="1094" height="495" alt="image" src="https://github.com/user-attachments/assets/70471a9a-eec5-4041-8b36-5d14469e159a" />
+
+- We will use burp suite to solve this lab. Firstly we will check how many columns it has by using order by 1 -- and increase the value till it says internal sever error. 
+
+<img width="1024" height="485" alt="image" src="https://github.com/user-attachments/assets/bb652dc9-53b0-44c5-8179-0e7012ad136f" />
+
+<img width="1043" height="508" alt="image" src="https://github.com/user-attachments/assets/654c125e-209f-42f0-ad35-a256ec255c74" />
+
+<img width="1095" height="555" alt="image" src="https://github.com/user-attachments/assets/40f42d37-6dfd-4a15-9aa3-fa348ff6eec9" />
+
+- Hence it has 2 columns. Now we will find data type of the 2 columns by using UNION SELECT 'a' , 'a' FROM dual. Extra FROM dual because it is using the oracle database.
+
+<img width="1070" height="454" alt="image" src="https://github.com/user-attachments/assets/f1258aa8-25d9-4b10-b762-2b0ef58bf1cb" />
+
+- Hence we found both the columns are string. Now the last step we will outpur the version of the oracle using the query from the cheat sheet. 
+
+<img width="892" height="430" alt="image" src="https://github.com/user-attachments/assets/e81d7efe-bbf7-42af-80a9-70093bb0b739" />
+
+- By pasting this we can solve the lab SELECT banner, NULL FROM v$version
+
+<img width="1235" height="556" alt="image" src="https://github.com/user-attachments/assets/e9877349-94a8-4563-add0-75a35750c787" />
+
+<img width="1235" height="556" alt="image" src="https://github.com/user-attachments/assets/793ce434-342f-4c79-8bbd-4eff32bf6bcb" />
+
+
+# ------------------------------------------------------------------------------
+
+
+
+
+
+
 
 
