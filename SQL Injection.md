@@ -100,7 +100,7 @@
 
 <img width="892" height="430" alt="image" src="https://github.com/user-attachments/assets/e81d7efe-bbf7-42af-80a9-70093bb0b739" />
 
-- By pasting this we can solve the lab SELECT banner, NULL FROM v$version
+- By pasting this we can solve the lab UNION SELECT banner, NULL FROM v$version
 
 <img width="1235" height="556" alt="image" src="https://github.com/user-attachments/assets/e9877349-94a8-4563-add0-75a35750c787" />
 
@@ -110,9 +110,50 @@
 # ------------------------------------------------------------------------------
 
 
+#4. SQL injection attack, querying the database type and version on MySQL and Microsoft
+
+<img width="759" height="110" alt="image" src="https://github.com/user-attachments/assets/13c4107a-ad7d-48cc-8f10-3c9563fd115d" />
+
+### **Goal** :   To display data version string. 
+
+### **Ingrediants** : Home & Category button. 
+
+<img width="1274" height="401" alt="image" src="https://github.com/user-attachments/assets/2110ab35-b1cc-4a55-9c25-1437ccd10fee" />
+
+### **Solving** : 
+
+- Lets check it is vulnerable to SQLI or not by introducing ' in the query as usual. And we can see it is vulnerable.
+
+<img width="1067" height="487" alt="image" src="https://github.com/user-attachments/assets/192994d7-3f1a-4e67-9de7-877d23b518b6" />
+
+- We will use burp suite to solve this lab. Firstly we will check how many columns it has by using order by 1 -- and increase the value till it says internal sever error. But we could see it shows an error 
+
+<img width="1305" height="462" alt="image" src="https://github.com/user-attachments/assets/ef8e7b73-9f29-4e17-9f78-0d8cce017fa0" />
+
+- Since it is not using the oralce database we will try this payload order by 1# and we can see it worked and it having 2 columns only
+
+<img width="1162" height="420" alt="image" src="https://github.com/user-attachments/assets/15a6f384-a136-48af-b334-30d41832680c" />
+
+<img width="1188" height="510" alt="image" src="https://github.com/user-attachments/assets/131e0f7a-f6ad-476d-a240-6dccd19a48b8" />
+
+<img width="1347" height="604" alt="image" src="https://github.com/user-attachments/assets/4dd94de7-8d46-431b-a6c1-c27eb768cc4d" />
+
+- Now we will find data type of the 2 columns by using UNION SELECT 'a' , 'a'#. Hence we can see it is in response  
+
+<img width="1213" height="518" alt="image" src="https://github.com/user-attachments/assets/b8bc27de-cab4-4d18-b356-44f65b79b01e" />
+
+- By pasting this we can solve the lab UNION SELECT @@version, NULL# we can display the version and solved the lab. 
+
+<img width="713" height="353" alt="image" src="https://github.com/user-attachments/assets/94693422-33d3-4561-bc84-5c2393937c11" />
+
+<img width="1308" height="484" alt="image" src="https://github.com/user-attachments/assets/8c27d3a6-3888-44fd-be35-62c08200dd39" />
+
+<img width="1330" height="519" alt="image" src="https://github.com/user-attachments/assets/f31e8647-d152-42f6-9272-c69750114d61" />
 
 
+# ------------------------------------------------------------------------------
 
+# 5. 
 
 
 
