@@ -1,4 +1,4 @@
-<img width="1024" height="485" alt="image" src="https://github.com/user-attachments/assets/23e18219-d12b-46f3-989f-180300e3076c" />**SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
+<img width="1298" height="563" alt="image" src="https://github.com/user-attachments/assets/d8df4906-6608-467b-b5d2-0c0dd87c14aa" /><img width="1024" height="485" alt="image" src="https://github.com/user-attachments/assets/23e18219-d12b-46f3-989f-180300e3076c" />**SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
 
 # 1. SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 
@@ -153,7 +153,74 @@
 
 # ------------------------------------------------------------------------------
 
-# 5. 
+# 5. SQL injection attack, listing the database contents on non-Oracle databases
+
+<img width="772" height="270" alt="image" src="https://github.com/user-attachments/assets/855d6ae5-7f5f-4b15-9697-540c7afa99ad" />
+
+### **Goal** :  To determine the table which contains username and password output the content of the table and finally login as the administrator user. 
+
+### **Ingrediants** : Home, Category & My account button. 
+
+<img width="1300" height="438" alt="image" src="https://github.com/user-attachments/assets/89d40c5f-84e3-4001-b7f3-4de83cfb4905" />
+
+### **Solving** : 
+
+- Lets check it is vulnerable to SQLI or not by introducing ' in the query as usual. And we can see it is vulnerable.
+
+<img width="916" height="358" alt="image" src="https://github.com/user-attachments/assets/25fbc050-adcb-41ed-b1f1-b682ee54b960" />
+
+- We will use burp suite to solve this lab. Firstly we will check how many columns it has by using order by 1 -- and increase the value till it says internal sever error.
+
+<img width="1294" height="470" alt="image" src="https://github.com/user-attachments/assets/fd055313-a613-4ac4-ae16-1533d55c7586" />
+
+<img width="1176" height="524" alt="image" src="https://github.com/user-attachments/assets/5bbbf5c0-5ad3-406b-8894-e1f7a65b1d5c" />
+
+- Hence it has 2 columns. Now we will find data type of the 2 columns by using UNION SELECT 'a' , 'a'--. Hence we can see both the data type is string. 
+
+<img width="1139" height="452" alt="image" src="https://github.com/user-attachments/assets/3e77e466-6670-48c4-a058-f13edaa89e54" />
+
+-  Next we have to find the version of the database for that first we have to find the which type of data base it is using  
+
+<img width="713" height="353" alt="image" src="https://github.com/user-attachments/assets/94693422-33d3-4561-bc84-5c2393937c11" />
+
+<img width="1351" height="560" alt="image" src="https://github.com/user-attachments/assets/849d1be5-e18e-4983-a731-fe7fcdc8cb17" />
+
+<img width="1217" height="530" alt="image" src="https://github.com/user-attachments/assets/959d763c-f7c1-4c7e-bea9-352ab36549fe" />
+
+<img width="1284" height="437" alt="image" src="https://github.com/user-attachments/assets/aa9d730c-a018-4f5b-9230-a3fb07e3e8aa" />
+
+- It is using Postgre SQL not microsoft. Next we will get the outpu the list of tables.
+
+<img width="818" height="522" alt="image" src="https://github.com/user-attachments/assets/acda3e62-3c74-4ad4-a600-24eb227b59fb" />
+
+- We will search information_schema.tables in browser to we found it has table_name
+
+<img width="604" height="411" alt="image" src="https://github.com/user-attachments/assets/0b329af3-7057-4469-8ab9-e0d358e043b3" />
+
+- Hence the comment would be UNION SELECT table_name, NULL FROM information_schema.tables-- FROM information_schema.tables. NULL because it has 2 columns.  Hence we got the table name of the users. users_tlhtaj
+
+<img width="1244" height="515" alt="image" src="https://github.com/user-attachments/assets/478ebba0-8d65-40d8-b2ac-b16aa003cfff" />
+
+- Lets find the column names of the users_tlhtaj. UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'users_tlhtaj' 
+
+<img width="1332" height="568" alt="image" src="https://github.com/user-attachments/assets/2af8d8af-763f-40b0-ba9e-eca8c97ee469" />
+
+-  We got the username column name and password column name username_wlxwdz, password_lallgr by pasting this UNION SELECT username_wlxwdz, password_lallgr FROM users_tlhtaj--
+
+<img width="1298" height="563" alt="image" src="https://github.com/user-attachments/assets/6b8c14e0-a670-4f89-980a-d716482c4699" />
+
+<img width="1141" height="533" alt="image" src="https://github.com/user-attachments/assets/cb6a12f6-e040-4000-9969-183c1cd54b5c" />
+
+- Hence by using the username and password we have logged in as the administrator.
+
+# ------------------------------------------------------------------------------
+
+
+# 6. 
+
+<img width="762" height="262" alt="image" src="https://github.com/user-attachments/assets/3a627429-1170-4742-a74d-4e14a1f7ac8a" />
+
+
 
 
 
