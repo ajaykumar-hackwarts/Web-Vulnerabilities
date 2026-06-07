@@ -1,4 +1,4 @@
- **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
+# **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
 
 # 1. SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 
