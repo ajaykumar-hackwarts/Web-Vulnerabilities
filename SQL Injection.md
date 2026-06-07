@@ -1,4 +1,4 @@
-<img width="1298" height="563" alt="image" src="https://github.com/user-attachments/assets/d8df4906-6608-467b-b5d2-0c0dd87c14aa" /><img width="1024" height="485" alt="image" src="https://github.com/user-attachments/assets/23e18219-d12b-46f3-989f-180300e3076c" />**SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
+ **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
 
 # 1. SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 
