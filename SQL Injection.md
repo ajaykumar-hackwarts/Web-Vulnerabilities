@@ -408,7 +408,18 @@
 # ------------------------------------------------------------------------------
 
 
-11. 
+11. Blind SQL injection with conditional responses.
+
+<img width="761" height="314" alt="image" src="https://github.com/user-attachments/assets/db02ee82-6e51-4ef8-bd27-a432cb5a78bd" />
+
+### **Goal** : To login as the administrator user as lab has Blind SQLI. 
+
+Blind SQLI : Where database doesn't show the error directly instead they will show like delayed or change in response. 
+
+### **Ingrediants** : Same as above. 
+
+### **Solving** : 
+
 
 
 
