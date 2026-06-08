@@ -309,7 +309,7 @@
 
 <img width="1209" height="506" alt="image" src="https://github.com/user-attachments/assets/11803b35-4040-486b-8338-34b81c7fb0cc" />
 
-- Hence it has 3 columns. Now we will find which column has the data type string by using UNION SELECT 'a', NULL, NULL-- iteratively like NULL, 'a', NULL-- and see which displays the additional column.
+- It has 3 columns. Now we will find which column has the data type string by using UNION SELECT 'a', NULL, NULL-- iteratively like NULL, 'a', NULL-- and see which displays the additional column.
 
 <img width="1180" height="392" alt="image" src="https://github.com/user-attachments/assets/909e4bea-e0ec-4941-855a-96522ed10970" />
 
@@ -325,6 +325,7 @@
 
 <img width="1328" height="491" alt="image" src="https://github.com/user-attachments/assets/fcf512c9-8dc9-4f4f-9727-d16e6fa0b8d3" />
 
+
 # ------------------------------------------------------------------------------
 
 
@@ -332,7 +333,90 @@
 
 <img width="741" height="279" alt="image" src="https://github.com/user-attachments/assets/a5cc9be5-0c63-4c5c-96c9-ec5c6abfa337" />
 
-### **Goal** :
+### **Goal** : To perfrom UNION SQLI that will retrive all the usernames and password and using that we login as the administrator user. 
+
+### **Ingrediants** : Same as above. 
+
+### **Solving** : 
+
+- We will use burp suite to solve this lab. Firstly we will check how many columns it has by using order by 1 -- and increase the value till it says internal sever error.
+
+<img width="1205" height="464" alt="image" src="https://github.com/user-attachments/assets/4a88fd02-4760-416c-8ab1-d50af31bd336" />
+
+<img width="1260" height="503" alt="image" src="https://github.com/user-attachments/assets/e9cb8e20-3503-4f6f-972c-b2b911768a2e" />
+
+- Hence it has 2 columns. Now we will find data type of the 2 columns by using UNION SELECT 'a' , 'a'--. 
+
+<img width="1225" height="399" alt="image" src="https://github.com/user-attachments/assets/93165928-d615-4e0d-9843-f5c106669bd8" />
+
+-  Both column is of type string. Hence we can retrive data from another table using UNION because to diplay the username and password we have a condition that the two tables should have the same data type and number of columns. Therefore by pasting this we can retrive the username and password. UNION SELECT  username and password from users--
+
+<img width="1308" height="458" alt="image" src="https://github.com/user-attachments/assets/420069f1-cffc-4d5c-bba7-7d53660fd476" />
+
+- Hence we have the username and password of administrator user by using this we can solve the lab.
+
+<img width="1217" height="518" alt="image" src="https://github.com/user-attachments/assets/c0f78330-22ae-4179-99b1-763701c218e1" />
+
+# ------------------------------------------------------------------------------
+
+# 10. SQL injection UNION attack, retrieving multiple values in a single column
+
+<img width="760" height="255" alt="image" src="https://github.com/user-attachments/assets/fdcdfcf7-b5e0-4bff-9cf5-08628b06f5e7" />
+
+### **Goal** : To retrive all the username and the password and log in as administrator. 
+
+### **Ingrediants** : Same as above. 
+
+### **Solving** : 
+
+- We will use burp suite to solve this lab. Firstly we will check how many columns it has by using order by 1 -- and increase the value till it says internal sever error.
+
+<img width="1176" height="478" alt="image" src="https://github.com/user-attachments/assets/58b7d895-7153-4efe-8710-5c733a5c3b4e" />
+
+<img width="1285" height="509" alt="image" src="https://github.com/user-attachments/assets/19000814-7213-403a-977c-896adc41c11d" />
+
+- Hence it has 2 columns. Now we will find from the 2 columns which has the data type string by using UNION SELECT 'a' , NULL-- and iteratively.
+
+<img width="1196" height="433" alt="image" src="https://github.com/user-attachments/assets/1cb8869c-9f80-4fc9-8b62-3d805e5318dc" />
+
+<img width="1230" height="418" alt="image" src="https://github.com/user-attachments/assets/b89cb6a4-310f-42b1-a987-f7797dd449a8" />
+
+<img width="1246" height="464" alt="image" src="https://github.com/user-attachments/assets/feb8d069-f1d3-49fc-8fc7-636d74f21f16" />
+
+- Since only one column is of type string we can't retrive the username and password in single comment. Hence we will use the cheat sheet.
+
+<img width="755" height="456" alt="image" src="https://github.com/user-attachments/assets/8a4a226f-2752-49e3-b985-1ee46fcdfddc" />
+
+- To do these we have to find which type of database it is using.
+
+<img width="683" height="368" alt="image" src="https://github.com/user-attachments/assets/f4151937-f209-49f0-be06-dac86b090a2d" />
+
+ <img width="1320" height="537" alt="image" src="https://github.com/user-attachments/assets/3474cf61-fd53-4d69-8158-97a4aba9473e" />
+
+<img width="1365" height="502" alt="image" src="https://github.com/user-attachments/assets/06c8a3fc-ab0f-481b-8718-22251707cb66" />
+
+- Hence it is using the postgre SQL. Therefore by pasting UNION SELECT NULL, username||password from users-- we can retrive the data. 
+
+<img width="1360" height="568" alt="image" src="https://github.com/user-attachments/assets/63a26e13-dff4-4bc3-a073-72867a497a17" />
+
+- Beautifying. 
+
+<img width="1290" height="460" alt="image" src="https://github.com/user-attachments/assets/542802d4-8dce-4e6c-a0d5-74f44a52834a" />
+
+<img width="1350" height="497" alt="image" src="https://github.com/user-attachments/assets/a5e96459-bb90-4a24-b83e-7debe098d1f0" />
+
+# ------------------------------------------------------------------------------
+
+
+11. 
+
+
+
+
+
+
+
+
 
 
 
