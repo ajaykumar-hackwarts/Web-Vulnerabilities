@@ -1,4 +1,4 @@
-# **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
+<img width="1328" height="491" alt="image" src="https://github.com/user-attachments/assets/822f4b26-4514-4378-b05a-146d5fbacb3f" /># **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
 
 # 1. SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 
@@ -260,6 +260,8 @@
 
 - Hence by pasting this we can solve the lab.
 
+# ------------------------------------------------------------------------------
+
 
 # 7. SQL injection UNION attack, determining the number of columns returned by the query. 
 
@@ -267,6 +269,77 @@
 
 ### **Goal** : To determine to number of column returned by the query by UNION SQLI which will return addition null values. 
 
-### **Ingrediants** : Home, Category & My account button. 
+### **Ingrediants** : Home, Category, View details & My account button. 
+
+<img width="1225" height="391" alt="image" src="https://github.com/user-attachments/assets/67af8970-7935-4860-969e-20deede9bbcf" />
+
+### **Solving** : 
+
+-  We will use burp suite to solve this lab. Firstly we will check how many columns it has by using order by 1 -- and increase the value till it says internal sever error.
+
+ <img width="1212" height="529" alt="image" src="https://github.com/user-attachments/assets/7d9b7f77-288e-4efa-9e43-2d085415bff4" />
+
+ <img width="1253" height="571" alt="image" src="https://github.com/user-attachments/assets/e342a08f-4a85-4a13-ab6f-ae36643a96f4" />
+
+ <img width="1213" height="574" alt="image" src="https://github.com/user-attachments/assets/98de4e65-9510-4e07-bd92-c0b82e89aedb" />
+
+ <img width="1326" height="551" alt="image" src="https://github.com/user-attachments/assets/1810d679-c645-4bdf-b2a0-d3e7368581e0" />
+
+ - Hence the number of columns is 3.
+
+<img width="1309" height="446" alt="image" src="https://github.com/user-attachments/assets/5c175c6b-22f3-4682-a4db-5ade6058ee5e" />
+
+# ------------------------------------------------------------------------------
+
+# 8.  SQL injection UNION attack, finding a column containing text
+
+<img width="771" height="320" alt="image" src="https://github.com/user-attachments/assets/03584299-9750-4ad4-bea3-0200b4144fb3" />
+
+### **Goal** : To perform UNION attack returns an additional row contains the value given in the lab.  Hence we can find which columns has the string data. 
+
+### **Ingrediants** : Home, Category, View details & My account button.
+
+<img width="1228" height="565" alt="image" src="https://github.com/user-attachments/assets/90eecec5-5be9-49b3-9f02-14ef9f24fb5f" />
+
+### **Solving** : 
+
+-  We will use burp suite to solve this lab. Firstly we will check how many columns it has by using order by 1 -- and increase the value till it says internal sever error.
+
+<img width="1196" height="449" alt="image" src="https://github.com/user-attachments/assets/e2b1e02a-ef0a-4032-8a09-2c75c71b92a7" />
+
+<img width="1209" height="506" alt="image" src="https://github.com/user-attachments/assets/11803b35-4040-486b-8338-34b81c7fb0cc" />
+
+- Hence it has 3 columns. Now we will find which column has the data type string by using UNION SELECT 'a', NULL, NULL-- iteratively like NULL, 'a', NULL-- and see which displays the additional column.
+
+<img width="1180" height="392" alt="image" src="https://github.com/user-attachments/assets/909e4bea-e0ec-4941-855a-96522ed10970" />
+
+<img width="1280" height="470" alt="image" src="https://github.com/user-attachments/assets/0c529df3-4ed4-4abe-8a8e-b7f056b034d9" />
+
+<img width="1247" height="414" alt="image" src="https://github.com/user-attachments/assets/06f8bbd1-1e35-433d-b24b-3cde42f56cb7" />
+
+<img width="1198" height="401" alt="image" src="https://github.com/user-attachments/assets/f07f5e8a-e799-4ea7-ad25-8e7b18c83059" />
+
+- Hence the second column is of type string. Therefore by pasting UNION SELECT NULL, 'n5bleC', NULL-- we can solve the lab. 
+
+<img width="1203" height="414" alt="image" src="https://github.com/user-attachments/assets/b74ad90b-0793-42e6-a081-64353ab58ad5" />
+
+<img width="1328" height="491" alt="image" src="https://github.com/user-attachments/assets/fcf512c9-8dc9-4f4f-9727-d16e6fa0b8d3" />
+
+# ------------------------------------------------------------------------------
+
+
+# 9. SQL injection UNION attack, retrieving data from other tables
+
+<img width="741" height="279" alt="image" src="https://github.com/user-attachments/assets/a5cc9be5-0c63-4c5c-96c9-ec5c6abfa337" />
+
+### **Goal** :
+
+
+
+
+
+
+
+
 
 
