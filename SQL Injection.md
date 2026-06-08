@@ -261,6 +261,12 @@
 - Hence by pasting this we can solve the lab.
 
 
+# 7. SQL injection UNION attack, determining the number of columns returned by the query. 
 
+<img width="758" height="230" alt="image" src="https://github.com/user-attachments/assets/48b4fe25-785b-4267-a9fd-56e48be0500d" />
+
+### **Goal** : To determine to number of column returned by the query by UNION SQLI which will return addition null values. 
+
+### **Ingrediants** : Home, Category & My account button. 
 
 
