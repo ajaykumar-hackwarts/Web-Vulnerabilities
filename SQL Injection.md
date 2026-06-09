@@ -1,4 +1,4 @@
-<img width="1328" height="491" alt="image" src="https://github.com/user-attachments/assets/822f4b26-4514-4378-b05a-146d5fbacb3f" /># **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
+<img width="1356" height="576" alt="image" src="https://github.com/user-attachments/assets/d1fa11d5-f991-4271-9183-478c101a5a14" /><img width="1177" height="450" alt="image" src="https://github.com/user-attachments/assets/9b566cc9-c605-418d-8e8b-d407ed17e9bc" /><img width="1328" height="491" alt="image" src="https://github.com/user-attachments/assets/822f4b26-4514-4378-b05a-146d5fbacb3f" /># **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
 
 # 1. SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 
@@ -420,12 +420,61 @@ Blind SQLI : Where database doesn't show the error directly instead they will sh
 
 ### **Solving** : 
 
+- First we will find that the parameter is vulnerable to Blind SQLI by using the burp suite. If the tracking Id is correct it will return a welcome back message. 
 
+<img width="1157" height="460" alt="image" src="https://github.com/user-attachments/assets/1e60cdd1-001a-4236-8951-da992c368f5a" />
 
+- We will add some character to check that if the tracking is exist or not and welcome back message is coming or not. Hence If tracking id doesn't exist it will not give the welcome back message. 
 
+<img width="1342" height="514" alt="image" src="https://github.com/user-attachments/assets/dbcd79e8-2a84-40ad-ba74-f87381931b46" />
 
+- Now we will inject and test if it is vulnerable to Blind SQLI or not. By adding with ' and 1=1-- after the tracking id. 
 
+<img width="1206" height="444" alt="image" src="https://github.com/user-attachments/assets/2816fe29-a674-489e-82b8-c78179300f74" />
 
+<img width="1325" height="485" alt="image" src="https://github.com/user-attachments/assets/5ba6b928-cd56-4cbe-a899-01ca89389b05" />
+
+- Hence it is reacting based on condition we can confirm it is vurnerable to Blind SQLI since it. By this we verify the users table exist or not like ' and (select 'x' from users LIMIT 1)='x'--
+
+- If users table exist it will take x(orbitory value) from the table since we limit it by only one value is retrive at a time and x=x will come and give welcome back message indicate the users table exist.
+
+<img width="1177" height="450" alt="image" src="https://github.com/user-attachments/assets/7d818bf8-12d2-4336-a787-d3b902994c44" />
+
+- Hence we can see users table exist. Next we will confim that the username administrator exist in the users table or not by pasting ' and (select username from users where username='administrator')='administrator'--
+
+<img width="1252" height="500" alt="image" src="https://github.com/user-attachments/assets/4dec6fd0-5b6a-4649-952a-7dffe6bbad76" />
+
+- Username administrator does exist. By the same way we can check the password one by one like ' and (select password from users where username='administrator')='welcome121'-- like on by one. 
+
+- But it is not a good way of doing that because we can do that it in the login page in the UI by brute force we don't need this srcipt or burp suite. 
+
+- Hence we will try each charater of the password where for the administrator user. for that first we have find the length of the password. By this script ' and (select username from users where username='administrator' and Length(password)>1)='administrator'--
+
+- And we will iterate the value 1 to 2 then 3, 4 and so on until it will not show welcome back message by using the burp suite intruder.
+
+<img width="1179" height="477" alt="image" src="https://github.com/user-attachments/assets/93978b02-b5df-4cf2-ab4c-47b05c0e3e46" />
+
+- We can see till 19 we get the welcome back message and length is same from 20 it changes and no welcome back message. Hence the password length is 20. 
+
+<img width="1175" height="425" alt="image" src="https://github.com/user-attachments/assets/f2bc621f-649b-4bd0-a3ba-5b1e69f6b4f7" />
+
+- Now we will find the first character of the password by brute forcing the alphanumeric values like ' and (select substring(password, 1, 1) from users where username='administrator')='a'--
+
+<img width="1087" height="540" alt="image" src="https://github.com/user-attachments/assets/9ae269a7-fed2-48ae-9827-de9945988608" />
+
+- We have founder the first character of the password by this we have to find all the character of the password. For this we have to iterate two values one is substring(password, 2, 1) and another is  ='a'--. Hence we will use the attacker type called cluster bomb and give two payload.
+
+<img width="1318" height="560" alt="image" src="https://github.com/user-attachments/assets/4dfca8c0-8621-4580-884d-c1dda51a9cee" />
+
+- These are 20 characters of the password. By arranging them sequentially we can login as administrator. 
+
+<img width="1015" height="497" alt="image" src="https://github.com/user-attachments/assets/8292e1ca-94ff-447d-8e9a-f33bd2db8fbf" />
+
+- The password is 392rl7bk9gtq4qbh1uq2. Hence we can login as the administrator user and solve the lab.
+
+<img width="1197" height="509" alt="image" src="https://github.com/user-attachments/assets/dbab2724-2574-4a4e-a372-9b22183b23d1" />
+ 
+# ------------------------------------------------------------------------------
 
 
 
