@@ -476,14 +476,50 @@ Blind SQLI : Where database doesn't show the error directly instead they will sh
  
 # ------------------------------------------------------------------------------
 
+# 12. Visible error-based SQL injection
 
+<img width="733" height="197" alt="image" src="https://github.com/user-attachments/assets/36ebc346-818b-4e11-974c-6dd6c04e6247" />
 
+### **Goal** : To leak the password from the error
+ 
+### **Ingrediants** : Same as above. 
 
+### **Solving** : 
 
+- Since it is error based SQLI we will check the error by adding ' and we can see it is verbose error instead failing safe it is give us more detials hence we can exploit that. We can neglect the error by adding -- at the end. 
 
+<img width="1341" height="472" alt="image" src="https://github.com/user-attachments/assets/cc98c2f3-790f-4b3a-a6a4-c8077306ea4a" />
 
+- Lets use cast to display an error cast : change from one data type to another. Like ' and cast((select 1) as int)--. It throws an error that it should be type boolean
 
+<img width="1318" height="423" alt="image" src="https://github.com/user-attachments/assets/c6c49d00-f44c-4ce8-b8a8-9c7b3ffcf424" />
 
+- Hence we change and upload payload like ' and 1=cast((select 1) as int)--. Hence now it doesn't show that error. 
 
+<img width="1200" height="421" alt="image" src="https://github.com/user-attachments/assets/43c029fa-62d9-419a-8ca5-a53e7a7da549" />
 
+- We will use this script and modify it ' and 1=cast((select username from users) as int)-- like and to print the username
 
+<img width="1351" height="418" alt="image" src="https://github.com/user-attachments/assets/2470ea82-c148-4fe8-a76d-686ff1c5ca53" />
+
+- It shows an error as " Unterminated string literal started at position 95 in SQL SELECT * FROM tracking WHERE id = 'h3l4eM8Vy0KU3rVY' and 1=cast((select username from users) as' " as it exceeds the character as it completely ingores the last part " int)--"
+
+- Hence we can neglect the tracking id so that we have the room for our script. Now it shows different error as 1 is not equal to string lists  like that. 
+
+<img width="1353" height="471" alt="image" src="https://github.com/user-attachments/assets/76fa1bc5-c362-4b71-8da8-58591e9cf9c5" />
+
+- We can solve this limit to one string like ' and 1=cast((select username from users limit 1) as int)-- and we can see it is displays the username administrator in the error 
+
+<img width="1323" height="453" alt="image" src="https://github.com/user-attachments/assets/45d7b86c-118b-4578-94d7-f77958f26be7" />
+
+- By the same way we can able to get the password. Like ' and 1=cast((select password from users limit 1) as int)-- and it revealed the password. 
+
+<img width="1360" height="495" alt="image" src="https://github.com/user-attachments/assets/d9c9c6e9-3e1e-4117-bfa9-44d9fd0af843" />
+
+- The password is vka1lc7yc4q652m0pe5b and we can use this login as administartor and solve the lab.
+
+<img width="1256" height="499" alt="image" src="https://github.com/user-attachments/assets/d8570d35-4fdd-49cd-9290-d8ab4a0f6687" />
+
+# ------------------------------------------------------------------------------
+
+# 13. 
