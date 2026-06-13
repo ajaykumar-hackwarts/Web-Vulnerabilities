@@ -662,3 +662,30 @@ Blind SQLI : Where database doesn't show the error directly instead they will sh
 <img width="1215" height="596" alt="image" src="https://github.com/user-attachments/assets/8e5a6c71-698d-4d9b-8b4f-5e965e91f79d" />
 
 # ------------------------------------------------------------------------------
+
+# 17. SQL injection with filter bypass via XML encoding.
+
+<img width="737" height="196" alt="image" src="https://github.com/user-attachments/assets/3129dfd8-ee54-4a97-b1a6-9a557412ed11" />
+
+### **Goal** : To retrive the password of the administrator user from the users table. 
+
+### **Ingrediants** : Same as above. 
+
+### **Solving** : 
+
+- It has the vulnerability in the stock check feature let's check that first
+
+<img width="1206" height="602" alt="image" src="https://github.com/user-attachments/assets/9e89c723-9c77-4321-bfa7-04dbf5ed1673" />
+
+- Since the title said it filters via the xml encoding we will check the injection is blocked or not and as mentioned in the title it is blocked. 
+
+- <img width="1018" height="523" alt="image" src="https://github.com/user-attachments/assets/1107bafa-0673-4854-b644-40419ee332de" />
+
+- We will use the hackverter extension as suggested in the hint to overcome this. 
+
+<img width="812" height="255" alt="image" src="https://github.com/user-attachments/assets/7fcb691a-0ce6-4a23-bf8c-7a731178f265" />
+
+- 
+
+
+
