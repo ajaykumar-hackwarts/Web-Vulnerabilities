@@ -1,4 +1,4 @@
-# **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
+<img width="1355" height="496" alt="image" src="https://github.com/user-attachments/assets/58b07d77-1ef4-491e-ad8a-b19c15907219" /># **SQL Injection** : It is a vulnerability which allows attacker to interfere with the queries that application makes to the database. 
 
 # 1. SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 
@@ -522,4 +522,34 @@ Blind SQLI : Where database doesn't show the error directly instead they will sh
 
 # ------------------------------------------------------------------------------
 
-# 13. 
+# 13. Blind SQL injection with time delays
+
+<img width="746" height="241" alt="image" src="https://github.com/user-attachments/assets/8f42a1f6-d6b7-46eb-b6c5-568b4496c4e6" />
+
+### **Goal** : To exploit SQLI that cause 10 second time delay. 
+
+### **Ingrediants** : Same as above. 
+
+<img width="1263" height="386" alt="image" src="https://github.com/user-attachments/assets/1043c243-5b3b-4df0-9f02-071b7486294c" />
+
+### **Solving** :  
+
+- Here tracking id is the vulnerable parameter. We will use burp exploit this and we will use the cheat sheet to find which data base it is using.  
+
+<img width="734" height="297" alt="image" src="https://github.com/user-attachments/assets/ea8bf3e2-d114-4b6e-8e0d-8ceee002b6ac" />
+
+- We will check one by one by concatinating with the tracking id.
+
+<img width="1336" height="528" alt="image" src="https://github.com/user-attachments/assets/56456ba3-89a8-4352-bae0-fb5c0b2aca36" />
+
+<img width="1365" height="520" alt="image" src="https://github.com/user-attachments/assets/81497ec5-5098-498a-84c0-39c5cb34a782" />
+
+- Hence by with and without script the time taken is same hence it is not using MqSQL database. Let's try the next one.
+
+ <img width="1350" height="589" alt="image" src="https://github.com/user-attachments/assets/edacbec0-5e57-416f-a855-1ce0c9aff762" />
+
+ 
+
+
+
+
