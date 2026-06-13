@@ -637,3 +637,5 @@ Blind SQLI : Where database doesn't show the error directly instead they will sh
 
 # ------------------------------------------------------------------------------
 
+# 16. Blind SQL injection with out-of-band data exfiltration
+
