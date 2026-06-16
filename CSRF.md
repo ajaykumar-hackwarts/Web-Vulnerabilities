@@ -30,7 +30,7 @@
 
 - It should have cookie based session handling.
 
-<img width="1016" height="566" alt="image" src="https://github.com/user-attachments/assets/34ee87cf-a9eb-448c-8fcb-27b951438adb" />
+<img width="859" height="395" alt="image" src="https://github.com/user-attachments/assets/ebab70aa-477d-4d96-8a12-360633f85de9" />
 
 - No unpredictable request parameters. Like the csrf token.
 
