@@ -1,4 +1,4 @@
-<img width="1118" height="400" alt="image" src="https://github.com/user-attachments/assets/051668c6-334d-4996-8249-62dfa653e52b" /># CSRF(Cross Site request forgery) : Attacker tricks the victim's browser into sending unarthorized requests to trusted website where user is already authenticated. 
+# CSRF(Cross Site request forgery) : Attacker tricks the victim's browser into sending unarthorized requests to trusted website where user is already authenticated. 
 
 - Session cookie is saved by the browser.
 - Attcker send a malicious csrf script link through WhatsApp, Telegram, SMS, or social media.
