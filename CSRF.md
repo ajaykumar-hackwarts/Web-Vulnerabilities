@@ -97,4 +97,30 @@
 # ------------------------------------------------------------------------------
 
 
-# 3. 
+# 3. CSRF where token validation depends on token being present. 
+
+<img width="781" height="151" alt="image" src="https://github.com/user-attachments/assets/c32ff0e7-009e-4ba1-9be1-aba34d207daf" />
+
+# Goal :  Use exploit sever to host an html page that uses CSRF attack to change the email address.
+
+# Ingrediants : Same as above. 
+
+# Solving : 
+
+- Let's check it is satisfying all the conditions or not.
+
+<img width="1120" height="545" alt="image" src="https://github.com/user-attachments/assets/fbf9d102-84b2-4b2e-83a4-e2a2fa2197a1" />
+
+<img width="1053" height="474" alt="image" src="https://github.com/user-attachments/assets/8cdea0f0-d06b-4827-9f9c-e14bc44139de" />
+
+- Unlike the last lab instead of changing the request method and checking the csrf token is required or not we will try to remove the csrf token in the POST metod itself. And we can see it is worked. 
+
+<img width="1107" height="528" alt="image" src="https://github.com/user-attachments/assets/71660f37-2777-4f1b-b4ad-2aeff069e4e7" />
+
+- Like the last lab we will use the CSRF poc generator for exploit. Hence we can see we solved the lab by uploading the script.   
+
+<img width="1233" height="444" alt="image" src="https://github.com/user-attachments/assets/2724ef0b-0370-422e-b61e-93185121d9ed" />
+
+<img width="1223" height="408" alt="image" src="https://github.com/user-attachments/assets/61c48b65-b9d1-45dd-ac2e-4050f30ce9ed" />
+
+# ------------------------------------------------------------------------------
