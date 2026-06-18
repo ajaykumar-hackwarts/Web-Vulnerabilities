@@ -1,4 +1,4 @@
-# CSRF(Cross Site request forgery) : Attacker tricks the victim's browser into sending unarthorized requests to trusted website where user is already authenticated. 
+<img width="1118" height="400" alt="image" src="https://github.com/user-attachments/assets/051668c6-334d-4996-8249-62dfa653e52b" /># CSRF(Cross Site request forgery) : Attacker tricks the victim's browser into sending unarthorized requests to trusted website where user is already authenticated. 
 
 - Session cookie is saved by the browser.
 - Attcker send a malicious csrf script link through WhatsApp, Telegram, SMS, or social media.
@@ -48,4 +48,53 @@
 
 # ------------------------------------------------------------------------------
 
-# 2. 
+# 2. CSRF where token validation depends on request method
+
+<img width="761" height="187" alt="image" src="https://github.com/user-attachments/assets/086baa4b-e944-4e10-8829-ae38d1de97d6" />
+
+# Goal : Use exploit sever to host an html page that uses CSRF attack to change the email address.
+
+# Ingrediants : Exploit server, home, my account and view post button. 
+
+<img width="831" height="531" alt="image" src="https://github.com/user-attachments/assets/982bed6c-bb76-4e24-aa5c-f0fa163f8907" />
+
+# Solving : 
+
+- Since we got a credentails we will login through that credentials.
+
+ <img width="1275" height="520" alt="image" src="https://github.com/user-attachments/assets/9a1d1538-7360-4e75-b28f-78d1a28ecae7" />
+
+- As we know in order to perform csrf attack relevant action, cookie-based session handling and no unpredictable request parameters.
+
+<img width="787" height="530" alt="image" src="https://github.com/user-attachments/assets/443fbbbe-35dd-40ff-a175-5a3374773dd7" />
+
+- First 2 condition satisfied only the last condition is not satisfying to perform the csrf attack as it has the csrf token.
+
+- To bypass the csrf token validation we will firstly try to change request method.
+
+- When changing the request from post to get and followed the redirection we can see that it our changed email is there in the response.
+
+<img width="861" height="409" alt="image" src="https://github.com/user-attachments/assets/44a84323-4c95-4eeb-87ab-4caadc0b7cc7" />
+
+<img width="973" height="507" alt="image" src="https://github.com/user-attachments/assets/1cb9a5a5-1796-46a8-81a4-b15f11b793be" />
+
+- We will try to delete the csrf token and update the email and see what will happen. 
+
+<img width="914" height="458" alt="image" src="https://github.com/user-attachments/assets/140ab1fd-4e94-4cd9-8640-63cc85e0479e" />
+
+<img width="1185" height="558" alt="image" src="https://github.com/user-attachments/assets/712322e7-0bba-40cd-8337-6e44e63be7e3" />
+
+- But we can see only in the get method it doesn't required the csrf token but it needs in the POST method. 
+
+<img width="1118" height="400" alt="image" src="https://github.com/user-attachments/assets/b1d6ab13-0da1-4dd5-9ea7-8e0572d5a53b" />
+
+- We will use CSRF poc generator in the burpsuite pro to solve the lab. Which generates the csrf script for us including the submit button so when user clicks it. It automaticlly submits it.
+
+<img width="1076" height="535" alt="image" src="https://github.com/user-attachments/assets/95f0cff5-bc1f-427b-85af-3a2cf6f27f1b" />
+
+- Hence by submitting this we solve the lab. 
+
+# ------------------------------------------------------------------------------
+
+
+# 3. 
