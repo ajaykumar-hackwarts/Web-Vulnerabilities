@@ -124,3 +124,47 @@
 <img width="1223" height="408" alt="image" src="https://github.com/user-attachments/assets/61c48b65-b9d1-45dd-ac2e-4050f30ce9ed" />
 
 # ------------------------------------------------------------------------------
+
+# 4. CSRF where token is not tied to user session
+
+<img width="820" height="291" alt="image" src="https://github.com/user-attachments/assets/9f54fb74-c933-4633-b470-c60ae489b9d3" />
+
+# Goal :  Use exploit sever to host an html page that uses CSRF attack to change the email address.
+
+# Ingrediants : Same as above. 
+
+# Solving : 
+
+- Let's check it is satisfying all the conditions or not.
+
+<img width="1213" height="504" alt="image" src="https://github.com/user-attachments/assets/351736ba-cca9-4152-8678-50cd7b88a995" />
+
+<img width="1049" height="521" alt="image" src="https://github.com/user-attachments/assets/e648f30e-83cd-42e3-b922-9e4069db0ee6" />
+
+- Lets check the csrf token is needed or not then we will change it to request method.
+
+<img width="1068" height="453" alt="image" src="https://github.com/user-attachments/assets/6e12ad98-6ede-4d72-b430-7f4ab28ed861" />
+
+<img width="1144" height="425" alt="image" src="https://github.com/user-attachments/assets/ce1310e9-acfc-4e12-9d49-f0b4412a88ae" />
+
+- Hence both are not working. Let's check if it is actually need a valid csrf token by added extra string there. We can see it does need a valid token. 
+
+<img width="996" height="476" alt="image" src="https://github.com/user-attachments/assets/5c85c459-9aa4-4a9c-a3fe-0102f56caadf" />
+
+- Let's check that if the csrf token is tied to the session id or not by taking the valid crsf token from attacker carlos:montoya account and use here.  
+
+<img width="1078" height="480" alt="image" src="https://github.com/user-attachments/assets/03d4ebe9-94ac-4fca-8aeb-8fd8910ed16c" />
+
+<img width="1107" height="559" alt="image" src="https://github.com/user-attachments/assets/7908f410-fd51-44be-bfd5-ccd4a6bb8ff6" />
+
+- We can see it worked. Let's generate the script and 
+
+<img width="1052" height="658" alt="image" src="https://github.com/user-attachments/assets/a2e7be5f-964d-4134-b95e-e8a60901b6c7" />
+
+<img width="1108" height="554" alt="image" src="https://github.com/user-attachments/assets/189c0f01-9784-4135-886d-7c1987e5b6f4" />
+
+<img width="937" height="448" alt="image" src="https://github.com/user-attachments/assets/01ed776c-d2a7-4f18-8f0a-473d939bea96" />
+
+<img width="1143" height="425" alt="image" src="https://github.com/user-attachments/assets/5c39c1d1-57de-415f-b712-c2fe633be9dd" />
+
+
