@@ -173,4 +173,16 @@
 
 # ------------------------------------------------------------------------------
 
-# 5. 
+# 5. CSRF where token is tied to non-session cookie. 
+
+<img width="811" height="308" alt="image" src="https://github.com/user-attachments/assets/2b931e65-7d95-485d-a51c-9ac6ea916b53" />
+
+# Goal :  Use exploit sever to host an html page that uses CSRF attack to change the email address.
+
+# Ingrediants : Same as above. 
+
+# Solving : 
+
+- Let's try all the possibilities that we tried in the previous lab.
+
+
