@@ -157,14 +157,20 @@
 
 <img width="1107" height="559" alt="image" src="https://github.com/user-attachments/assets/7908f410-fd51-44be-bfd5-ccd4a6bb8ff6" />
 
-- We can see it worked. Let's generate the script and 
+- We can see it worked hence csrf token is not tied to the session id. 
 
 <img width="1052" height="658" alt="image" src="https://github.com/user-attachments/assets/a2e7be5f-964d-4134-b95e-e8a60901b6c7" />
 
-<img width="1108" height="554" alt="image" src="https://github.com/user-attachments/assets/189c0f01-9784-4135-886d-7c1987e5b6f4" />
+- Let's generate the script using the Poc generator and submit in the exploit server. 
 
 <img width="937" height="448" alt="image" src="https://github.com/user-attachments/assets/01ed776c-d2a7-4f18-8f0a-473d939bea96" />
 
+<img width="1108" height="554" alt="image" src="https://github.com/user-attachments/assets/189c0f01-9784-4135-886d-7c1987e5b6f4" />
+
+- Hence we solved the lab by uploading that. 
+
 <img width="1143" height="425" alt="image" src="https://github.com/user-attachments/assets/5c39c1d1-57de-415f-b712-c2fe633be9dd" />
 
+# ------------------------------------------------------------------------------
 
+# 5. 
