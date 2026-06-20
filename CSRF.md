@@ -179,10 +179,50 @@
 
 # Goal :  Use exploit sever to host an html page that uses CSRF attack to change the email address.
 
-# Ingrediants : Same as above. 
+# Ingrediants : Same as above and extra it has the search tab. 
+
+<img width="1001" height="493" alt="image" src="https://github.com/user-attachments/assets/11b8bf7b-cd30-49d0-95e1-8a3b76ea4524" />
 
 # Solving : 
 
 - Let's try all the possibilities that we tried in the previous lab.
+
+<img width="1330" height="462" alt="image" src="https://github.com/user-attachments/assets/a76edb4e-5bec-4a60-983f-992ede56aba9" />
+
+<img width="1082" height="496" alt="image" src="https://github.com/user-attachments/assets/13ac93d3-e19a-4da0-9e1d-53ac6911afd7" />
+
+<img width="998" height="485" alt="image" src="https://github.com/user-attachments/assets/24c3291c-c1a1-45bc-a8cb-4e3031ddcd8a" />
+
+- We can see it has one add on cookie with session cookie which is csrf key cookie. We will try to add csrf token and crsfkey cookie from attacker account.
+
+<img width="1022" height="509" alt="image" src="https://github.com/user-attachments/assets/2503faac-8d1a-4c5c-95c2-0b05d1d9d286" />
+
+<img width="1285" height="396" alt="image" src="https://github.com/user-attachments/assets/c288ca70-42aa-4d8c-a6a0-5534c6fa14cf" />
+
+- We can see it worked it. 
+
+<img width="1046" height="489" alt="image" src="https://github.com/user-attachments/assets/1256863d-be49-462e-81b5-7aebc6b02af6" />
+
+- Let's generate the script using the Poc generator and submit in the exploit server. 
+
+- First we have to inject csrf key into user's session(Http header injection). For that we have to another parameter to inject in the header. 
+
+<img width="895" height="440" alt="image" src="https://github.com/user-attachments/assets/84403d25-e264-4529-a5c0-1daa89d3ce50" />
+
+<img width="1114" height="467" alt="image" src="https://github.com/user-attachments/assets/bb4c3bf5-4c8b-46c9-82d8-7f3d271a7276" />
+
+- Let's add the csrfkey in the search term. we need to set-cookie of the csrfkey value as the attackers account. 
+
+<img width="1067" height="615" alt="image" src="https://github.com/user-attachments/assets/77bfe176-13ec-4920-9570-750caa5ead75" />
+
+- We can able to successfully inject that now we have to generate the script using the Poc generator. Here instead of submitting the form automatically we will try to set the cookie as csrfkey in the image and fails it will submit the form.  
+
+<img width="1227" height="507" alt="image" src="https://github.com/user-attachments/assets/fe018dbb-300a-419f-b996-ac56b70467e9" />
+
+<img width="947" height="419" alt="image" src="https://github.com/user-attachments/assets/11ed91d8-fc42-4445-abcd-2aac7e57d68b" />
+
+
+
+
 
 
