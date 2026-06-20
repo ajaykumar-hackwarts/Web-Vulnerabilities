@@ -219,10 +219,12 @@
 
 <img width="1227" height="507" alt="image" src="https://github.com/user-attachments/assets/fe018dbb-300a-419f-b996-ac56b70467e9" />
 
-<img width="947" height="419" alt="image" src="https://github.com/user-attachments/assets/11ed91d8-fc42-4445-abcd-2aac7e57d68b" />
+- Hence by uploading the script we solve the lab. 
 
+<img width="1100" height="440" alt="image" src="https://github.com/user-attachments/assets/7bbf9a4a-7f40-48e1-af9a-2967875c1188" />
 
+# ------------------------------------------------------------------------------
 
-
+# 6. 
 
 
