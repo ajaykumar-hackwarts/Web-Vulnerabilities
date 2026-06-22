@@ -284,13 +284,21 @@
 
 <img width="980" height="409" alt="image" src="https://github.com/user-attachments/assets/130adcee-80eb-4813-a034-1a2d57b94946" />
 
-- 
+- We can change the method type by a concept called method spoofing where a hidden parameter will get as our desired request method type by using _method parameter.  
 
 <img width="967" height="426" alt="image" src="https://github.com/user-attachments/assets/e3deaf12-f3d6-48bb-85e8-166fcb6402c0" />
 
+- Let's generate the script with the method spoofing.
 
+<img width="973" height="320" alt="image" src="https://github.com/user-attachments/assets/4f706cc0-9c0c-492a-ac09-d659883fa766" />
 
+<img width="1080" height="464" alt="image" src="https://github.com/user-attachments/assets/745e5183-cd12-4454-b345-cd0453ee8be5" />
 
+-  Hence by uploading this we solve the lab.
+
+<img width="1303" height="488" alt="image" src="https://github.com/user-attachments/assets/297781b5-4f35-4891-a3a6-51116d891833" />
+
+# ------------------------------------------------------------------------------
 
 
 
