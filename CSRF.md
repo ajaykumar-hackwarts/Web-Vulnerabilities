@@ -225,6 +225,46 @@
 
 # ------------------------------------------------------------------------------
 
-# 6. 
+# 6. CSRF where token is duplicated in cookie
+
+<img width="761" height="184" alt="image" src="https://github.com/user-attachments/assets/8f7d239d-c79d-4feb-9853-ba3f4a7780d3" />
+
+# Goal :  Use exploit sever to host an html page that uses CSRF attack to change the email address.
+
+# Ingrediants : Same as above.
+
+# Solving :
+
+- Let do the usuals as the previous lab.
+
+<img width="815" height="510" alt="image" src="https://github.com/user-attachments/assets/c487d7c5-3d53-4c87-ad97-91e1e7f1b2f7" />
+
+<img width="936" height="458" alt="image" src="https://github.com/user-attachments/assets/dbf7cc3e-6657-4668-b254-31fc9d18fd0a" />
+
+<img width="1028" height="398" alt="image" src="https://github.com/user-attachments/assets/afe3e554-cc91-46f1-bb5b-f831e45f10b8" />
+
+- And we can notice that both the csrf key and token are the same value and when we checked with the dummy random value we see the 200 response from this we can understand that it doesn't matter value which value is the csrf token or key as long as both are euqal.
+
+- Hence we can follow the previous lab steps and solve this.
+
+ <img width="1162" height="587" alt="image" src="https://github.com/user-attachments/assets/38444a05-b9a0-42fb-9c06-3b28c1b30b68" />
+
+ <img width="1220" height="455" alt="image" src="https://github.com/user-attachments/assets/9147ba33-7a42-4a71-b077-6cf439a5eab1" />
+
+ - Hence by uploading the following we solve the lab. 
+
+ <img width="1074" height="381" alt="image" src="https://github.com/user-attachments/assets/30775e18-a3ea-4bde-908b-1d5440490062" />
+
+# ------------------------------------------------------------------------------
+
+
+# 7. 
+
+
+
+
+
+
+
 
 
