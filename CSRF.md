@@ -258,7 +258,38 @@
 # ------------------------------------------------------------------------------
 
 
-# 7. 
+# 7. SameSite Lax bypass via method override.
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/d6f35bc4-a9ac-4c22-a49c-4ec3deeb1bdf" />
+
+# Goal :  Same as above. 
+
+# Ingrediants : Same as above.
+
+# Solving :
+
+- Same site Lax : It's cookie setting that limits when a browser sends a cookie to another site.
+
+- Let's do the usuals. We can see there is no csrf token used.
+
+<img width="962" height="495" alt="image" src="https://github.com/user-attachments/assets/81d8ddf2-d56a-44a9-a0bf-4cd752016a6b" />
+
+- Since most same site - lax will block the cross site post requests. But when we checked the login post request it is sending the session cookie with the expiry time. Hence it will allow to send the cookie with the expiry date that it is vulnerable parameter we are going to exploit. 
+
+<img width="1067" height="533" alt="image" src="https://github.com/user-attachments/assets/d31993f7-17d4-40c0-9109-5f95a8fa5832" />
+
+<img width="1339" height="573" alt="image" src="https://github.com/user-attachments/assets/58b20419-e74e-481d-90c4-1cd5598ec0c0" />
+
+-  We will try to change the request type and exploit this and it says method is not allowed. 
+
+<img width="980" height="409" alt="image" src="https://github.com/user-attachments/assets/130adcee-80eb-4813-a034-1a2d57b94946" />
+
+- 
+
+<img width="967" height="426" alt="image" src="https://github.com/user-attachments/assets/e3deaf12-f3d6-48bb-85e8-166fcb6402c0" />
+
+
+
 
 
 
