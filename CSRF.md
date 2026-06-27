@@ -1,4 +1,4 @@
-# CSRF(Cross Site request forgery) : Attacker tricks the victim's browser into sending unarthorized requests to trusted website where user is already authenticated. 
+<img width="1000" height="506" alt="image" src="https://github.com/user-attachments/assets/d966d6c7-bffc-45a4-9795-199a556f84e0" /># CSRF(Cross Site request forgery) : Attacker tricks the victim's browser into sending unarthorized requests to trusted website where user is already authenticated. 
 
 - Session cookie is saved by the browser.
 - Attacker send a malicious csrf script link through WhatsApp, Telegram, SMS, or social media.
@@ -377,12 +377,86 @@
 # ------------------------------------------------------------------------------
 
 
-# 9. 
+# 9. SameSite Strict bypass via sibling domain. 
 
+<img width="764" height="253" alt="image" src="https://github.com/user-attachments/assets/a38fb175-70d7-4a80-b1d2-e59a21e6232e" />
 
+# Goal : To perform CSWSH attack that exfiltrates the victim's chat history to the default Burp Collaborator server. Where the chat history contains login credentials in plain text. 
 
+- Cross-site WebSocket hijacking : It is like a csrf but for a web socket. In this attack where attacker uses victims loggined account to open a websocket connection to a trusted website and perform actions for victim.
 
+- When we using the live chat function and send a message we can see it is making a web socket connection and the messages are seen in the web socket history. 
 
+<img width="1255" height="480" alt="image" src="https://github.com/user-attachments/assets/1a63b248-41c2-4d41-b41c-9bda6c8c4ed8" />
 
+<img width="883" height="485" alt="image" src="https://github.com/user-attachments/assets/2783e0d3-ff54-4344-9461-8ccadc859779" />
 
+- When we check the chat request we can see it is swicthing protocal and making a web socket connetion and there is no csrf token used. Hence it is vulnerable to csrf.
 
+<img width="867" height="525" alt="image" src="https://github.com/user-attachments/assets/bc724ab4-3ba9-4281-88c4-8e58d4fd1a5b" />
+
+- We will see the js file which is responsible for the exfiltrating the messages. This is js file which is responsible for the exfiltration. 
+
+<img width="1200" height="409" alt="image" src="https://github.com/user-attachments/assets/a78320e4-fb3e-499d-b111-9ec80537549d" />
+
+- They initiating the new web socket. 
+
+<img width="1343" height="481" alt="image" src="https://github.com/user-attachments/assets/6ddf69ac-9a0f-4a98-aff1-40985ba7a19b" />
+
+- There is an event handler to open the web socket. 
+
+<img width="1071" height="351" alt="image" src="https://github.com/user-attachments/assets/25e5b959-95c4-4313-8e6a-edd2086425d2" />
+
+- Let's develop the script that would reveal the exfiltration.
+
+<img width="1199" height="398" alt="image" src="https://github.com/user-attachments/assets/06fe7856-d16f-4012-8eda-cfaeaa79ebeb" />
+
+- When we see the access log we notice it has the base64 encrypted string. 
+
+<img width="1358" height="453" alt="image" src="https://github.com/user-attachments/assets/b474a3d9-a1bc-4ec0-9921-4761b859ffe2" />
+
+- When we decrypt the string it reveals that it has the chat messages. 
+
+<img width="1365" height="386" alt="image" src="https://github.com/user-attachments/assets/1e1b3cf1-445d-41c7-a430-3d4c4d10fe2d" />
+
+- We can see that this chat.js is loading an login page. 
+
+<img width="1279" height="536" alt="image" src="https://github.com/user-attachments/assets/0eace45d-9b2f-4bdd-9bee-d521b1091b9b" />
+
+- When going back and see the chat.js response it is loading one url. 
+
+<img width="1337" height="528" alt="image" src="https://github.com/user-attachments/assets/9bc09311-5c81-41f8-9b06-07ae9176d41a" />
+
+- When we load the url in the url we can see it loads a login page and we will inject the script there. 
+
+<img width="811" height="285" alt="image" src="https://github.com/user-attachments/assets/39ec6a7a-41a6-439f-9980-839795f658b3" />
+
+<img width="1273" height="512" alt="image" src="https://github.com/user-attachments/assets/ea11f506-3bf5-42db-8035-02b81ce1363e" />
+
+- Let's change the request method and see the response it gives the 200 response only. 
+
+<img width="1046" height="527" alt="image" src="https://github.com/user-attachments/assets/441664d4-61d1-4636-ba6e-3769384f9b99" />
+
+- Now we will upload our payload in the get mathod query parameter.
+
+<img width="1331" height="337" alt="image" src="https://github.com/user-attachments/assets/074cc401-742e-4a22-93a0-5c0da3ca87bb" />
+
+- We can see the payload is decrypted in the response. 
+
+<img width="1336" height="472" alt="image" src="https://github.com/user-attachments/assets/70c60760-881f-448e-93e3-596c9525cc85" />
+
+- Let's upload the payload to the exploit server and fetch the password.
+
+<img width="1314" height="530" alt="image" src="https://github.com/user-attachments/assets/a704d066-f4db-4d55-b19d-b4be47b6f3e0" />
+
+- Let's decrypt the strings.
+
+<img width="826" height="327" alt="image" src="https://github.com/user-attachments/assets/f6c32dfb-d474-4db0-9d90-a940f7624611" />
+
+- Hence by using the password we loginned and solved the lab. 
+
+<img width="1000" height="506" alt="image" src="https://github.com/user-attachments/assets/87926cc7-2d79-4502-a179-e96449ee2b5f" />
+
+# ------------------------------------------------------------------------------
+
+# 10. 
