@@ -300,7 +300,85 @@
 
 # ------------------------------------------------------------------------------
 
-# 8. 
+# 8. SameSite Strict bypass via client-side redirect.
+
+<img width="753" height="135" alt="image" src="https://github.com/user-attachments/assets/c6eb506c-fd47-4e88-b93d-144b539e7b2d" />
+
+# Goal :  Same as above. 
+
+# Ingrediants : Same as above.
+
+# Solving :
+
+- In this lab it is using the same site stict where cookie will be only sent for the same site request.
+
+<img width="992" height="567" alt="image" src="https://github.com/user-attachments/assets/b311bf4f-43eb-4508-856a-8321e1f9fcb2" />
+
+- We can see even when changing the request method in the email change request we still get the 302 response. 
+
+<img width="992" height="567" alt="image" src="https://github.com/user-attachments/assets/a7a9d6dd-4342-4507-aa9e-46ab31a5f95a" />
+
+<img width="921" height="518" alt="image" src="https://github.com/user-attachments/assets/8d271f22-7139-40eb-a41c-12f2bea8006e" />
+
+- We will try to post someting and watch the redirection. 
+
+<img width="914" height="626" alt="image" src="https://github.com/user-attachments/assets/6a635d65-3fc8-4288-8cb1-9dba60d1ea56" />
+
+<img width="1014" height="518" alt="image" src="https://github.com/user-attachments/assets/64847ffb-1ebe-4f76-882a-3e8f2a484f15" />
+
+- It is using the js for this redirection
+
+<img width="1034" height="485" alt="image" src="https://github.com/user-attachments/assets/cefed79f-7d87-40a5-ae35-a430a0e1b607" />
+
+- It is getting the postId parameter from the /post/comment/confirmation?postId=4 and redirecting to page which is after the ? parameter. 
+
+<img width="1107" height="543" alt="image" src="https://github.com/user-attachments/assets/0fc2d736-8470-485f-a96f-71a76c6382a8" />
+
+<img width="950" height="398" alt="image" src="https://github.com/user-attachments/assets/794defe3-785a-4099-87aa-fd276e2ca44e" />
+
+<img width="1108" height="516" alt="image" src="https://github.com/user-attachments/assets/75c55a5d-46eb-42a6-a733-69f7f4cf7a45" />
+
+- We can see it is successfully redirected now we will change the payload to our desired page. 
+
+<img width="948" height="535" alt="image" src="https://github.com/user-attachments/assets/86ab8d9a-c28d-463f-ba9d-9dfe774b6728" />
+
+- We can see we got a "not found" error that is because it is under the section of post/ to overcome this we have to go before the preious folder by modifying the payload to this ../PostId. 
+
+<img width="1163" height="606" alt="image" src="https://github.com/user-attachments/assets/84494d56-14c5-4d17-a348-8c04b7ad36ae" />
+
+<img width="1021" height="330" alt="image" src="https://github.com/user-attachments/assets/d1a081f9-c20c-4db6-9d1f-06e4ea70e4f1" />
+
+- We can see it is successfully redirecting. 
+
+<img width="1082" height="510" alt="image" src="https://github.com/user-attachments/assets/7580f43d-1744-4458-b7ed-bea636006bc2" />
+
+<img width="962" height="605" alt="image" src="https://github.com/user-attachments/assets/9d0456f0-5653-49bd-9a88-915c7517b9de" />
+
+- Now we will append the change email get request and see is the email is changed or not. It says missing parameter that is beacuse we can encode the & to %26
+
+<img width="1322" height="376" alt="image" src="https://github.com/user-attachments/assets/774ea44c-4f62-4208-bcc0-2aeccc2f2c4a" />
+
+ <img width="1091" height="498" alt="image" src="https://github.com/user-attachments/assets/76f50b49-2b67-4dfb-bd8e-8404d4b508c8" />
+
+ <img width="1042" height="654" alt="image" src="https://github.com/user-attachments/assets/c13fe150-4cb9-46a4-862f-4248a20e2ff5" />
+
+- It worked we can able to change the email by the payload.  
+
+<img width="858" height="445" alt="image" src="https://github.com/user-attachments/assets/e024f6b8-c191-45aa-884c-498119c2e063" />
+
+- Now we will upload the script in the exploit server. 
+
+<img width="1248" height="486" alt="image" src="https://github.com/user-attachments/assets/b984baf1-05f9-4bbc-bb9a-8dd4cdd0fa7e" />
+
+- We successfully solved the lab after uploading this script.
+
+<img width="1144" height="442" alt="image" src="https://github.com/user-attachments/assets/7523e045-010d-465a-99a9-c9f440e6885c" />
+
+# ------------------------------------------------------------------------------
+
+
+# 9. 
+
 
 
 
