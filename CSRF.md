@@ -545,6 +545,50 @@
 
 # ------------------------------------------------------------------------------
 
-# 12.
+# 12.CSRF with broken Referer validation. 
 
+<img width="775" height="182" alt="image" src="https://github.com/user-attachments/assets/caf12e33-edee-409b-a60d-64f3e71ae0dc" />
 
+# Goal : Same as above. 
+
+# Ingrediants : Same as above. 
+
+# Solving :  
+
+- Lets do the process like the previous lab. As like the previous lab the referrer header is different when we generate the crsf script and see the response.
+
+<img width="1034" height="444" alt="image" src="https://github.com/user-attachments/assets/ce96a339-f187-4174-abb3-b7153f94f711" />
+
+<img width="1117" height="652" alt="image" src="https://github.com/user-attachments/assets/b511a878-2119-4af5-94b3-9c0682565914" />
+
+<img width="985" height="270" alt="image" src="https://github.com/user-attachments/assets/5e988c6b-73a1-4823-9ecc-1b984b1f120d" />
+
+<img width="1197" height="456" alt="image" src="https://github.com/user-attachments/assets/cbfe0148-9725-4b88-a9a8-efb3575cda47" />
+
+- When we tried to remove the referrer header it also says invalid referrer header.
+
+<img width="1065" height="396" alt="image" src="https://github.com/user-attachments/assets/14d4ed0f-fbb0-4606-9ee6-90dbf737b045" />
+
+- Now lets check which portion of the referrer is validated by adding a domain and it worked.
+
+<img width="1059" height="432" alt="image" src="https://github.com/user-attachments/assets/f466ffe7-de79-4605-978c-5a063d68dc5a" />
+
+- Hence instead of validating exactly the entire url it is just seeing that it containing the domain or not.
+
+- Lets use this vulnerability and generate the csrf Poc.
+
+<img width="1016" height="297" alt="image" src="https://github.com/user-attachments/assets/71d6eb74-6a65-4bf4-86a2-a50d8ed9bfd5" />
+
+- We will use the  history.pushState('', '', '/'); method what it will does is it will add an entry in the browser session history stat. 
+
+- It has 3 parameters 1 - stat, 2 - title, 3 - url. We will focus on the 3rd parameter. It can be realative or absolute if it is absolute it should be same domain as the current url.  
+
+- Let's change url parameter as relative by adding a query parameter because if it is absolute it will only accept the same domain in this case the script is not originated from websecurity accademy it is originated from the burpsuite so we will add this /?
+
+<img width="1037" height="312" alt="image" src="https://github.com/user-attachments/assets/f103f74e-4a66-45ac-b690-38154f8fac52" />
+
+- Hence by uploading the script in exploit server we solve the lab.
+
+<img width="1076" height="570" alt="image" src="https://github.com/user-attachments/assets/9ef9fce9-0f55-437a-a811-d93e375b9ba7" />
+
+# ------------------------------------------------------------------------------
