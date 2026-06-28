@@ -1,4 +1,4 @@
-# CSRF(Cross Site request forgery) : Attacker tricks the victim's browser into sending unarthorized requests to trusted website where user is already authenticated. 
+<img width="992" height="349" alt="image" src="https://github.com/user-attachments/assets/491f1e6e-a942-4fe1-a881-a131f64fbbf1" /># CSRF(Cross Site request forgery) : Attacker tricks the victim's browser into sending unarthorized requests to trusted website where user is already authenticated. 
 
 - Session cookie is saved by the browser.
 - Attacker send a malicious csrf script link through WhatsApp, Telegram, SMS, or social media.
@@ -501,9 +501,47 @@
 
 # ------------------------------------------------------------------------------
 
+# 10. CSRF where Referer validation depends on header being present
 
-# 10. 
+<img width="744" height="182" alt="image" src="https://github.com/user-attachments/assets/ba87287e-fe3b-436f-a9a7-adf0bb9f9708" />
 
+# Goal : Same as above. 
+
+# Ingrediants : Same as above. 
+
+# Solving :  
+
+- Let's update the email and see the response and see the response. 
+
+<img width="1188" height="508" alt="image" src="https://github.com/user-attachments/assets/05b64463-50e7-4413-b822-c23ea59dc7ff" />
+
+- We can notice it doesn't have the csrf token and referer and host are same domain. 
+
+<img width="1022" height="400" alt="image" src="https://github.com/user-attachments/assets/7575ecd6-43ce-41c0-ac8a-9c3ce461b721" />
+
+- Now let's take the referer and see the response. We can see even without the referer it is giving 302 response only. 
+
+<img width="938" height="439" alt="image" src="https://github.com/user-attachments/assets/e18ca660-6e35-4939-b49f-e8490b6c24f2" />
+
+- Let's generate the CSRF poc and test in the browser. 
+
+<img width="613" height="468" alt="image" src="https://github.com/user-attachments/assets/eb408195-ca39-4973-9654-78f85b08b129" />
+
+<img width="992" height="349" alt="image" src="https://github.com/user-attachments/assets/ec03d9fa-fc6d-48b8-ab04-96fd36137064" />
+
+- It says "Invalid referer header" that is because the referer is different from the host domain
+
+<img width="1020" height="353" alt="image" src="https://github.com/user-attachments/assets/2d31cfda-c1e9-422f-ae12-df891e194ee3" />
+ 
+- Hence we will remove the header in the script and upload it to exploit server.
+
+ <img width="932" height="497" alt="image" src="https://github.com/user-attachments/assets/0e24acb6-65a2-480e-9ad0-6d43d14abe03" />
+
+- Hence we solved the lab by uploading the script to exploit server. 
+
+<img width="1200" height="484" alt="image" src="https://github.com/user-attachments/assets/e5ab5d71-a139-4fb0-b570-4586a00fcf99" />
+
+<img width="1149" height="481" alt="image" src="https://github.com/user-attachments/assets/f42d7aec-c642-4ace-978e-a959841bb3bd" />
 
 
 
