@@ -383,6 +383,12 @@
 
 # Goal : To perform CSWSH attack that exfiltrates the victim's chat history to the default Burp Collaborator server. Where the chat history contains login credentials in plain text. 
 
+# Ingrediants :  Live chat, my-account view details and exploit sever button. 
+
+<img width="1216" height="566" alt="image" src="https://github.com/user-attachments/assets/976a0058-7f5a-47c5-9b57-c9fedb037008" />
+
+# Solving :
+
 - Cross-site WebSocket hijacking : It is like a csrf but for a web socket. In this attack where attacker uses victims loggined account to open a websocket connection to a trusted website and perform actions for victim.
 
 - When we using the live chat function and send a message we can see it is making a web socket connection and the messages are seen in the web socket history. 
@@ -459,4 +465,46 @@
 
 # ------------------------------------------------------------------------------
 
+# 10. SameSite Lax bypass via cookie refresh
+
+<img width="806" height="206" alt="image" src="https://github.com/user-attachments/assets/3dd48901-f880-48c5-bd50-391f04bb395d" />
+
+# Goal : To exploit the csrf vulnerberality and change the victim's email address.
+
+# Ingrediants : Home, my-account, view post and exploit server button.
+
+# Solving :
+
+- OAuth : It is way where one application access our data on another application without giving away our password.
+
+- We will login in the Scoial media account.
+
+<img width="883" height="491" alt="image" src="https://github.com/user-attachments/assets/357bb7ec-0a2e-48ff-89a6-7f2dd129a7f7" />
+
+- So it can access our profile and now we will update our email. 
+
+<img width="862" height="526" alt="image" src="https://github.com/user-attachments/assets/2c65c98f-7081-4946-ba17-8acb59c764f3" />
+
+<img width="889" height="559" alt="image" src="https://github.com/user-attachments/assets/ad5edb2c-50aa-4f61-8dce-eccf93921046" />
+
+- Let's modify the Csrf Poc script.
+
+<img width="984" height="548" alt="image" src="https://github.com/user-attachments/assets/0d2f170a-d151-422f-9af2-1ff4638ab3f3" />
+
+- When ever the user clicks anywhere on the screen it open up the pop up and refresh the Outh session cookie.
+
+<img width="1091" height="468" alt="image" src="https://github.com/user-attachments/assets/e39d3cb6-ddf3-4a47-84c2-d8baced39248" />
+
+- Hence first time we deliver the csrf script it will refersh the cookie and when we deliver the second time it will perform the csrf. And by doing that we solve the lab.
+
+<img width="1224" height="481" alt="image" src="https://github.com/user-attachments/assets/38c65778-9518-40a5-9806-65809c5d7d16" />
+
+# ------------------------------------------------------------------------------
+
+
 # 10. 
+
+
+
+
+
