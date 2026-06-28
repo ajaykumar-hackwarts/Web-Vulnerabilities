@@ -501,7 +501,7 @@
 
 # ------------------------------------------------------------------------------
 
-# 10. CSRF where Referer validation depends on header being present
+# 11. CSRF where Referer validation depends on header being present
 
 <img width="744" height="182" alt="image" src="https://github.com/user-attachments/assets/ba87287e-fe3b-436f-a9a7-adf0bb9f9708" />
 
@@ -543,6 +543,8 @@
 
 <img width="1149" height="481" alt="image" src="https://github.com/user-attachments/assets/f42d7aec-c642-4ace-978e-a959841bb3bd" />
 
+# ------------------------------------------------------------------------------
 
+# 12.
 
 
