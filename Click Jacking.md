@@ -1,4 +1,4 @@
-<img width="853" height="522" alt="image" src="https://github.com/user-attachments/assets/ce27663b-ec76-41d6-9843-8c035dac518c" /># Clickjacking : Attack where user is tricked to click into something different from what they think they are clicking. 
+# Clickjacking : Attack where user is tricked to click into something different from what they think they are clicking. 
 
 # 1. Basic clickjacking with CSRF token protection : 
 
