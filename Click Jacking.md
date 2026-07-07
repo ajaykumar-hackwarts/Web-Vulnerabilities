@@ -50,3 +50,34 @@
 
 # ------------------------------------------------------------------------------ 
 
+# 2. Clickjacking with form input data prefilled from a URL parameter.
+
+# Goal : Trick the user to click on the click me which in back end update the email. 
+
+# Ingrediants : My account, home, exploit server and view post button. 
+
+<img width="947" height="547" alt="image" src="https://github.com/user-attachments/assets/1598661b-4adc-47b1-a1e2-cd41da1d1f6d" />
+
+# Solving : 
+
+- Like the last lab we will login and build a overley using the iframe tab.
+
+<img width="1133" height="560" alt="image" src="https://github.com/user-attachments/assets/d6ade022-58f0-49e3-b24c-d13b48941121" />
+
+<img width="906" height="584" alt="image" src="https://github.com/user-attachments/assets/4ae01bc2-b131-4a34-b348-1af4fc45de54" />
+
+- Now we will adjust teh size using the style.
+
+<img width="1142" height="515" alt="image" src="https://github.com/user-attachments/assets/21dee915-2a3e-4289-aba5-9ef207b5111a" />
+
+<img width="1235" height="610" alt="image" src="https://github.com/user-attachments/assets/222d7435-f674-4ec5-bcd5-b9677499f059" />
+
+-  Hence we solved the lab by decreasing the opacity and deliver the script to the user. 
+
+<img width="1153" height="581" alt="image" src="https://github.com/user-attachments/assets/b34d27ad-4e10-463a-b183-4bc4b4bc0fa3" />
+
+# ------------------------------------------------------------------------------ 
+
+
+# 3. 
+
