@@ -120,10 +120,43 @@
 # ------------------------------------------------------------------------------ 
 
 
-# 4. 
+# 4. Exploiting clickjacking vulnerability to trigger DOM-based XSS. 
 
+<img width="748" height="88" alt="image" src="https://github.com/user-attachments/assets/12acecc0-daca-483d-bd8b-c20505f41ea0" />
 
+# Goal : Trick the user to click on the click me which calls the print(). 
 
+# Ingrediants :  Submit feedback, home, exploit server and view post button. 
 
+<img width="1007" height="486" alt="image" src="https://github.com/user-attachments/assets/96801112-bcb3-4b1b-8073-f37d9a95b237" />
 
+# Solving : 
+
+- Let's firstly try to submit the feedback with random values.
+
+<img width="878" height="569" alt="image" src="https://github.com/user-attachments/assets/25689b70-2a22-404a-a5bc-a0385040f2b8" />
+
+<img width="847" height="562" alt="image" src="https://github.com/user-attachments/assets/a4ab0f16-ad02-4dea-bfe2-2eaf685c4416" />
+
+- Now we will try to submit DOM based Xss script and check it is vulnerable to xss or not. 
+
+<img width="862" height="568" alt="image" src="https://github.com/user-attachments/assets/c3f07e57-887b-4d92-88b8-78e3e9030a64" />
+
+- And it poppud up hence it is vulnerable to xss. 
+
+<img width="1071" height="539" alt="image" src="https://github.com/user-attachments/assets/4be508f1-ef9c-4397-ac55-cfaaca55acec" />
+
+- Now we will try to check if it is prepopulating the value when we giving in the query paramter of the url and it is possible to prepoulate. 
+
+<img width="1215" height="633" alt="image" src="https://github.com/user-attachments/assets/30c192ba-00cd-4e9a-8c43-1cbbd81c45ae" />
+
+- Now we have to build the iframe and place the click me button on the submit feedback.
+
+<img width="1053" height="517" alt="image" src="https://github.com/user-attachments/assets/f0d8e4e5-602d-46c5-851a-6d02b884979a" />
+
+- Hence by submitting the script to exploit server we solve the lab.
+
+<img width="778" height="578" alt="image" src="https://github.com/user-attachments/assets/2a3a6753-061e-4653-b3e4-4e5e0be65bef" />
+
+# ------------------------------------------------------------------------------ 
 
