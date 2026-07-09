@@ -79,5 +79,51 @@
 # ------------------------------------------------------------------------------ 
 
 
-# 3. 
+# 3. Clickjacking with a frame buster script.
+
+<img width="779" height="255" alt="image" src="https://github.com/user-attachments/assets/d80b86e9-fcc7-4562-87ac-b1b1edd23787" />
+
+# Goal : Trick the user to click on the click me which in back end update the email. 
+
+# Ingrediants : Same as above. 
+
+# Solving : 
+
+- Like the last lab we will try to build th iframe.
+
+<img width="1026" height="519" alt="image" src="https://github.com/user-attachments/assets/4d904143-f447-4ca9-b1a0-46f27ffc7621" />
+
+- And it says the page cannot be framed. 
+
+<img width="576" height="353" alt="image" src="https://github.com/user-attachments/assets/fe692feb-2667-4a4f-9a56-95665dd4e29c" />
+
+- Let's try bypass this by using sandbox.
+
+<img width="1331" height="473" alt="image" src="https://github.com/user-attachments/assets/91a0f66a-d908-4824-b94b-e94be87ddf41" />
+
+- We have bypassed it as we can see the iframe. 
+
+<img width="910" height="461" alt="image" src="https://github.com/user-attachments/assets/26f393a6-88e5-4062-85e8-06ddd39ab7f1" />
+
+- Now we will style and place the click me button on the top of update email. 
+
+<img width="1155" height="418" alt="image" src="https://github.com/user-attachments/assets/b65a59cc-3a72-421d-ab7c-f001810a4a37" />
+
+<img width="863" height="540" alt="image" src="https://github.com/user-attachments/assets/c1765e01-72a3-409c-a290-67f16252ecdd" />
+
+<img width="1276" height="470" alt="image" src="https://github.com/user-attachments/assets/c5695eb5-3178-4e39-be9a-d78aebd08ebd" />
+
+- Hence by pasting this we solve the lab.
+
+<img width="1245" height="454" alt="image" src="https://github.com/user-attachments/assets/fb9b0b54-3b1d-4aa5-a5cd-4f882d78cd49" />
+
+# ------------------------------------------------------------------------------ 
+
+
+# 4. 
+
+
+
+
+
 
