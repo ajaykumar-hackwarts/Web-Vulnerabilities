@@ -161,4 +161,41 @@
 # ------------------------------------------------------------------------------ 
 
 
-# 5.  
+# 5.  Multistep clickjacking. 
+
+<img width="772" height="236" alt="image" src="https://github.com/user-attachments/assets/cdbc495e-236d-4f7e-96a6-55aab2903da2" />
+
+# Goal : Trick the user to delete the account where it has a functionality that it asks "are you sure you wanna delete this account."
+
+# Ingrediants :  Submit feedback, home, exploit server and view post button. 
+
+# Solving : 
+
+- Let's login and try to delete the account. 
+
+<img width="1272" height="475" alt="image" src="https://github.com/user-attachments/assets/9045c786-11f8-4030-8c7f-e6ea78a9efa0" />
+
+<img width="1217" height="393" alt="image" src="https://github.com/user-attachments/assets/e26abc2b-f70a-42f1-897d-92f649e857f5" />
+
+- So we can see it asks for are you sure text and have 2 options yes or no. Hence we have to create two click me frames.
+  
+- Let's try to frame click me first button.
+
+<img width="1130" height="448" alt="image" src="https://github.com/user-attachments/assets/bcb7e144-d83c-4842-acda-84077ad0c5d2" />
+
+<img width="1018" height="599" alt="image" src="https://github.com/user-attachments/assets/796f6c56-ecf1-4cdf-b94a-a5bb9a4a1e1e" />
+
+- Now we will try to frame click me Next button.
+
+<img width="1076" height="467" alt="image" src="https://github.com/user-attachments/assets/a68a04a5-6305-4276-8f73-132e4228006b" />
+
+<img width="999" height="566" alt="image" src="https://github.com/user-attachments/assets/d86a6643-b8a2-4c5a-b3be-2f3d2ef62327" />
+
+- Hence by uploading this we solve the lab. 
+
+# ------------------------------------------------------------------------------ 
+
+
+
+
+
