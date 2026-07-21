@@ -58,12 +58,18 @@ xhr.send(null)
 
 <img width="1215" height="540" alt="image" src="https://github.com/user-attachments/assets/8caac09d-fdb7-44b4-bdf1-8c3080cc88c6" />
 
+# ------------------------------------------------------------------------------
 
 
+# 2. CORS vulnerability with trusted null origin.
 
+<img width="798" height="190" alt="image" src="https://github.com/user-attachments/assets/3b1b9134-9aab-4ac2-99fc-21dbd23e5a1c" />
 
+# Goal : Same as above 
 
+# Ingrediants : Same as above. 
 
+# Solving : 
 
 
 
