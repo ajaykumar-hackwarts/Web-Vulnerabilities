@@ -57,5 +57,28 @@
 
 # ------------------------------------------------------------------------------
 
+# 3. File path traversal, traversal sequences stripped non-recursively. 
+
+## Goal :  Same as above.  
+
+## Ingrediants :  Same as above.
+
+## Solving : 
+
+- Like the last lab we will try to solve the lab ../ and absolute path.
+
+<img width="1160" height="433" alt="image" src="https://github.com/user-attachments/assets/36afbcd1-d77f-4fad-9d17-d0e1e1c05842" />
+
+<img width="1171" height="474" alt="image" src="https://github.com/user-attachments/assets/a687f927-16a4-491f-9cc0-549ad2e27116" />
+
+- We can both is failed because the traversal sequence is stripped by the developer like whenever we see a sequence like ../ it will be filtered for that we will use the path like this ....//....//....// so after removing ../ we will still have another ../
+
+<img width="1183" height="543" alt="image" src="https://github.com/user-attachments/assets/2d5380c8-cff5-40d9-bbf0-c66056fa43fa" />
+ 
+- We can see it worked and we solved the lab.
+
+<img width="1209" height="517" alt="image" src="https://github.com/user-attachments/assets/c8c4c77e-d3f8-4394-ac99-7b89b75189c6" />
+
+# ------------------------------------------------------------------------------
 
 
