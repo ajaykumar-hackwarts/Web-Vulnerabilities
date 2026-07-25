@@ -114,5 +114,37 @@
 
 # ------------------------------------------------------------------------------
 
-# 5. 
+# 5. File path traversal, validation of start of path. 
+
+<img width="767" height="175" alt="image" src="https://github.com/user-attachments/assets/156f9929-306a-405a-96aa-ebfd6aeb49c4" />
+
+## Goal :  Same as above.  
+
+## Ingrediants :  Same as above.
+
+## Solving : 
+
+- We will try to see the response of the images and we can see it has this path /var/www/images/21.jpg
+
+<img width="1050" height="492" alt="image" src="https://github.com/user-attachments/assets/259aa3a0-c9c3-41d8-9251-049f2f09e7c5" />
+
+- We will try all the possibilities of the pervious lab.
+
+<img width="1139" height="412" alt="image" src="https://github.com/user-attachments/assets/f13f4f71-c182-4e8e-9450-491da2dc0352" />
+
+<img width="1165" height="415" alt="image" src="https://github.com/user-attachments/assets/5fb78b91-c2a3-4cb0-aed0-358cfa7ce4c2" />
+
+- It says missing parameter Since the path is different we will try inject ../ after this /var/www/images like /var/www/images/../../../etc/passwd
+
+<img width="1106" height="463" alt="image" src="https://github.com/user-attachments/assets/0d67cd8b-dee2-4c6d-8e6e-c9c7f4a55784" />
+
+- We can see it worked and we solve the lab.
+
+<img width="1277" height="550" alt="image" src="https://github.com/user-attachments/assets/05968433-4215-41c0-946d-9265ae6c50a7" />
+
+# ------------------------------------------------------------------------------
+
+
+# 6. 
+
 
