@@ -33,7 +33,29 @@
 # ------------------------------------------------------------------------------
 
 
-# 2. File path traversal, traversal sequences blocked with absolute path bypass
+# 2. File path traversal, traversal sequences blocked with absolute path bypass. 
+
+<img width="754" height="172" alt="image" src="https://github.com/user-attachments/assets/069362e4-36b3-452f-b2d5-8a5e38e5b4bb" />
+
+## Goal :  Same as above.  
+
+## Ingrediants :  Same as above. 
+
+## Solving : 
+
+- Like the last lab we will try to solve the lab ../
+
+<img width="1168" height="460" alt="image" src="https://github.com/user-attachments/assets/90ff4048-c59f-4d2c-b13f-37d33d3bf8f7" />
+
+- We can see it is failed. Now we will try that it is taking absolute path. 
+
+<img width="1217" height="530" alt="image" src="https://github.com/user-attachments/assets/a035f158-428d-43d2-8222-4587a0350024" />
+
+- It is taking the absolute path and we solved the lab.
+
+<img width="1234" height="559" alt="image" src="https://github.com/user-attachments/assets/69ad49c2-ae0e-431a-baeb-20a8b7212557" />
+
+# ------------------------------------------------------------------------------
 
 
 
