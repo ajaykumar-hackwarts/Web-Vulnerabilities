@@ -145,6 +145,27 @@
 # ------------------------------------------------------------------------------
 
 
-# 6. 
+# 6. File path traversal, validation of file extension with null byte bypass.
 
+<img width="756" height="133" alt="image" src="https://github.com/user-attachments/assets/af299c79-2fa0-4b8d-a112-f01ab16b4101" />
+
+## Goal :  Same as above.  
+
+## Ingrediants :  Same as above.
+
+## Solving :
+
+- Like the last lab we will try the possibilities and we can it won't work we have to use the null byte to bypass that 
+
+<img width="1068" height="353" alt="image" src="https://github.com/user-attachments/assets/57ec2c28-122a-4169-92e7-4c2594a4aee7" />
+
+- %00 This is null byte hexa decimal representation and what it does is ignore all the value after this. 
+
+<img width="1350" height="560" alt="image" src="https://github.com/user-attachments/assets/8acc4a44-c830-4148-b11d-689109dc0643" />
+
+- We can see it worked and we solve the lab.
+
+<img width="1246" height="575" alt="image" src="https://github.com/user-attachments/assets/46e5fd8b-9660-4b23-b1ab-219f9e38615c" />
+
+# ------------------------------------------------------------------------------
 
