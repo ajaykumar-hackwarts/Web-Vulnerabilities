@@ -1,14 +1,14 @@
-<img width="1346" height="600" alt="image" src="https://github.com/user-attachments/assets/7018ab2f-3053-4f30-8381-0f199728a5fb" /><img width="1346" height="600" alt="image" src="https://github.com/user-attachments/assets/fcd2cb1d-2a05-4412-b2cb-41978e6ed357" /># OS Command Injection : It's an attack where attacker executes an arbitory operating system commands on the server running on the application. 
+<img width="1139" height="392" alt="image" src="https://github.com/user-attachments/assets/bccdd01a-d671-4109-8604-2f917691b21d" /># OS Command Injection : It's an attack where attacker executes an arbitory operating system commands on the server running on the application. 
 
 # 1. OS command injection, simple case
 
-# Goal :  To execute the whoami command to determine the name of the current user. 
+### Goal :  To execute the whoami command to determine the name of the current user. 
 
-# Ingrediants :  Home and view details button. 
+### Ingrediants :  Home and view details button. 
 
 <img width="1294" height="594" alt="image" src="https://github.com/user-attachments/assets/389d7fdf-b1a0-41ed-8f83-e3744b2a2c25" />
 
-# Solving : 
+### Solving : 
 
 - Let's check the stocks and intercept the request in the burp.
 
@@ -39,13 +39,13 @@
 
 <img width="765" height="200" alt="image" src="https://github.com/user-attachments/assets/6f5187d9-8e2d-4801-a092-107ff953ab6a" />
 
-# Goal :  To exploit blind OS command injection to cause 10 second delay. 
+### Goal :  To exploit blind OS command injection to cause 10 second delay. 
 
-# Ingrediants :  Home, Submit feedback and view details button. 
+### Ingrediants :  Home, Submit feedback and view details button. 
 
 <img width="1320" height="603" alt="image" src="https://github.com/user-attachments/assets/bcbfa57b-0de1-4714-8b91-32081b92a5ae" />
 
-# Solving : 
+### Solving : 
 
 - We will submit a feedback and check the response.
 
@@ -70,13 +70,11 @@
 
 <img width="813" height="340" alt="image" src="https://github.com/user-attachments/assets/c8236d49-9567-4f69-89a7-c485abe52fd1" />
 
-# Goal :  To execute the whoami command and retrive the output. 
+### Goal :  To execute the whoami command and retrive the output. 
 
-# Ingrediants :  Same as above. 
+### Ingrediants :  Same as above. 
 
-<img width="1282" height="584" alt="image" src="https://github.com/user-attachments/assets/52075a0d-57fd-4db7-a50d-1db49681808f" />
-
-# Solving :  
+### Solving :  
 
 - Like the last lab we will check the app is vulnerable to blind OS command injection or not. And it is vuklnerable to blind OS command injection. 
 
@@ -111,8 +109,65 @@
 
 <img width="802" height="246" alt="image" src="https://github.com/user-attachments/assets/a0a71739-2f58-4b51-a47a-d70969041e5a" />
 
-# Goal : To exploit blind OS command injection to issue DNS lookup. 
+### Goal : To exploit blind OS command injection to issue DNS lookup. 
 
-# Ingrediants :  Same as above. 
+### Ingrediants :  Same as above. 
+
+### Solving : 
+
+- Like the last lab we will submit a feedback and see the response.
+
+<img width="1073" height="583" alt="image" src="https://github.com/user-attachments/assets/9074b907-fba9-4beb-8f19-e045873ff57c" />
+
+<img width="1184" height="470" alt="image" src="https://github.com/user-attachments/assets/bd5971b7-1058-49cc-95f1-da29be3fd2f5" />
+
+- Since it is out of band we will see the response by using the burp collaborator DNS lookup.
+
+ <img width="1196" height="503" alt="image" src="https://github.com/user-attachments/assets/328c6e2f-61be-44ba-8d0c-fab4f770e880" />
+
+<img width="1196" height="585" alt="image" src="https://github.com/user-attachments/assets/5fd982e3-133e-48eb-a016-653c0a15d157" />
+
+- Hence we solve the lab using this command. 
+
+<img width="1266" height="512" alt="image" src="https://github.com/user-attachments/assets/a056154a-b0c6-43cd-a0ea-ee28c5424a14" />
+
+# ------------------------------------------------------------------------------
+
+
+# 5. Blind OS command injection with out-of-band data exfiltration.
+
+<img width="797" height="277" alt="image" src="https://github.com/user-attachments/assets/5a5dad48-b5f8-4ba4-ad54-e3b24f3332d7" />
+
+### Goal : To execute whoami command and exfiltrate the output using the dns query in the burp colloborator. 
+
+### Ingrediants :  Same as above. 
+
+### Solving :
+
+- Like the last lab we will submit the feedback and see the response.
+
+<img width="1083" height="554" alt="image" src="https://github.com/user-attachments/assets/ba82bedd-ccb6-4e5f-ad04-82e18d077538" />
+
+<img width="1139" height="392" alt="image" src="https://github.com/user-attachments/assets/944a7161-e824-412e-9800-682f971e952e" />
+
+- It is vulnerable to bind OS command injection and hence we got response in burp collobarator by DNS query. 
+
+<img width="1243" height="528" alt="image" src="https://github.com/user-attachments/assets/f7e29478-e6a0-4db6-8a53-c4d052b6e6a7" />
+
+- We will now find the user name using the whoami command.
+
+<img width="1239" height="480" alt="image" src="https://github.com/user-attachments/assets/e77492da-7954-4dda-b372-59898f8bc69b" />
+
+- We got the output. 
+
+<img width="1180" height="534" alt="image" src="https://github.com/user-attachments/assets/4c67a55d-507b-4d99-b204-37ea05f11b4e" />
+
+- We solve the lab by submitting this in the solution. 
+
+<img width="1038" height="503" alt="image" src="https://github.com/user-attachments/assets/377a7449-8500-44fe-9941-48bdc736e3ae" />
+
+<img width="1263" height="509" alt="image" src="https://github.com/user-attachments/assets/355176e9-c502-4b76-aea7-78141f14eb4e" />
+
+# ------------------------------------------------------------------------------
 
 
