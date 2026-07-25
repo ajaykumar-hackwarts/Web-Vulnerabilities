@@ -1,4 +1,4 @@
-<img width="1275" height="545" alt="image" src="https://github.com/user-attachments/assets/629a9e20-fbae-45cd-8321-b1c70a5b6067" /># Path Traversal : It's a vulnerability where the attacker tricks a webiste into reading files from the server that they should not be able to access. 
+# Path Traversal : It's a vulnerability where the attacker tricks a webiste into reading files from the server that they should not be able to access. 
 
 # 1.  File path traversal, simple case
 
