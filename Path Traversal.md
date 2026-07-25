@@ -82,3 +82,37 @@
 # ------------------------------------------------------------------------------
 
 
+# 4. File path traversal, traversal sequences stripped with superfluous URL-decode.
+
+<img width="784" height="172" alt="image" src="https://github.com/user-attachments/assets/c295eaf0-5925-4e9b-bd9e-a9bab6ab956c" />
+
+## Goal :  Same as above.  
+
+## Ingrediants :  Same as above.
+
+## Solving : 
+
+- We will try the possibilities of the previous lab.
+
+<img width="1282" height="443" alt="image" src="https://github.com/user-attachments/assets/6f4d6151-7508-4052-9cb4-4b938de86b8a" />
+
+<img width="1231" height="487" alt="image" src="https://github.com/user-attachments/assets/5932223a-082c-4a1e-9a12-ad9ae55e9c19" />
+
+<img width="1252" height="497" alt="image" src="https://github.com/user-attachments/assets/6042946e-43a3-4cbc-b9eb-14fd8ae506e3" />
+
+- We can see all are failed. Now we will try to encode the url and check.
+
+<img width="1222" height="495" alt="image" src="https://github.com/user-attachments/assets/f0aebd64-69c2-4ea8-a4a3-04c67976579e" />
+
+- Since it decodes the url and checks for ../ and filters it we will try to url encode it again and check.
+
+<img width="1274" height="610" alt="image" src="https://github.com/user-attachments/assets/c87e1dd2-5376-4514-8535-5e316b115067" />
+
+- We can see it worked and we solved the lab.
+
+<img width="1207" height="545" alt="image" src="https://github.com/user-attachments/assets/9c48f136-0520-421d-b510-2fd09288517f" />
+
+# ------------------------------------------------------------------------------
+
+# 5. 
+
