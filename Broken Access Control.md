@@ -35,11 +35,11 @@
 
 <img width="769" height="120" alt="image" src="https://github.com/user-attachments/assets/b4f092e7-6074-4404-a441-59fa7c3ac065" />
 
-# Goal : To delete the carlos user. 
+## Goal : To delete the carlos user. 
 
-# Ingrediants : Same as above. 
+## Ingrediants : Same as above. 
 
-# Solving : 
+## Solving : 
 
 - First we will try the robots.txt file.
 
@@ -58,3 +58,43 @@
 <img width="1209" height="574" alt="image" src="https://github.com/user-attachments/assets/8a4c033d-5c63-4768-9845-49e7b9f9d688" />
 
 # ------------------------------------------------------------------------------
+
+
+# 3. User role controlled by request parameter. 
+
+<img width="770" height="163" alt="image" src="https://github.com/user-attachments/assets/5d5f8d75-51b6-40da-aceb-639652edb134" />
+
+## Goal : To delete the carlos user. 
+
+## Ingrediants : Same as above. 
+
+## Solving : 
+
+- Let's login using the credentials and see the response.
+
+<img width="1298" height="537" alt="image" src="https://github.com/user-attachments/assets/06841e3d-ad25-41d7-857c-92bd7d8c4199" />
+
+- We can see a strange parameter in the request that is admin=false 
+
+<img width="1304" height="556" alt="image" src="https://github.com/user-attachments/assets/e3fa67dc-5a22-4e73-9544-eeecc0978d3d" />
+
+- We will try to set it true and see the change in the response and we can notice we got the admin panel in teh response.  
+
+<img width="1228" height="526" alt="image" src="https://github.com/user-attachments/assets/af587c2d-d0b5-4640-91bb-139db6e22733" />
+
+- Let's try to change this in the browser.
+
+<img width="1347" height="609" alt="image" src="https://github.com/user-attachments/assets/19ec0b9a-212a-4d85-927d-3684a37c78ca" />
+
+<img width="1350" height="552" alt="image" src="https://github.com/user-attachments/assets/326f3aed-6c5a-4b78-a33c-f044d993442f" />
+
+- We got the admin panel and by deleting the carlos user we solve the lab. 
+
+<img width="1319" height="422" alt="image" src="https://github.com/user-attachments/assets/48a31044-6ca8-4172-af1f-301e8d54a822" />
+
+<img width="1238" height="455" alt="image" src="https://github.com/user-attachments/assets/3ecefe76-070d-4ba2-8d93-4d27fb3c0019" />
+
+ # ------------------------------------------------------------------------------
+
+
+# 4. 
