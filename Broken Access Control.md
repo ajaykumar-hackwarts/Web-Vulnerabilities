@@ -29,3 +29,32 @@
 <img width="1228" height="488" alt="image" src="https://github.com/user-attachments/assets/59b0cb91-cbfa-41ba-80d5-1aa8ce5ed542" />
 
 # ------------------------------------------------------------------------------
+
+
+# 2. Unprotected admin functionality with unpredictable URL. 
+
+<img width="769" height="120" alt="image" src="https://github.com/user-attachments/assets/b4f092e7-6074-4404-a441-59fa7c3ac065" />
+
+# Goal : To delete the carlos user. 
+
+# Ingrediants : Same as above. 
+
+# Solving : 
+
+- First we will try the robots.txt file.
+
+- It is a file that tells search engine bots which should or should not crawl. Crawling is viewing, reading and follwing the link automatically.
+
+<img width="1180" height="474" alt="image" src="https://github.com/user-attachments/assets/931d198c-6b5d-473b-8a24-045fa00ebfe0" />
+ 
+- Since there isn't one we will see the page source. We got the script which has the admin directory. /admin-un2vic
+
+<img width="1016" height="631" alt="image" src="https://github.com/user-attachments/assets/db13c1cb-d954-4be2-b941-ce0ae9b6891c" />
+
+<img width="1147" height="542" alt="image" src="https://github.com/user-attachments/assets/7e6c5054-3d01-46fa-a479-8ce14d70f026" />
+
+- It worked and by deleting the carlos user we solved the lab.
+
+<img width="1209" height="574" alt="image" src="https://github.com/user-attachments/assets/8a4c033d-5c63-4768-9845-49e7b9f9d688" />
+
+# ------------------------------------------------------------------------------
