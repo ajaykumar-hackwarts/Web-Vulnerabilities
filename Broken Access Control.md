@@ -257,3 +257,7 @@
 <img width="1279" height="479" alt="image" src="https://github.com/user-attachments/assets/bcc1c360-0901-412f-b616-ecbb61bef824" />
 
  # ------------------------------------------------------------------------------
+
+ # 9. Insecure direct object references. 
+
+ 
