@@ -168,7 +168,7 @@
 
 ## Goal : To find the GUID from carlos and submit the api key. 
 
-## Ingrediants : Same as above. 
+## Ingrediants : Home, my-account, view post and submit solution. 
 
 ## Solving : 
 
@@ -196,7 +196,53 @@
 
  # ------------------------------------------------------------------------------
 
- # 7. 
+ # 7. User ID controlled by request parameter with data leakage in redirect. 
 
+<img width="753" height="168" alt="image" src="https://github.com/user-attachments/assets/1fd2c180-d6a1-4de5-abd0-28bffd472c7c" />
  
+## Goal : To find the GUID from carlos and submit the api key. 
+
+## Ingrediants : Same as above. 
+
+## Solving : 
+
+- We login and we will try to change the user id. 
+
+<img width="1277" height="528" alt="image" src="https://github.com/user-attachments/assets/2d7589e2-cb2a-48b6-8a44-4c07dcf0d1e2" />
+
+<img width="1317" height="645" alt="image" src="https://github.com/user-attachments/assets/64492889-6f40-4600-9852-9eaa0d2d7409" />
+
+- We can see it redirects to the login page. 
+
+<img width="1351" height="638" alt="image" src="https://github.com/user-attachments/assets/12e5e510-7276-41cc-82a8-34954edf6c21" />
+
+- But in the redirection response it gives all the information we want especially the api key. 
+
+<img width="1291" height="600" alt="image" src="https://github.com/user-attachments/assets/4ad40604-130f-4647-bd82-0d6d140a8f09" />
+
+- Hence by submitting the api key we will solve the lab.
+
+<img width="1176" height="581" alt="image" src="https://github.com/user-attachments/assets/a7af3b67-01d7-4494-bc7b-567a8490e46c" />
+
+ # ------------------------------------------------------------------------------
+
+ # 8. User ID controlled by request parameter with password disclosure. 
+
+<img width="779" height="194" alt="image" src="https://github.com/user-attachments/assets/56bc3862-03e3-468e-b28c-db59b17e1857" />
+
+## Goal : To retrive the admin's password and delete the carlos user. 
+
+## Ingrediants : Same as above. 
+
+## Solving :
+
+- We login and we can notice it has the update password button and box which has password place holder in it. This is a poorly contructed UI and website which reveals password. 
+
+<img width="1298" height="557" alt="image" src="https://github.com/user-attachments/assets/1e6a2116-acd1-4ecc-a21a-d1b337ccf61e" />
+ 
+- We will try to change the ID as administrator and see the response. We can able to get to login as an administrator. 
+
+<img width="1249" height="668" alt="image" src="https://github.com/user-attachments/assets/a1dd3410-949b-44dd-b0d6-f3678597def5" />
+
+- Now we will update the password.
 
