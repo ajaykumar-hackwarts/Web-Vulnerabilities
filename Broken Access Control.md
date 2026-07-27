@@ -96,5 +96,47 @@
 
  # ------------------------------------------------------------------------------
 
+# 4. User role can be modified in user profile. 
 
-# 4. 
+<img width="758" height="178" alt="image" src="https://github.com/user-attachments/assets/3dd463c9-b599-4f9e-8f5b-4c6262ee6949" />
+
+## Goal : To delete the carlos user. 
+
+## Ingrediants : Same as above. 
+
+## Solving : 
+
+- Let's login using the credentials and see the response.
+
+<img width="1296" height="573" alt="image" src="https://github.com/user-attachments/assets/74e1a62d-1b53-46dc-9bdd-1b0692686b1c" />
+
+<img width="1090" height="537" alt="image" src="https://github.com/user-attachments/assets/3221dac2-1168-4afb-b695-3b21fe8c83cd" />
+
+- Let's try to change the id to admin and see the reponse.
+
+<img width="997" height="535" alt="image" src="https://github.com/user-attachments/assets/9324b95a-abf6-4ecc-9be9-78c41a6a0542" />
+
+<img width="1145" height="603" alt="image" src="https://github.com/user-attachments/assets/ea5b6bc8-5e63-4759-aa17-3b7be8f816b2" />
+
+<img width="1145" height="597" alt="image" src="https://github.com/user-attachments/assets/fa575b57-8690-430b-a2f8-35d543135d12" />
+
+- When changing the id we can't able to find the admin related strings in the response. Hence we will try to update the email and see the response.
+
+<img width="1237" height="571" alt="image" src="https://github.com/user-attachments/assets/bb596df5-4487-4d93-9de9-bc43900f206f" />
+
+- We can see in the change email it has the 4 parameter id email, name and apikey in the response and has only email parameter in request we will try to add the id and change it to 2 in the request.
+
+<img width="1265" height="602" alt="image" src="https://github.com/user-attachments/assets/4079cd89-9892-4619-9260-21d9263df293" />
+
+- We can see it is changed and we have the admin panel in the response.
+
+<img width="1147" height="590" alt="image" src="https://github.com/user-attachments/assets/10323d6f-1ace-4ce5-b594-90f409122d48" />
+
+- Hence by deleting the carlos user in the admin panel we solve the lab.
+
+<img width="1314" height="469" alt="image" src="https://github.com/user-attachments/assets/38de0bfd-f439-4570-ba25-019fc3690efb" />
+
+ # ------------------------------------------------------------------------------
+
+# 5. 
+
