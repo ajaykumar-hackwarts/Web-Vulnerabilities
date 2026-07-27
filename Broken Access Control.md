@@ -260,4 +260,70 @@
 
  # 9. Insecure direct object references. 
 
- 
+## Goal : To find the password of carlos user and login. 
+
+## Ingrediants : Same as above and live chat button is extra. 
+
+## Solving :
+
+- Since it has the live chat we will play with that and see the response and click on the view transcript button.
+
+<img width="1240" height="535" alt="image" src="https://github.com/user-attachments/assets/b3a00476-4846-47fa-a7e9-51ea263a2163" />
+
+<img width="1075" height="429" alt="image" src="https://github.com/user-attachments/assets/b6605aa6-3f0a-4532-95f4-7ee0be932b41" />
+
+- It is downloading a txt file when clicking the transript in the history it has the chat history. Since it is 2.txt there must bu 1.txt we will try to check that.
+
+<img width="1245" height="515" alt="image" src="https://github.com/user-attachments/assets/c3fb59be-5eb8-4ef9-a91b-f8818d7975cc" />
+
+- And Here we go we got the password in the chat history hence by submiting it we can solve the lab. 
+
+<img width="1361" height="509" alt="image" src="https://github.com/user-attachments/assets/79b5329e-64e6-40d8-a8ca-3bfb30753617" />
+
+ # ------------------------------------------------------------------------------
+
+ # 10. URL-based access control can be circumvented. 
+
+ <img width="803" height="157" alt="image" src="https://github.com/user-attachments/assets/5f6a8f46-6cd6-4363-b5ae-698b163a452a" />
+
+## Goal : To access the admin panel and delete the carlos user.  
+
+## Ingrediants : Same as before. 
+
+## Solving :
+
+- Lets try to click on the admin panel and see the response.
+
+<img width="1313" height="610" alt="image" src="https://github.com/user-attachments/assets/67202f2e-2773-444d-981f-1f901901999a" />
+
+<img width="1061" height="397" alt="image" src="https://github.com/user-attachments/assets/cc282022-f0f4-448f-93f6-67578a460eaf" />
+
+- It is giving the access denied 403 forbidden response.
+
+<img width="1070" height="505" alt="image" src="https://github.com/user-attachments/assets/3a1a2f4a-4c4e-4c72-9f81-f63834f18ee6" />
+
+- Let's add a random X-origin value and see the response. Surprisingly it is not saying forbidden it is saying not found. 
+
+<img width="1007" height="547" alt="image" src="https://github.com/user-attachments/assets/eddea6ec-48a3-4228-b72c-4f5a73e0ca41" />
+
+- Lets give the admin value instead of random value and see the response. We can see It gives the admin panel 
+
+<img width="1207" height="563" alt="image" src="https://github.com/user-attachments/assets/27bed568-fabf-4f08-9d4b-ced15d5ea058" />
+
+- Let's test that in browser and see the result 
+
+<img width="1319" height="455" alt="image" src="https://github.com/user-attachments/assets/a177c17d-ae83-4e67-b71e-d9f4c59cbd05" />
+
+- When we tried to delete the carlos user it is not deleting. 
+
+<img width="1047" height="411" alt="image" src="https://github.com/user-attachments/assets/11159f47-efab-435f-82dc-d859f52f2103" />
+
+- Hence we will try to paste and send the entire url and see the response
+
+<img width="1088" height="558" alt="image" src="https://github.com/user-attachments/assets/bb39ae38-0282-4c44-a62e-e0c9cb65184b" />
+
+- We can see we successfully completed the lab.
+
+<img width="1162" height="525" alt="image" src="https://github.com/user-attachments/assets/159b548b-2c36-42a9-91d4-9648306a323b" />
+
+ # ------------------------------------------------------------------------------
