@@ -242,7 +242,18 @@
  
 - We will try to change the ID as administrator and see the response. We can able to get to login as an administrator. 
 
-<img width="1249" height="668" alt="image" src="https://github.com/user-attachments/assets/a1dd3410-949b-44dd-b0d6-f3678597def5" />
+<img width="1071" height="656" alt="image" src="https://github.com/user-attachments/assets/8d84e74b-0598-4109-81a1-44c6e6a60c9e" />
 
-- Now we will update the password.
+- We will see the response and try to see the password and we got the password value. 
 
+<img width="1105" height="548" alt="image" src="https://github.com/user-attachments/assets/5a37aada-8523-4173-a20a-7a9dd1c28c16" />
+
+- We login as the administartor. 
+
+<img width="1289" height="596" alt="image" src="https://github.com/user-attachments/assets/c757c447-a3b2-4f70-9203-fb568802825d" />
+
+- And by deleting the carlos user we solve the lab. 
+
+<img width="1279" height="479" alt="image" src="https://github.com/user-attachments/assets/bcc1c360-0901-412f-b616-ecbb61bef824" />
+
+ # ------------------------------------------------------------------------------
