@@ -1,4 +1,4 @@
-<img width="1099" height="577" alt="image" src="https://github.com/user-attachments/assets/c333fcb6-2ff4-4581-8cf6-916ae18118f6" /><img width="1055" height="507" alt="image" src="https://github.com/user-attachments/assets/e49645d5-049a-42ec-a807-f16205b9b306" /><img width="1210" height="587" alt="image" src="https://github.com/user-attachments/assets/8979a0b5-5066-4223-87d2-876a3a2ca4ba" /># Access control vulnerabilities : It's a vulnerbility where application is fails to properly enforce the authorization rules, allowing user to access or perform action that they are not permitted to do it. 
+># Access control vulnerabilities : It's a vulnerbility where application is fails to properly enforce the authorization rules, allowing user to access or perform action that they are not permitted to do it. 
 
 # 1. Unprotected admin functionality. 
 
