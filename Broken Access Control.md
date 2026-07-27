@@ -1,4 +1,4 @@
-# Access control vulnerabilities : It's a vulnerbility where application is fails to properly enforce the authorization rules, allowing user to access or perform action that they are not permitted to do it. 
+<img width="1099" height="577" alt="image" src="https://github.com/user-attachments/assets/c333fcb6-2ff4-4581-8cf6-916ae18118f6" /><img width="1055" height="507" alt="image" src="https://github.com/user-attachments/assets/e49645d5-049a-42ec-a807-f16205b9b306" /><img width="1210" height="587" alt="image" src="https://github.com/user-attachments/assets/8979a0b5-5066-4223-87d2-876a3a2ca4ba" /># Access control vulnerabilities : It's a vulnerbility where application is fails to properly enforce the authorization rules, allowing user to access or perform action that they are not permitted to do it. 
 
 # 1. Unprotected admin functionality. 
 
@@ -138,5 +138,65 @@
 
  # ------------------------------------------------------------------------------
 
-# 5. 
+# 5. User ID controlled by request parameter. 
+
+<img width="717" height="130" alt="image" src="https://github.com/user-attachments/assets/d1eab210-69ec-4268-92a3-0d66739741fa" />
+
+## Goal : To optain the api key from the carlos and submit it. 
+
+## Ingrediants : Same as above. 
+
+## Solving : 
+
+- Like the usual we will try to login as wiener and see the response.
+
+<img width="1124" height="575" alt="image" src="https://github.com/user-attachments/assets/09199f98-ad78-4a1c-ab8b-17dc35f3637d" />
+
+- Let's change the user ID and see the response. Hence by changing the user id in the request parameter we got the api key
+
+<img width="1164" height="590" alt="image" src="https://github.com/user-attachments/assets/d5c1a7e0-53d3-4321-aaf8-d9181c2f857f" />
+
+- We will submit the api key and solve the lab.
+
+<img width="1107" height="521" alt="image" src="https://github.com/user-attachments/assets/10d2679d-28c0-44c7-bdb3-3b3fec0355ca" />
+
+ # ------------------------------------------------------------------------------
+
+ # 6.  User ID controlled by request parameter, with unpredictable user IDs. 
+
+<img width="785" height="172" alt="image" src="https://github.com/user-attachments/assets/8aa2e33a-7453-4532-9cb4-ce40e91c8cff" />
+
+## Goal : To find the GUID from carlos and submit the api key. 
+
+## Ingrediants : Same as above. 
+
+## Solving : 
+
+- We will start like last lab. We can notice something different in the request as instead of it is having the id=wiener it has random numbers which is GUID(Global user ID)
+
+<img width="1210" height="587" alt="image" src="https://github.com/user-attachments/assets/658fb67f-095d-40c8-a886-5ed25e1bfa66" />
+
+- We will try to find the carlos's user ID. By viewing all the buttons.
+
+<img width="1019" height="563" alt="image" src="https://github.com/user-attachments/assets/d20ea023-e29e-42f7-8275-2bf61b48198e" />
+
+ <img width="1215" height="507" alt="image" src="https://github.com/user-attachments/assets/2ab43f49-c81c-40a5-a02d-ff9505aa2a6e" />
+
+- By clicking on the carlos we got an user ID of carlos in the request.
+
+<img width="1365" height="542" alt="image" src="https://github.com/user-attachments/assets/2b5989d2-b0f2-4170-947f-b63054f527da" />
+
+- We will send that GUID in the id place and get the api key.
+
+<img width="1099" height="577" alt="image" src="https://github.com/user-attachments/assets/5e8f98ae-c40b-4d79-a3e0-4012acda2acd" />
+
+- By submitting the api key we solved the lab.
+
+<img width="1208" height="561" alt="image" src="https://github.com/user-attachments/assets/9974796d-e575-4af7-9fda-daee6dca6090" />
+
+ # ------------------------------------------------------------------------------
+
+ # 7. 
+
+ 
 
