@@ -419,3 +419,30 @@
 
 # ------------------------------------------------------------------------------ 
 
+
+# 13. Referer-based access control. 
+
+<img width="773" height="180" alt="image" src="https://github.com/user-attachments/assets/bd77a070-b6e2-4ab3-af91-423dd0afe475" />
+
+## Goal : Same as before. 
+
+## Ingrediants : Same as before. 
+
+## Solving :
+
+- We will usuals as like the pervious lab.
+
+<img width="1127" height="409" alt="image" src="https://github.com/user-attachments/assets/99cf324b-bf2d-4783-bb1e-70ffc467eddf" />
+
+<img width="1071" height="591" alt="image" src="https://github.com/user-attachments/assets/49d70206-7aa0-4044-b9a8-a4f78687bcf4" />
+
+<img width="1175" height="565" alt="image" src="https://github.com/user-attachments/assets/10ae1959-a589-4ea9-a225-2fc899fc8bd3" />
+
+- We can see when we changes the username and session since it has the referrer as admin we got a 302 response and we solved the lab successfully. 
+
+<img width="945" height="475" alt="image" src="https://github.com/user-attachments/assets/ca165691-193d-4b81-9c89-fe1c72274d04" />
+
+<img width="1097" height="518" alt="image" src="https://github.com/user-attachments/assets/e23d93fa-6291-48c0-ad8a-09d9ef1d9b7d" />
+
+# ------------------------------------------------------------------------------ 
+  
