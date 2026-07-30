@@ -381,5 +381,41 @@
 
  # ------------------------------------------------------------------------------
 
+# 12. Multi-step process with no access control on one step. 
 
+<img width="757" height="187" alt="image" src="https://github.com/user-attachments/assets/8bb8eb25-bfc0-4a20-bdf1-8f4f6a162de7" />
+
+## Goal : Same as before. 
+
+## Ingrediants : Same as before. 
+
+## Solving :
+
+- We will start like pervious lab.
+
+<img width="1301" height="286" alt="image" src="https://github.com/user-attachments/assets/6072bc5e-799d-4d2d-a08f-ab89ab17829f" />
+
+<img width="1259" height="369" alt="image" src="https://github.com/user-attachments/assets/f0374458-bd93-4db8-9a25-c333bbcd5393" />
+
+- And we can notice it moves to additional page / process that it asks that are you sure or not. 
+
+<img width="1147" height="367" alt="image" src="https://github.com/user-attachments/assets/c3cc60f5-bd2f-49e5-83cc-912e543a47d3" />
+
+- We will see the multi process request in the burp.
+
+<img width="934" height="583" alt="image" src="https://github.com/user-attachments/assets/62b7434a-28d4-4c6e-bf30-8c6bff75087c" />
+
+- We login as the wiener user and try to inject the session cookie in the admin post request in both the requests and also we change the user from carlos to wiener
+
+<img width="1205" height="565" alt="image" src="https://github.com/user-attachments/assets/1445f3c9-4e5b-4c8c-aff6-6304cdc7515d" />
+
+<img width="1034" height="548" alt="image" src="https://github.com/user-attachments/assets/669ec554-ced3-4394-b507-73130d89f3cc" />
+
+- We got a 200 response and we solve the lab. 
+
+<img width="992" height="559" alt="image" src="https://github.com/user-attachments/assets/ec035e61-bd72-4b1c-9975-b16586624b66" />
+
+<img width="1191" height="446" alt="image" src="https://github.com/user-attachments/assets/426750fe-2783-4bfa-897b-750388a6ea3e" />
+
+# ------------------------------------------------------------------------------ 
 
