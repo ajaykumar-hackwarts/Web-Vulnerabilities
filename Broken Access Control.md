@@ -327,3 +327,59 @@
 <img width="1162" height="525" alt="image" src="https://github.com/user-attachments/assets/159b548b-2c36-42a9-91d4-9648306a323b" />
 
  # ------------------------------------------------------------------------------
+
+
+ # 11. Method-based access control can be circumvented. 
+
+ <img width="762" height="183" alt="image" src="https://github.com/user-attachments/assets/4e6ba8a0-3d90-49ed-99b3-2b0ccdfbfdd0" />
+
+## Goal : To exploit flawed access control and became the admin user. 
+
+## Ingrediants : Same as before. 
+
+## Solving :
+
+- As given in the lab we will login as administrator. We will click on the admin panel 
+
+<img width="1286" height="520" alt="image" src="https://github.com/user-attachments/assets/04e3bc59-da6f-4218-81c2-17a0173728da" />
+
+- We can see in the admin panel it has 2 button upgrade and downgrade.
+
+<img width="1306" height="396" alt="image" src="https://github.com/user-attachments/assets/732c59ef-b321-4731-9164-10e32043e72e" />
+
+- When we click upgrade it upgraded as admin.
+
+<img width="1038" height="318" alt="image" src="https://github.com/user-attachments/assets/d394f0f5-995c-4e47-ac45-e150680e1d1f" />
+
+- When we click downgrade it becomes normal user.
+
+<img width="1119" height="364" alt="image" src="https://github.com/user-attachments/assets/6268243e-8546-469a-b7c3-6e16403bfee3" />
+ 
+- When we see the response of the adnin. 
+
+<img width="883" height="509" alt="image" src="https://github.com/user-attachments/assets/e6eaf654-71fd-4b08-a1ca-f616f4ed1550" />
+
+- No we will try to login as wiener and peter and will see the response.
+
+<img width="1290" height="500" alt="image" src="https://github.com/user-attachments/assets/a9e3c8e1-95bd-42e8-8b35-3ec2bc44f52e" />
+
+<img width="1072" height="567" alt="image" src="https://github.com/user-attachments/assets/9cf3bf28-869e-482f-9f25-79e9fe29bd9d" />
+
+- Now we will put this session to the admin request. We can notice it gives the response as Unauthorized. 
+
+<img width="1016" height="557" alt="image" src="https://github.com/user-attachments/assets/0c06d924-503b-453f-ae43-d14c0586650f" />
+
+- We will try to change the method type and change the user to our user wiener and check the response.
+
+<img width="528" height="531" alt="image" src="https://github.com/user-attachments/assets/2a3c66ca-2a69-4176-ad85-9b66416c9d0b" />
+
+- We got a positive 302 response and we solved the lab successfully. 
+
+<img width="1005" height="531" alt="image" src="https://github.com/user-attachments/assets/eaef2177-627d-445b-a59d-29dde20cfd81" />
+
+<img width="1195" height="527" alt="image" src="https://github.com/user-attachments/assets/66ea07f6-09e7-4067-a498-17915019680a" />
+
+ # ------------------------------------------------------------------------------
+
+
+
