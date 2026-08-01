@@ -32,3 +32,66 @@ Authentication : Checking the person is really who they claim to be.
 
 # ------------------------------------------------------------------------------
 
+# 2. 2FA simple bypass.
+
+<img width="774" height="192" alt="image" src="https://github.com/user-attachments/assets/7badb2c9-0240-47ce-ae7b-fdc8215700fc" />
+
+# Goal : To access carlos account page. 
+
+# Ingrediants : Home, My account and email client. 
+
+# Solving : 
+
+- Firstly we will login as wiener and peter. We can see since it has 2 factor authentication we need a code to solve complete login.
+
+<img width="1186" height="423" alt="image" src="https://github.com/user-attachments/assets/01f9f0b3-fd31-479c-b0bc-00a76eb30d16" />
+
+- The verification should be available in the email client.
+
+<img width="1270" height="591" alt="image" src="https://github.com/user-attachments/assets/668998a8-3ef7-4f40-82bd-933e5a485865" />
+
+<img width="1197" height="552" alt="image" src="https://github.com/user-attachments/assets/0824be01-f740-40c7-a0d2-1731f09085c1" />
+
+- Now we will see the two responses.
+
+<img width="1101" height="501" alt="image" src="https://github.com/user-attachments/assets/4f7cb40e-7177-4e8d-b8e9-d52579b319ce" />
+
+- We will try to intercept the request of carlos login request and forward the post request. 
+
+<img width="1032" height="553" alt="image" src="https://github.com/user-attachments/assets/c9cb8b4f-9abe-4bb1-bb0d-968eb10e5244" />
+
+<img width="1151" height="601" alt="image" src="https://github.com/user-attachments/assets/3dba5063-fd9c-464e-b52e-c777fc1ce2d3" />
+
+- When we forward it we can notice that it is going for the next page for verification submit code. 
+
+<img width="1274" height="561" alt="image" src="https://github.com/user-attachments/assets/692bf62b-d4bd-4c87-a9be-aeed7d4b6dfc" />
+
+- We will drop(delete the request to the server) the request and see that we can still login to my-account page.
+
+<img width="1195" height="478" alt="image" src="https://github.com/user-attachments/assets/82077ca9-c917-47cf-ba2a-593b00c3d8a6" />
+
+- And we can see we successfully bypassed the 2FA and solved the lab.
+
+<img width="1294" height="576" alt="image" src="https://github.com/user-attachments/assets/34708249-0ee3-4241-8c46-e3d5afe9ae7d" />
+  
+# ------------------------------------------------------------------------------
+
+# 3. Password reset broken logic.
+
+# Goal : To access carlos account page. 
+
+# Ingrediants : Home, My account and email client. 
+
+<img width="1035" height="592" alt="image" src="https://github.com/user-attachments/assets/23148dd8-d19e-40eb-a199-d65406c87b54" />
+
+# Solving : 
+
+- To reset carlos's password then login and access the "My-account" page.
+
+
+
+
+# ------------------------------------------------------------------------------
+
+Username enumeration via subtly different responses
+
