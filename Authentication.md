@@ -93,5 +93,43 @@ Authentication : Checking the person is really who they claim to be.
 
 # ------------------------------------------------------------------------------
 
-Username enumeration via subtly different responses
+# 4. Username enumeration via subtly different responses
 
+<img width="779" height="259" alt="image" src="https://github.com/user-attachments/assets/86a84fd7-5918-4994-80c8-a910729db8b3" />
+
+# Goal : To enumerate the valid username and brute force the password access the account page.  
+
+# Ingrediants : Home, My account and email client. 
+
+# Solving : 
+
+- Firstly we will login as wiener and peter and see the response.
+
+<img width="1350" height="521" alt="image" src="https://github.com/user-attachments/assets/64b2d8da-be5e-492c-89ac-f848db905d63" />
+
+- Let's try to brute force the username with the given list and see the difference in the response.
+
+<img width="1144" height="627" alt="image" src="https://github.com/user-attachments/assets/518cb1e7-a95a-4f23-b1fa-225e3d2dd257" />
+
+- Since we got almost same response we will search the exact words in the reponse and in put it in the filter do a negative search.
+
+<img width="1215" height="562" alt="image" src="https://github.com/user-attachments/assets/d50470c0-0060-4df1-8185-f1eae3ca115a" />
+
+- And we got only one response which doesn't have the exact words. A dot . is missing. So we can say if the username is correct and password is wrong the response would be "Invalid username or password".  
+
+<img width="1171" height="566" alt="image" src="https://github.com/user-attachments/assets/fc3fd433-e9e3-45c1-8941-f05cf123f14f" />
+
+- Now we will enumerate the password with the correct username. We got a 302 reponse
+
+<img width="1357" height="605" alt="image" src="https://github.com/user-attachments/assets/48c11070-beba-4e54-9758-9496e32dd334" />
+
+- When we tried to with these credentials we solved the lab successfully.
+
+<img width="1149" height="544" alt="image" src="https://github.com/user-attachments/assets/a5e2c8fe-4df2-4507-830f-a5f4587d8360" />
+
+<img width="1132" height="565" alt="image" src="https://github.com/user-attachments/assets/61adc3b4-7c62-4250-811d-6728a47a3011" />
+
+# ------------------------------------------------------------------------------
+
+
+# 5. 
