@@ -30,6 +30,5 @@ Authentication : Checking the person is really who they claim to be.
 
 <img width="1306" height="582" alt="image" src="https://github.com/user-attachments/assets/af3206f3-8d68-420c-823c-27beb1188daf" />
 
-
-
+# ------------------------------------------------------------------------------
 
