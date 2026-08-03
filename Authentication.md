@@ -89,8 +89,6 @@ Authentication : Checking the person is really who they claim to be.
 - To reset carlos's password then login and access the "My-account" page.
 
 
-
-
 # ------------------------------------------------------------------------------
 
 # 4. Username enumeration via subtly different responses
@@ -131,5 +129,50 @@ Authentication : Checking the person is really who they claim to be.
 
 # ------------------------------------------------------------------------------
 
+# 5. Username enumeration via response timing.
 
-# 5. 
+<img width="822" height="222" alt="image" src="https://github.com/user-attachments/assets/4d403461-48f1-4296-bc1d-3b6eca5c2efc" />
+
+# Goal : Same as above.  
+
+# Ingrediants : Same as above.  
+
+# Solving : 
+
+- As like previous labs we will try to login with a dummy credentails and see the response and we can notice that after 3 attempts it is locked for 30 minutes. 
+
+<img width="1320" height="598" alt="image" src="https://github.com/user-attachments/assets/a73fcad1-baf3-4aa2-8a13-6abd2606053b" />
+
+- We can rectify this using the X-forwardef-for tag.
+
+<img width="1323" height="598" alt="image" src="https://github.com/user-attachments/assets/c82626b4-47ff-4334-8429-6f2678f34ba0" />
+
+- Lets try with valid username and see the time delay. But it is almost the same timing only.
+
+<img width="1365" height="665" alt="image" src="https://github.com/user-attachments/assets/756a5a6a-ce16-4672-bb9d-e110a20167aa" />
+
+- We will try to increase the length of the password and see. We can see if it is valid username it is checking the password correct or not so if the password length is larger it takes time to check. 
+
+<img width="1361" height="645" alt="image" src="https://github.com/user-attachments/assets/87fd8e89-0c7a-4143-a255-9034cc2a858b" />
+
+- Let's try to send it to intruder and brute force the username and see the time delay in the response. For that we use pitchfork feature in the intruder.
+
+- Pitchfork : Take two entries and run them parallely. like 1-1, 2-2, 3-3.
+
+<img width="1359" height="604" alt="image" src="https://github.com/user-attachments/assets/56d93716-ee85-4f13-947d-e9bb5e14ecc3" />
+
+- We can notice that this takes longer time. Hence that must the user name
+
+<img width="1124" height="594" alt="image" src="https://github.com/user-attachments/assets/e9f50d81-ceda-488c-9da5-cc9c3ca0617a" />
+
+- Now we enumerate the password. We got the positive 302 response 
+
+<img width="1039" height="562" alt="image" src="https://github.com/user-attachments/assets/4fed1d0d-ff8a-4f33-80e4-506d06becb0c" />
+
+- By pasting these credentials we solve the lab.
+
+<img width="1210" height="585" alt="image" src="https://github.com/user-attachments/assets/e785a121-3371-41f1-9699-64cc18fffe6b" />
+
+# ------------------------------------------------------------------------------
+
+# 6. 
