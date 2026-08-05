@@ -242,3 +242,41 @@ for pwd in lines:
 <img width="1264" height="484" alt="image" src="https://github.com/user-attachments/assets/c51bb7d2-016a-4c7c-a389-079e88dd3a46" />
 
 # ------------------------------------------------------------------------------
+
+# 7. Username enumeration via account lock.
+
+<img width="805" height="204" alt="image" src="https://github.com/user-attachments/assets/6f470b59-e7e6-47ca-92ef-22273f465443" />
+
+# Goal : To enumerate the valid username and brute force the password access the account page.  
+
+# Ingrediants : Same as above.
+
+# Solving : 
+ 
+- First we will try to login and see if it gets locked out. It says invalid username or password. 
+
+<img width="1158" height="608" alt="image" src="https://github.com/user-attachments/assets/966b61ad-e8cd-4c11-8217-fd2cb4f0d992" />
+
+- After too many attempts also it says the same. 
+
+<img width="1325" height="607" alt="image" src="https://github.com/user-attachments/assets/6020c125-703f-4dcf-9bed-a66bf6ef024f" />
+
+- We will try to enumerate the username and see it is giving a different response with null payload in the password.
+
+<img width="1365" height="602" alt="image" src="https://github.com/user-attachments/assets/5401602e-46d2-416f-bd2b-787db5dc6c20" />
+
+- We got a result which has a different length. 
+
+<img width="1177" height="521" alt="image" src="https://github.com/user-attachments/assets/42c2677f-8aea-4af7-92fc-a1204558de30" />
+
+- Next we will try to brute force the password with the username. We got a result which is different length.
+
+<img width="1135" height="562" alt="image" src="https://github.com/user-attachments/assets/6b50d5d1-83b2-45a1-bc35-497bd834eab7" />
+
+- When we tried with the password and username we can able to solve the lab.
+
+<img width="1271" height="561" alt="image" src="https://github.com/user-attachments/assets/a7bb7854-dc25-4b5b-82b6-bf1f9cf90481" />
+
+ # ------------------------------------------------------------------------------ 
+
+
