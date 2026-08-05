@@ -175,4 +175,70 @@ Authentication : Checking the person is really who they claim to be.
 
 # ------------------------------------------------------------------------------
 
-# 6. 
+# 6. Broken brute-force protection, IP block.
+
+<img width="806" height="178" alt="image" src="https://github.com/user-attachments/assets/856c1b42-ec97-48c6-84bd-e8c30b282126" />
+
+# Goal : To brute force victims password and access the page  
+
+# Ingrediants : Same as above.  
+
+# Solving : 
+
+- First we will try ro login with the victim with randm password and see the response. Here is the first vulnerability it has verbose error it says incorrect password which means username is correct. 
+
+<img width="1136" height="616" alt="image" src="https://github.com/user-attachments/assets/e36a731a-b87e-4a69-b482-c6914b1fb592" />
+
+- We can see after 3rd time it is locked out. Saying wait for one minute to another attempt.
+
+<img width="1085" height="596" alt="image" src="https://github.com/user-attachments/assets/9022bdc2-fe31-4fe7-9d40-cbdd3fa52482" />
+
+- After 1 min we will try to login with correct username and password see if the counter resets and logged in correctly.
+
+<img width="1171" height="558" alt="image" src="https://github.com/user-attachments/assets/edfaadb2-2fd1-49a4-881f-b6ab22c73e79" />
+
+- We can see with the correct credentials it is logged in properly and not showing error.
+
+<img width="1032" height="599" alt="image" src="https://github.com/user-attachments/assets/b37883d4-1513-437f-b161-514a4683c48e" />
+
+- Now we have to write a script like it shouldn't get locked out so set of payload of username and password we send to the instruder should be 2 custom and one correct and so on.
+
+- So following is the script. We run this using the VS code and saving the password in a file in passwords.txt. 
+
+print("###########The following are the usernames:###############")
+for i in range(150):
+    if i % 3:
+        print("carlos")
+    else:
+        print("wiener")
+
+
+print("##############The following are the passwords:############")
+with open('passwords.txt', 'r') as f:
+    lines = f.readlines()
+
+i = 0
+for pwd in lines:
+    if i % 3:
+        print(pwd.strip('\n'))
+    else:
+        print("peter")
+        print(pwd.strip('\n'))
+        i = i+1
+    i = i +1 
+
+- The payload is the following.
+
+<img width="1324" height="626" alt="image" src="https://github.com/user-attachments/assets/1560819a-804f-4274-965b-630339e236e1" />
+
+<img width="1320" height="661" alt="image" src="https://github.com/user-attachments/assets/97979241-c01a-4484-b08b-9b1fa3b8949f" />
+
+- We can see for carlos user we got one result which has the 302 response.
+
+<img width="1229" height="536" alt="image" src="https://github.com/user-attachments/assets/73d1d483-1f94-491f-9ce9-edc130b18d73" />
+
+- Hence by using that we solve the lab. 
+
+<img width="1264" height="484" alt="image" src="https://github.com/user-attachments/assets/c51bb7d2-016a-4c7c-a389-079e88dd3a46" />
+
+# ------------------------------------------------------------------------------
