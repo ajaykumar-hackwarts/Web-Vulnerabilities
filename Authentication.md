@@ -357,4 +357,50 @@ for pwd in lines:
 
  # ------------------------------------------------------------------------------
 
- # 10. 
+ # 10. Offline password cracking.
+
+<img width="794" height="226" alt="image" src="https://github.com/user-attachments/assets/0e53c241-9564-4dfc-a3ed-59064377cccd" />
+
+# Goal : To log in as carlos and delete his account from the "My account" page. 
+
+# Ingrediants : Same as above.
+
+# Solving : 
+
+-  Let's login and record the response. We can notice a delete account button is there. 
+
+<img width="1283" height="574" alt="image" src="https://github.com/user-attachments/assets/b874573f-41aa-4aad-b7a4-92757832f5d1" />
+
+- Like the last lab we will try to see the stay logged in cookie in the response.
+
+<img width="1164" height="545" alt="image" src="https://github.com/user-attachments/assets/9d280704-a42b-425f-a772-dbc268063656" />
+
+<img width="1131" height="448" alt="image" src="https://github.com/user-attachments/assets/5a74fd41-c47c-449d-90f8-da6dafb75eb7" />
+
+<img width="1126" height="510" alt="image" src="https://github.com/user-attachments/assets/97fc935b-dffa-45e4-b82b-839357833541" />
+
+- It uses the same logic as in the last lab. Now lets try to collect the cookie of the user for that first we will try to submit a simple script. 
+
+<img width="897" height="565" alt="image" src="https://github.com/user-attachments/assets/2d20c4c2-182d-40cd-9b4a-ab8a58981d72" />
+
+-  It is working now will collect the cookies of the user whoever vists the exploit server page.
+
+<img width="1018" height="518" alt="image" src="https://github.com/user-attachments/assets/9a59e2b7-34d8-47c8-934c-9a5957428322" />
+
+<img width="917" height="575" alt="image" src="https://github.com/user-attachments/assets/fd1b4794-eacc-41ca-bb5b-be6bdf94455e" />
+
+- After submiiting this we got the cookie
+
+<img width="1365" height="559" alt="image" src="https://github.com/user-attachments/assets/95efa9b8-3c40-44f4-b262-0bd1df9f9d3a" />
+
+ <img width="1209" height="430" alt="image" src="https://github.com/user-attachments/assets/6a4c2e99-5417-49a9-bbb0-2e92ef7855a8" />
+
+- We cracked the password.
+
+<img width="1214" height="588" alt="image" src="https://github.com/user-attachments/assets/6ff98ca6-78e2-41ff-9a32-4280153ea2aa" />
+
+- Hence by using the password we successfully deleted the account and solved the lab.
+
+<img width="1142" height="427" alt="image" src="https://github.com/user-attachments/assets/5f2a6c21-4600-4b61-91de-b0143cf26481" />
+
+ # ------------------------------------------------------------------------------
