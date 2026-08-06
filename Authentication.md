@@ -1,4 +1,4 @@
-<img width="1166" height="612" alt="image" src="https://github.com/user-attachments/assets/ff179aa8-be64-45f3-9a7e-3c856e1df1a6" />Authentication : Checking the person is really who they claim to be.
+Authentication : Checking the person is really who they claim to be.
 
 # 1. Username enumeration via different responses.
 
