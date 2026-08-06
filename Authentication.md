@@ -1,4 +1,4 @@
-Authentication : Checking the person is really who they claim to be.
+<img width="1166" height="612" alt="image" src="https://github.com/user-attachments/assets/ff179aa8-be64-45f3-9a7e-3c856e1df1a6" />Authentication : Checking the person is really who they claim to be.
 
 # 1. Username enumeration via different responses.
 
@@ -279,4 +279,82 @@ for pwd in lines:
 
  # ------------------------------------------------------------------------------ 
 
+# 8. 2FA broken logic.
 
+<img width="754" height="170" alt="image" src="https://github.com/user-attachments/assets/8767bf6a-91fa-4681-bd2d-aa5219d3ff3f" />
+
+# Goal : To access the carlos account page.  
+
+# Ingrediants : Same as above.
+
+# Solving : 
+
+- Let's login and record the response.
+
+<img width="1251" height="597" alt="image" src="https://github.com/user-attachments/assets/eb7044ca-111b-40db-bbad-7d6cfc04b850" />
+
+<img width="1158" height="597" alt="image" src="https://github.com/user-attachments/assets/d486263d-a430-4507-b8c9-7af7602730b6" />
+
+- Let's change it to carlos and remove the session and see if it gives the correct response.  
+
+<img width="1249" height="564" alt="image" src="https://github.com/user-attachments/assets/847386db-df9c-401c-9668-6257259e8f0f" />
+
+- Since it is broken 2FA logic it gives the correct response.
+
+<img width="1159" height="569" alt="image" src="https://github.com/user-attachments/assets/113dd996-09a5-492a-9ec9-e964bc17c39d" />
+
+- But when we tried in the post request it says incorrect password. And also tried to send the request multiple for checking it is using the brute force protection or not but it doesn't have brute force protection. 
+
+<img width="1356" height="549" alt="image" src="https://github.com/user-attachments/assets/9fdee0eb-7aa8-4d7a-b19d-7a840c86a28f" />
+
+- Let's burte force the mfa code and find the 302 response.
+
+<img width="1348" height="598" alt="image" src="https://github.com/user-attachments/assets/0a4e2c71-7d03-43c8-a6b6-956675abb0dc" />
+
+<img width="1181" height="637" alt="image" src="https://github.com/user-attachments/assets/e425c42f-b50e-40a8-9dcf-1e6ea2418bb7" />
+
+- Hence changing the session id we solved the lab.
+
+<img width="1166" height="612" alt="image" src="https://github.com/user-attachments/assets/aef3ff32-8540-417c-b773-e2ecbe74438f" />
+
+ # ------------------------------------------------------------------------------ 
+
+ # 9.  Brute-forcing a stay-logged-in cookie.
+
+ <img width="761" height="234" alt="image" src="https://github.com/user-attachments/assets/1398b1be-9413-4894-8345-87fc48a216c7" />
+
+# Goal : To brute-force Carlos's cookie to gain access to his account page. 
+
+# Ingrediants : Same as above.
+
+# Solving : 
+
+-  Let's login and record the response.
+
+<img width="1020" height="588" alt="image" src="https://github.com/user-attachments/assets/05b87372-b1dd-4f76-9386-10297dee2186" />
+
+<img width="1365" height="495" alt="image" src="https://github.com/user-attachments/assets/ebc52cdc-48cd-41f7-9aea-1e3b50d6b62a" />
+
+- Let's decode the stay logged in id in the response and see what it is. 
+
+<img width="1336" height="376" alt="image" src="https://github.com/user-attachments/assets/5750f3d6-8ca2-4d0f-aca8-2ff60c42a655" />
+
+- We can see it is encoded value of Base64(username:md5(password))
+
+<img width="1074" height="481" alt="image" src="https://github.com/user-attachments/assets/6c1f50a2-b7d4-4e15-afe5-9717ef2f335b" />
+
+- Let's see the my account response. We will remove the session id and brute force the stay logged in Id. 
+
+<img width="1138" height="474" alt="image" src="https://github.com/user-attachments/assets/a74f7bac-33c9-4fa5-9049-cdcd50b9382b" />
+
+<img width="1365" height="661" alt="image" src="https://github.com/user-attachments/assets/d6b1de03-7e0f-4cc5-be97-9cd000e8e07d" />
+
+- We found a postive response and we solved the lab.
+
+<img width="1200" height="587" alt="image" src="https://github.com/user-attachments/assets/e4c9937d-ea65-461d-b225-952020ebb82f" />
+
+<img width="1275" height="548" alt="image" src="https://github.com/user-attachments/assets/b317ebcd-cd54-460e-b828-0bab6a7875b5" />
+
+ # ------------------------------------------------------------------------------
+
+ # 10. 
