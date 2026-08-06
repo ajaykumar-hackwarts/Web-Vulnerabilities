@@ -1,4 +1,4 @@
-Authentication : Checking the person is really who they claim to be.
+<img width="1201" height="338" alt="image" src="https://github.com/user-attachments/assets/dda52b77-06eb-4d35-8562-98c8b54658c1" />Authentication : Checking the person is really who they claim to be.
 
 # 1. Username enumeration via different responses.
 
@@ -404,3 +404,111 @@ for pwd in lines:
 <img width="1142" height="427" alt="image" src="https://github.com/user-attachments/assets/5f2a6c21-4600-4b61-91de-b0143cf26481" />
 
  # ------------------------------------------------------------------------------
+
+
+# 11. Password reset poisoning via middleware.
+
+<img width="780" height="166" alt="image" src="https://github.com/user-attachments/assets/211dc073-1329-400d-b8cd-c0b4bc90f7ab" />
+
+# Goal : To log in as carlos account page. 
+
+# Ingrediants : Same as above.
+
+# Solving :   
+
+- We will login and see the response. We will give forget password and follow the reponse. 
+
+<img width="873" height="557" alt="image" src="https://github.com/user-attachments/assets/59c169b0-5cc3-49f0-8af5-109a5eed21e8" />
+
+<img width="1201" height="338" alt="image" src="https://github.com/user-attachments/assets/893c60a9-c21b-4216-ad9a-5ff144d984e9" />
+
+- 
+
+
+
+ # ------------------------------------------------------------------------------
+
+ # 12. Password brute-force via password change.
+
+ <img width="736" height="215" alt="image" src="https://github.com/user-attachments/assets/0053d879-c995-4f53-939a-d8a8ee6735ce" />
+
+ # Goal : To log into carlos account page. 
+
+# Ingrediants : Same as above.
+
+# Solving :   
+
+- Let's login and play with the all and see the response.
+
+<img width="841" height="535" alt="image" src="https://github.com/user-attachments/assets/ebe29c44-ba15-4c50-b7cf-0b6095369503" />
+
+- When we put the wrong current password and new passwords are matching means it returns to the login page. 
+
+<img width="895" height="399" alt="image" src="https://github.com/user-attachments/assets/b3e7d4b8-7d6e-4af7-b1be-a43e4f07e235" />
+
+- And it is brute force protected.
+
+<img width="854" height="369" alt="image" src="https://github.com/user-attachments/assets/900bcf6b-cb86-47ca-977f-313f795c6019" />
+
+- We can notice when current password is correct and the new password doesn't match it says new password doesn't match.
+
+<img width="828" height="545" alt="image" src="https://github.com/user-attachments/assets/b782dbc3-3b29-405e-90aa-a66b7a137acc" />
+
+-  When the current password is incorrect and new password doesn't match it says current password is incorrect.
+
+<img width="840" height="555" alt="image" src="https://github.com/user-attachments/assets/80353b01-b213-4539-b6aa-94adfa26ddd6" />
+
+- Even after  sending many times the request it is not locking out.
+
+<img width="1255" height="532" alt="image" src="https://github.com/user-attachments/assets/d615fb46-9574-4eef-a982-535d3f9077b8" />
+
+<img width="1311" height="550" alt="image" src="https://github.com/user-attachments/assets/9563104c-024c-4874-a66c-d876b172799f" />
+
+- We got a one result which is of different length. 
+
+<img width="1210" height="539" alt="image" src="https://github.com/user-attachments/assets/6c29e851-35bc-4cf1-98dd-405f6bd449db" />
+
+- Hence by submitting the password we solve the lab.
+
+<img width="1206" height="583" alt="image" src="https://github.com/user-attachments/assets/97b958a0-d94c-4640-af6f-24a08bedf89c" />
+
+ # ------------------------------------------------------------------------------
+
+ # 13. Broken brute-force protection, multiple credentials per request.
+
+ <img width="765" height="154" alt="image" src="https://github.com/user-attachments/assets/df5e2984-c7eb-4b4c-a260-148f0f131175" />
+
+# Goal : To brute force carlos password and access the account.
+
+# Ingrediants : Same as above.
+
+# Solving : 
+
+- We login and see the response.
+
+<img width="1051" height="498" alt="image" src="https://github.com/user-attachments/assets/522c6329-50a5-44f0-a0fb-c4498f0fb44f" />
+
+- Let's try to send the multiple password value and see the responses.
+
+<img width="1300" height="597" alt="image" src="https://github.com/user-attachments/assets/6ab3bc92-80b0-434d-9695-ee0d98370e35" />
+
+- Let's write a script to give output the given password in these formats.
+
+- Hence by using the following script. We print the following.
+
+print("[", end='')
+
+with open('passwords.txt', 'r') as f:
+    lines = f.readlines()
+    for pwd in lines:
+        print('"' + pwd.rstrip("\n") + '",', end='')
+
+   print('"random"]' , end='')
+   
+<img width="1361" height="585" alt="image" src="https://github.com/user-attachments/assets/2031aedd-d6ae-4345-b774-7770dc1ee4c9" />
+
+- Hence by pasting the session id we solved the lab.
+
+<img width="1299" height="565" alt="image" src="https://github.com/user-attachments/assets/1266b974-653d-461d-86ca-20d56a3c78fc" />
+
+# ------------------------------------------------------------------------------
