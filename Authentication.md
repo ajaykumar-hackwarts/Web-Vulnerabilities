@@ -527,3 +527,36 @@ with open('passwords.txt', 'r') as f:
 <img width="1299" height="565" alt="image" src="https://github.com/user-attachments/assets/1266b974-653d-461d-86ca-20d56a3c78fc" />
 
 # ------------------------------------------------------------------------------
+
+
+# 14. 2FA bypass using a brute-force attack.
+
+<img width="779" height="180" alt="image" src="https://github.com/user-attachments/assets/af70d1da-743d-49bc-b5a0-81a96d5d6674" />
+
+# Goal : To brute force 2FA code and access carlos account.
+
+# Ingrediants : Same as above.
+
+# Solving : 
+
+- We login and see the response.
+
+<img width="866" height="401" alt="image" src="https://github.com/user-attachments/assets/165d8d0a-a673-4456-95c9-081d832f1a89" />
+
+<img width="1157" height="575" alt="image" src="https://github.com/user-attachments/assets/4553ca97-d490-44bb-9a17-22700cd863f5" />
+
+<img width="1247" height="556" alt="image" src="https://github.com/user-attachments/assets/85b178f6-3ea3-44e6-a55a-4216d3fa266d" />
+
+- Inorder to perform brute force we have to request these 3 requests for that we will use macros which is used for send sequence of requests.
+
+<img width="1202" height="714" alt="image" src="https://github.com/user-attachments/assets/275cc527-cee2-4ec9-b951-d70e8aef35c9" />
+
+<img width="1087" height="668" alt="image" src="https://github.com/user-attachments/assets/31ea1631-d2dd-470d-99e7-94a89409cad5" />
+
+<img width="1083" height="690" alt="image" src="https://github.com/user-attachments/assets/313d4ca5-84d9-450b-9f4a-a35e00ca9d33" />
+
+- Hence sending it to intruder and brute force the 2fa code.
+
+
+
+# ------------------------------------------------------------------------------
