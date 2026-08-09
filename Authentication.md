@@ -420,10 +420,25 @@ for pwd in lines:
 
 <img width="873" height="557" alt="image" src="https://github.com/user-attachments/assets/59c169b0-5cc3-49f0-8af5-109a5eed21e8" />
 
-<img width="1201" height="338" alt="image" src="https://github.com/user-attachments/assets/893c60a9-c21b-4216-ad9a-5ff144d984e9" />
+<img width="1309" height="569" alt="image" src="https://github.com/user-attachments/assets/04f1040a-bbab-480a-8edf-afe38e37e7e6" />
 
-- 
+- Let's change the user name see if it accepts the X-forwarded-Host and see if it triggers the reset password url. And it triggers the url.
 
+<img width="1157" height="489" alt="image" src="https://github.com/user-attachments/assets/3d1f6646-e685-4d38-b84e-4a496f9d2094" />
+
+<img width="1297" height="476" alt="image" src="https://github.com/user-attachments/assets/0394d8df-f5b4-4aa7-bdfa-9760fc552a01" />
+
+- We got a token for the temp password.
+
+<img width="1352" height="509" alt="image" src="https://github.com/user-attachments/assets/7ea01ab7-df4f-4d26-93f8-1cd81422aff8" />
+
+- Hence by pasting that we successfully resetted password for carlos.
+
+<img width="1136" height="493" alt="image" src="https://github.com/user-attachments/assets/aef12f15-474a-432f-afcf-439afa922746" />
+
+- Hence when we tried to login through the new passoword we solved the lab.
+
+<img width="1135" height="497" alt="image" src="https://github.com/user-attachments/assets/2f92675d-7fcf-4a79-ad4f-1e5c59b16973" />
 
 
  # ------------------------------------------------------------------------------
