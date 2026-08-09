@@ -71,3 +71,34 @@
 
 # ------------------------------------------------------------------------------
 
+# 3. Inconsistent security controls.
+
+<img width="871" height="130" alt="image" src="https://github.com/user-attachments/assets/952af00f-0e67-4f0d-84d0-2ce113823b3c" />
+
+# Goal : To access the admin panel and delete carlos user. 
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+-   We will try to fuzz the admin in the url. We can notice admin panel is there but for that we have to logged in as DontWannaCry user.
+
+ <img width="1170" height="426" alt="image" src="https://github.com/user-attachments/assets/88f8dc32-1bad-4f71-a547-f8cbf59f7168" />
+ 
+- We will use the exploit email first for getting the complete registration link.
+
+<img width="1244" height="547" alt="image" src="https://github.com/user-attachments/assets/ee12bc0c-3300-49e0-9c62-acdbcac018ab" />
+
+<img width="1321" height="590" alt="image" src="https://github.com/user-attachments/assets/099b8b95-d959-41da-8089-db109e7589cc" />
+
+- Now we will update the email to access the admin panel.
+
+<img width="1323" height="561" alt="image" src="https://github.com/user-attachments/assets/23e913ad-53a3-410e-b8b6-14405807c7ae" />
+
+- Hence by deleting the admin panel we solved the lab.
+
+<img width="1319" height="543" alt="image" src="https://github.com/user-attachments/assets/6e41a5b9-4293-4da2-a80c-1dffa3da5f76" />
+
+# ------------------------------------------------------------------------------
+
+# 4. 
