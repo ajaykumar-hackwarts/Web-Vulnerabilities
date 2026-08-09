@@ -39,3 +39,35 @@
 
 # ------------------------------------------------------------------------------
 
+# 2. High-level logic vulnerability.
+
+<img width="726" height="151" alt="image" src="https://github.com/user-attachments/assets/5d678d9b-7980-4788-83e2-cf0462d1f5b4" />
+
+# Goal : Same as above
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+- Let's login and add the jacket to the cart. We can notice that we don't have price in the request as like the preivious lab.
+
+<img width="1075" height="455" alt="image" src="https://github.com/user-attachments/assets/7e021f49-9188-4f3f-9088-32f1cdd05ce7" />
+
+- We will try to send a negative value in the quantity and see the response in the UI and it is accepts the negative value.
+
+<img width="1071" height="564" alt="image" src="https://github.com/user-attachments/assets/b7f9064a-5c8d-4b3e-8e97-5c4aa478bd09" />
+
+- We will try to add some other and item and have negative value to that.
+
+<img width="871" height="439" alt="image" src="https://github.com/user-attachments/assets/5b377220-ede4-4516-bc1d-336f465fe7bf" />
+
+- Hence the negative value of the newly added item is subtracted from the leather jacket.
+
+<img width="924" height="591" alt="image" src="https://github.com/user-attachments/assets/329d412a-5392-40d8-b5ca-7ed501c49e10" />
+
+- Now we will place the order and solve the lab.
+
+<img width="1120" height="461" alt="image" src="https://github.com/user-attachments/assets/135ef05a-c8c4-4525-9a79-ecf59bffdcec" />
+
+# ------------------------------------------------------------------------------
+
