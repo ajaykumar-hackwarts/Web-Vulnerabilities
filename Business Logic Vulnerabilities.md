@@ -1,4 +1,4 @@
-# Business Logic Vulnerabilities : It is a vulnerability where application works correctly as programmed but the business rules are flawed like the user manipulate and use the application as they shouldn't be able to.
+<img width="912" height="432" alt="image" src="https://github.com/user-attachments/assets/38c66b24-7fcf-4cc0-a6ab-8e325f191f06" /># Business Logic Vulnerabilities : It is a vulnerability where application works correctly as programmed but the business rules are flawed like the user manipulate and use the application as they shouldn't be able to.
 
 ## Example : Like app has a product for price 1000 and discount coupon is 10% and app accidentaly allows to apply the coupon for multiple times 
 
@@ -101,4 +101,37 @@
 
 # ------------------------------------------------------------------------------
 
-# 4. 
+# 4. Flawed enforcement of business rules.
+
+<img width="804" height="145" alt="image" src="https://github.com/user-attachments/assets/313b209b-dfb2-47de-8c81-4985fded631d" />
+
+# Goal : To buy a "Lightweight l33t leather jacket". 
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+- Let's login and add the leather to the cart and see the response.
+
+<img width="1037" height="566" alt="image" src="https://github.com/user-attachments/assets/fff1068d-3fd9-4d42-8e83-af91fc67f54a" />
+
+<img width="1260" height="506" alt="image" src="https://github.com/user-attachments/assets/7b661941-9b9b-4461-ad24-5b3b358ceeaa" />
+
+- Lets check for some other features in the home page. There is a signup box and when we signup we got a coupon for that
+
+<img width="1275" height="591" alt="image" src="https://github.com/user-attachments/assets/0fac923a-1ddf-4b62-8501-daf304a92c58" />
+
+<img width="912" height="432" alt="image" src="https://github.com/user-attachments/assets/83d6bd72-fcba-4055-80d4-1b804d00448e" />
+
+<img width="914" height="597" alt="image" src="https://github.com/user-attachments/assets/8c0c6261-cdd7-4f8f-a87e-6e6a2c0bc03b" />
+
+- And we can see we can't contiously apply these coupons hence we will try alternatively apply the coupon.
+
+<img width="1059" height="476" alt="image" src="https://github.com/user-attachments/assets/e95ca97f-fe6a-40c3-9759-796e1859285c" />
+
+- After doing all this and placing the order we solved the lab.
+
+<img width="1173" height="600" alt="image" src="https://github.com/user-attachments/assets/8ccea1f0-2b34-47e0-81bb-c18d97382ae5" />
+
+# ------------------------------------------------------------------------------
+
