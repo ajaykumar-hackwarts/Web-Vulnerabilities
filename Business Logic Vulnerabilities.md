@@ -190,3 +190,19 @@
 <img width="1122" height="482" alt="image" src="https://github.com/user-attachments/assets/62770733-2077-475c-bfa5-ec5edc5f51b6" />
 
 # ------------------------------------------------------------------------------
+
+
+# 6. Inconsistent handling of exceptional input.
+
+<img width="761" height="107" alt="image" src="https://github.com/user-attachments/assets/6f2f0af5-1bf8-44ab-8e83-bdd6728d7968" />
+
+# Goal : Access the admin panel and delete carlos user.
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+- Let's login and add the leather to the cart and see the response.
+
+
+
