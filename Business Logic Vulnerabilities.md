@@ -232,11 +232,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 <img width="1127" height="495" alt="image" src="https://github.com/user-attachments/assets/67a4348b-fba1-4b89-9f34-d89d9fd50bd6" />
 
+
 # ------------------------------------------------------------------------------
 
 
+# 7. Weak isolation on dual-use endpoint.
+
+<img width="790" height="183" alt="image" src="https://github.com/user-attachments/assets/e4c5bb59-0537-49e2-ab1e-bfd81160815b" />
+
+# Goal : Access the admin panel and delete carlos user.
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+- Let's login and see the response. We can able to see there is a current password and new password menu where we can update the password.
+
+<img width="1158" height="711" alt="image" src="https://github.com/user-attachments/assets/db86a178-8629-43af-a073-2f4448f47005" />
+
+- When we fuzz the admin username in the url we got a response in the UI like "Admin interface only available if logged in as an administrator". 
+
+<img width="1098" height="416" alt="image" src="https://github.com/user-attachments/assets/fa0e1096-0cf1-485c-89e7-f819854bd7dd" />
+
+- Let's try to change the username and see the response. It says current password is incorrect 
+
+<img width="1132" height="552" alt="image" src="https://github.com/user-attachments/assets/e255b7da-a5cd-42db-b584-9c294386aa88" />
+
+- let's remove the current-password and see if it is still working. We can see it worked and password changes successfully.
+
+<img width="1262" height="488" alt="image" src="https://github.com/user-attachments/assets/7829cefb-e802-4630-ba3a-58c001f0ebbf" />
+
+- Hence login as administrator, access the admin panel and delete the carlos user.
+
+<img width="1252" height="532" alt="image" src="https://github.com/user-attachments/assets/73ad4458-ecf0-4f40-8abc-33e0f20dd528" />
+
+<img width="1248" height="443" alt="image" src="https://github.com/user-attachments/assets/2f5c2141-c6c3-45f2-a43d-912d244bb61e" />
 
 
-
-
-
+# ------------------------------------------------------------------------------
