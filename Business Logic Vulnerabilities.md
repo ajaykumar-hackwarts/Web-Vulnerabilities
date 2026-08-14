@@ -270,3 +270,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 
 # ------------------------------------------------------------------------------
+
+
+# 8. Insufficient workflow validation.
+
+<img width="747" height="132" alt="image" src="https://github.com/user-attachments/assets/a51f7954-5421-417e-8650-05c228452b8b" />
+
+# Goal : Same as above
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+- Let's login and add the leather to the cart and see the response.
+
+<img width="1189" height="554" alt="image" src="https://github.com/user-attachments/assets/c57d5590-1a28-4612-b9ac-6629f3fa3f8b" />
+
+- Lets say we have tried all the possibilities of previous labs and nothing is working out. Hence we will try to buy an item which we can afford and see the response.
+
+<img width="1056" height="402" alt="image" src="https://github.com/user-attachments/assets/deaefa06-5ac3-4a44-a51b-494fc6c5a49a" />
+
+- We got 2 response post and get confirmation. post is only taking the csrf token nothing more than 
+
+<img width="1110" height="521" alt="image" src="https://github.com/user-attachments/assets/2bdd988c-f28f-4da8-8075-ba1cb59d8824" />
+
+- In the get reuqest we got a confirmation=true if it has a flaw it will to exploited if confirmation=true. 
+
+<img width="1094" height="485" alt="image" src="https://github.com/user-attachments/assets/991c4c3a-e375-405c-bfc3-faa451befdad" />
+
+- Hence we will try to add the leather jacket to the cart and send this request. Therefor we solved the lab.
+
+<img width="1221" height="609" alt="image" src="https://github.com/user-attachments/assets/8480b239-1574-4813-8ec0-fda01d70a428" />
+
+# ------------------------------------------------------------------------------
