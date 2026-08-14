@@ -202,7 +202,41 @@
 
 # Solving : 
 
-- Let's login and add the leather to the cart and see the response.
+- Let's try to login using the exploit server mail id.
+
+<img width="1244" height="462" alt="image" src="https://github.com/user-attachments/assets/135ec49c-2cb8-4023-9b69-9fbb3f7d0156" />
+
+- Unlike the last lab last it doesn't have the update email hence we can't update the email to dontwannacry domain. Hence we will try to add the huge character and see what happens. We will try to add the characters before that.
+
+<img width="1333" height="650" alt="image" src="https://github.com/user-attachments/assets/a7c351b8-7616-4e4e-bac6-45ddfd265e7f" />
+
+- It result like the following.
+
+<img width="1291" height="587" alt="image" src="https://github.com/user-attachments/assets/1f364d99-3dd4-4f4e-9041-0e5c76e7b49d" />
+
+- Let's register and see the result.
+
+<img width="1260" height="490" alt="image" src="https://github.com/user-attachments/assets/b5e577d9-e4f6-43a9-90a1-5edafd59951e" />
+
+- We can't see the exploitserver.net portion only AAAA is tere. It is truncating some portion of the email.
+
+<img width="1221" height="479" alt="image" src="https://github.com/user-attachments/assets/cfd7b2d5-73d7-4708-9964-11b00791a3a2" />
+
+- When counting we can notice that notice it is allowing only 256 characters. Hence let's add like the following.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@dontwannacry.com%40exploit-0a5f00f4042c1f6382d550d0015700f0.exploit-server.net
+
+<img width="1258" height="498" alt="image" src="https://github.com/user-attachments/assets/8b07a579-b455-4f83-9690-ec1ea94d1e45" />
+
+- Hence we can see the admin panel here. Hence by detelting the carlos user we can solve the lab.
+
+<img width="1127" height="495" alt="image" src="https://github.com/user-attachments/assets/67a4348b-fba1-4b89-9f34-d89d9fd50bd6" />
+
+# ------------------------------------------------------------------------------
+
+
+
+
 
 
 
