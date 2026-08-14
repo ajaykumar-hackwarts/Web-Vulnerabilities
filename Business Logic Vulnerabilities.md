@@ -303,3 +303,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 <img width="1221" height="609" alt="image" src="https://github.com/user-attachments/assets/8480b239-1574-4813-8ec0-fda01d70a428" />
 
 # ------------------------------------------------------------------------------
+
+
+# 9. Authentication bypass via flawed state machine.
+
+<img width="762" height="165" alt="image" src="https://github.com/user-attachments/assets/dc1f0d40-1186-453f-a37d-e3cc1cbd5b58" />
+
+# Goal : Access the admin panel and delete carlos user.
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+- Let's login and see the response. We can it having a role selector page we have to select user or content author. Lets login as both and see any difference in the UI.
+
+- As a user nothing is different.
+
+  <img width="1196" height="532" alt="image" src="https://github.com/user-attachments/assets/8ab27764-b4a1-4e0d-8ed2-7a9544b02389" />
+
+- As a content author nothing is different.
+
+  <img width="1207" height="507" alt="image" src="https://github.com/user-attachments/assets/31e47d31-271a-43a1-9335-d36ae0564528" />
+
+- We will try to drop the role selector request by intercepting the request.
+
+<img width="1113" height="644" alt="image" src="https://github.com/user-attachments/assets/bcb0b13a-0e98-4838-a531-1c4f93239dc2" />
+
+- Since no roles are selected we can see admin panel there. 
+
+<img width="1295" height="529" alt="image" src="https://github.com/user-attachments/assets/79f7ff17-8565-4854-97b7-20b585a3bd68" />
+
+- Hence deleting the carlos user we can solve the lab.
+
+<img width="1225" height="503" alt="image" src="https://github.com/user-attachments/assets/1779d9e8-7a43-4a6b-b9b3-d9a6cfa1e44c" />
+
+# ------------------------------------------------------------------------------
+  
+
+
+
