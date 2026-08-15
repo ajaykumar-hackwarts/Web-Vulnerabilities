@@ -339,6 +339,66 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 # ------------------------------------------------------------------------------
   
+# 10. Infinite money logic flaw.
 
+<img width="793" height="117" alt="image" src="https://github.com/user-attachments/assets/e5a7f498-7771-4714-866c-829fb1d5e6f1" />
 
+# Goal : To buy a "Lightweight l33t leather jacket". 
 
+# Ingrediants : Same as above
+
+# Solving : 
+
+- Let's login and see the response. We can see it has a gift card we will add that.
+
+<img width="1048" height="556" alt="image" src="https://github.com/user-attachments/assets/01966a95-7f31-4a39-aaf5-f32cd7778d49" />
+
+- When we use the code of gift we can redeem the amounts. 
+
+<img width="1061" height="526" alt="image" src="https://github.com/user-attachments/assets/a122d8b0-44f0-4cc6-a6d6-6f15919ab62b" />
+
+<img width="797" height="517" alt="image" src="https://github.com/user-attachments/assets/23750ae4-e40c-4203-a597-463d0d15069b" />
+
+- There is signup box we will signup and try to take the coupon.
+
+<img width="1167" height="558" alt="image" src="https://github.com/user-attachments/assets/834229b7-4535-4f81-af7a-ba19275d98a8" />
+
+<img width="992" height="539" alt="image" src="https://github.com/user-attachments/assets/9cd54716-fe75-4ae4-9959-52118e9f6697" />
+
+<img width="845" height="566" alt="image" src="https://github.com/user-attachments/assets/9ffa6a5c-03a3-40f2-91e0-22927274e439" />
+
+- Our credit increases when we using the signing up and using the gift card code.
+
+<img width="922" height="433" alt="image" src="https://github.com/user-attachments/assets/8e16ea1e-5263-43e2-b5de-7e607cbe2662" />
+
+- So by doing these things again and again we can have infinite amount and we can able to purchase the leather jacket.
+
+- We will use macros for these contious request sending. We have to take the code from the 4th request and send it to the 5th paramter. 
+
+<img width="1179" height="605" alt="image" src="https://github.com/user-attachments/assets/d6b87b0c-2775-4cfc-8124-f9b15c028c98" />
+
+- And the 5th response should be derived from the 4th request.
+
+<img width="1215" height="547" alt="image" src="https://github.com/user-attachments/assets/667b8cf2-7769-4488-8fc6-2b1071b40f01" />
+
+- When we test a macros we can see it has new gift card.
+
+<img width="1045" height="575" alt="image" src="https://github.com/user-attachments/assets/73077eb4-dc8a-43ae-be5a-4ec825cf33b8" />
+
+- Lets send the get request infinitely using intruder.
+
+<img width="1311" height="570" alt="image" src="https://github.com/user-attachments/assets/0e648c32-500c-4076-a559-4a83678e215f" />
+
+- We add the macros and run the intruder we can see 
+
+<img width="1319" height="616" alt="image" src="https://github.com/user-attachments/assets/89037976-9eac-4017-bfb2-9f4eff1d0762" />
+
+<img width="1361" height="601" alt="image" src="https://github.com/user-attachments/assets/92d15fa8-8bd6-4495-b395-b937513c2841" />
+
+- We can see we got enough money to buy the jacket. Hence we place the order and solve the lab.
+
+<img width="838" height="576" alt="image" src="https://github.com/user-attachments/assets/465209b0-6a07-495a-877d-812703a799ce" />
+
+<img width="1331" height="498" alt="image" src="https://github.com/user-attachments/assets/02effdb6-c202-4d82-adae-bd9d75e8c80d" />
+
+# ------------------------------------------------------------------------------
