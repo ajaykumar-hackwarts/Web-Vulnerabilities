@@ -402,3 +402,129 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 <img width="1331" height="498" alt="image" src="https://github.com/user-attachments/assets/02effdb6-c202-4d82-adae-bd9d75e8c80d" />
 
 # ------------------------------------------------------------------------------
+
+
+# 11. Authentication bypass via encryption oracle.
+
+<img width="744" height="112" alt="image" src="https://github.com/user-attachments/assets/7b38de5b-cfb3-495c-b654-0c1179f88f31" />
+
+# Goal : Access the admin panel and delete carlos user.
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+- Let's login and see the response we can see it has stay logged in button.
+
+<img width="996" height="545" alt="image" src="https://github.com/user-attachments/assets/9ab25299-d8e1-4ca8-bb75-06c15854ea16" />
+
+- Let's post a comment using an invalid email and see the response. 
+
+<img width="927" height="609" alt="image" src="https://github.com/user-attachments/assets/e4070401-609f-4b16-a07c-7b3c6e95dd72" />
+
+<img width="1078" height="460" alt="image" src="https://github.com/user-attachments/assets/51e26b52-a307-45ac-b69e-a3fe93ed7acb" />
+
+- We can see that that email value is encrypted and send to get method in the notification parameter. In the get method it is decrypted and seen in the response. 
+
+- Simply in the post it is encrypted and in the get it is decrypted
+
+ <img width="1354" height="424" alt="image" src="https://github.com/user-attachments/assets/7bcb39fa-c325-44ba-a6f3-b83c203ea485" />
+
+<img width="1029" height="415" alt="image" src="https://github.com/user-attachments/assets/c87b8c9d-da62-43aa-8936-656916602d73" />
+
+- Let's go to the response of the login where it has stay-logged in since it is using the same oracle encryption we will try to decrypt that using the request. 
+
+<img width="1019" height="419" alt="image" src="https://github.com/user-attachments/assets/7a98b467-2b18-4d6e-8e95-60c8cbbfa6d5" />
+
+- 
+
+# ------------------------------------------------------------------------------
+
+# 12. Bypassing access controls using email address parsing discrepancies.
+
+<img width="736" height="147" alt="image" src="https://github.com/user-attachments/assets/6b18dbc3-0ef6-4c61-89bc-c74761ddbe7e" />
+
+# Goal : To delete the carlos user. 
+
+# Ingrediants : Same as above
+
+# Solving : 
+
+- To solve this lab we should firstly we should take a look research paper. 
+
+<img width="1014" height="288" alt="image" src="https://github.com/user-attachments/assets/e838e083-6a8b-4b3f-b16c-693f2187535b" />
+
+- Something is given inside the "" it has different meaning from normal and character after \ is will be ignored.
+
+- Email has 2 parts local part and domain part like test@gmail.com
+
+- RFC --> Means Request for comment it is the standard format for how email, HTTP, cookies, authentication, URLs, and headers are supposed to work.
+
+- Hence acording to the recent RFCs it allows the "", / , white space, paranthesis. Hence email can be (user)"/"user@gmail.com. When we using the paranthesis it will be cmmented out. 
+
+<img width="1128" height="505" alt="image" src="https://github.com/user-attachments/assets/5c0da847-622a-49b7-aea9-9771c0c83334" />
+
+- Next thing we will do is email domain confusion. By using the UUCP format which is an ancient message sending format. Unix to Unix copy format. 
+
+<img width="1035" height="541" alt="image" src="https://github.com/user-attachments/assets/2dd5814c-c286-49f0-8add-bf1f301dc493" />
+
+- username@domain.com --> smpt format ; domain.com!username --> UUCP format.
+
+<img width="1133" height="518" alt="image" src="https://github.com/user-attachments/assets/0c52b7b2-2c4c-4919-a054-48e706a57ea7" />
+
+<img width="1133" height="518" alt="image" src="https://github.com/user-attachments/assets/1ba02e14-86fa-4cf8-9a17-3d266b813ef7" />
+
+-  Since we are using the ! it is treated as UUCP format we can modify that to go to different server by using the collaborator.
+
+- Now instead of escaping the @ we commented out rest of the texts. Whenever there is % it will change to @. Hence the output would be just foo@psres.net. 
+
+<img width="1069" height="454" alt="image" src="https://github.com/user-attachments/assets/e5f4cdab-ea26-423f-8044-8974dc602730" />
+
+- Next is parser discrepancies. Many web app is blocking the @ symbols. Following are the illustration of how unicode overflow works.
+
+ <img width="1039" height="591" alt="image" src="https://github.com/user-attachments/assets/c40d663e-7488-4b07-96c8-caaf299eb835" />
+
+- Ascii value of @ is 40. So 256 + the remaider @
+
+<img width="859" height="557" alt="image" src="https://github.com/user-attachments/assets/539a8f92-9efe-466d-9d90-491ff06265e6" />
+
+- When we keeps on repeating the process it gives the out as the following and when we checked it is equal to @.
+
+<img width="1163" height="574" alt="image" src="https://github.com/user-attachments/assets/050e9cfe-5a01-4ce3-8284-8f7c40c7c64c" />
+
+- Next is encoded word. It would roughly be like =? char set ? type of encoding ? encoded value ?=
+
+- Char set ---> utf-8, utf-7 etc. 
+- type of encoding ---> q
+
+<img width="1072" height="562" alt="image" src="https://github.com/user-attachments/assets/8417c5c4-bad1-45b7-afa6-db7e50c53372" />
+
+- Now coming to our lab. For registering we have to use @ginandjuice.shop domain for we also should have teh exploit server link for the confirmation registration. 
+
+<img width="1062" height="509" alt="image" src="https://github.com/user-attachments/assets/495606e2-b6e6-4cc5-b15f-682144582412" />
+
+- The email should be like attack@exploitserver @ginadnjuice.shop.  Hence we will use our technique
+  
+- attacker@exploit-0a03004f043fb6048069435c010d0004.exploit-server.net @ginadnjuice.shop. We will use utf-7 encoding hence @ for utf-7 is 
+
+<img width="1049" height="496" alt="image" src="https://github.com/user-attachments/assets/ed865e5a-6aec-4724-afd5-d4ff5191eb46" />
+
+- We have to give space for comment out the @ginadnjuice.shop domain
+
+<img width="961" height="526" alt="image" src="https://github.com/user-attachments/assets/499aefb5-5d0d-4551-8787-5623f158fa29" />
+
+- Hence when we add the technique it will be like this. 
+
+- =?utf-7?q?attacker&AEA-exploit-0af600cc0469f0df80f9898d010800d3.exploit-server.net&ACA-?=@ginandjuice.shop. + is replaced by &. Hence we got a registration link. 
+
+<img width="1264" height="590" alt="image" src="https://github.com/user-attachments/assets/aafd312e-ebb2-40c7-a970-3c137f75c5de" />
+
+- After login we could see the admin panel.
+
+<img width="1316" height="588" alt="image" src="https://github.com/user-attachments/assets/3dd4a416-01e0-437b-99bd-fd55fe0bca6d" />
+
+- Hence by deleting the carlos user we solve the lab.
+
+<img width="1252" height="530" alt="image" src="https://github.com/user-attachments/assets/fc0d83a2-d183-47c4-be58-255f23527a4d" />
+
+
