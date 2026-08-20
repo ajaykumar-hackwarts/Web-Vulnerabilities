@@ -95,4 +95,54 @@
 
 # ------------------------------------------------------------------------------
 
-# 4. 
+# 4. SSRF with blacklist-based input filter. 
+
+<img width="819" height="171" alt="image" src="https://github.com/user-attachments/assets/339471d1-f1b4-4b24-9767-4bf1fa636376" />
+
+# Goal :  To use the stock check feature to scan the internal 192.168.0.X range for an admin interface on port 8080 and delete carlos user. 
+
+# Ingrediants : Home, My account, view details. 
+ 
+# Solving : 
+
+- Lets check the stock and see the response.
+
+<img width="1305" height="484" alt="image" src="https://github.com/user-attachments/assets/bbe8f5c6-206d-43d3-a295-262bb8fc9549" />
+
+- Lets change it to local host and see the response. And it shows a 400 error it is restricts some strings like localhost. 
+
+<img width="1364" height="481" alt="image" src="https://github.com/user-attachments/assets/a33b7a03-3be9-4d60-b72e-d1e7798d917b" />
+
+- Also it restricting the ip address of local host.
+
+<img width="1265" height="564" alt="image" src="https://github.com/user-attachments/assets/a9a9a483-4775-484a-934a-4b27f5458573" />
+
+<img width="1320" height="584" alt="image" src="https://github.com/user-attachments/assets/078e6572-05f1-4513-b38f-538e992343e4" />
+
+- And it has the admin panel.
+
+<img width="1365" height="631" alt="image" src="https://github.com/user-attachments/assets/53be448a-d026-4305-afba-ce05bf1ac452" />
+
+- Let's try to access the admin panel using the admin at the end. It is also restricting the word admin
+
+<img width="1334" height="501" alt="image" src="https://github.com/user-attachments/assets/1233c106-f008-4ccd-b9be-5caff734d3fd" />
+
+- Let's try to encode that and see the response. It is url decoding it and searching the restricted word is there or not. 
+
+<img width="1352" height="535" alt="image" src="https://github.com/user-attachments/assets/2894cd04-b901-4ad2-a482-34026b1f83f4" />
+
+- Let's encode it one more time and see the response. We got the postive response 
+
+<img width="1299" height="604" alt="image" src="https://github.com/user-attachments/assets/d1f09eef-42fd-40f0-979a-fbbb889ec517" />
+
+- Hence we can notice that it is url encoding only one time
+
+<img width="1188" height="578" alt="image" src="https://github.com/user-attachments/assets/9f008e3c-84d9-4af7-ae2b-610e7d1bfab0" />
+
+- Hence by deleting the carlos user we solved the lab. 
+
+<img width="1273" height="525" alt="image" src="https://github.com/user-attachments/assets/6109d1cb-3915-483f-a263-6b9649c15ae0" />
+
+<img width="1235" height="543" alt="image" src="https://github.com/user-attachments/assets/83ccb02a-2c94-451c-b4a5-a74f777710bb" />
+
+# ------------------------------------------------------------------------------
