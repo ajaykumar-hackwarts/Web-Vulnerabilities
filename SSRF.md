@@ -32,4 +32,40 @@
 # ------------------------------------------------------------------------------
 
 
-# 2. 
+# 2. Basic SSRF against another back-end system. 
+
+<img width="727" height="114" alt="image" src="https://github.com/user-attachments/assets/c3165bac-7f4b-42b9-a5d1-d4ff28030f02" />
+
+# Goal : To use the stock check feature to scan the internal 192.168.0.X range for an admin interface on port 8080 and delete carlos user. 
+
+# Ingrediants : Home, My account, view details. 
+ 
+# Solving : 
+
+- Lets check the stock and see the response.
+
+<img width="1034" height="535" alt="image" src="https://github.com/user-attachments/assets/9235aa99-fc9d-4305-a0a6-79cdde067716" />
+
+- Let's try to change the value and see the response.
+
+<img width="1271" height="522" alt="image" src="https://github.com/user-attachments/assets/b4d09dbe-75b3-4d64-838a-473d751c555b" />
+
+- Still the same output hence we will use intruder to send many requests. 
+
+<img width="1125" height="493" alt="image" src="https://github.com/user-attachments/assets/73a6e7ee-daea-4373-87a6-a4225f99f544" />
+
+- 183 only gives different output.
+
+<img width="1148" height="573" alt="image" src="https://github.com/user-attachments/assets/76995741-92a6-4e57-a22b-9c1a3e069c9c" />
+
+- Hence by deleting the carlos user we can solve the lab. 
+
+<img width="1117" height="477" alt="image" src="https://github.com/user-attachments/assets/700fa3a3-ef8e-4ef6-9a38-b648e6b9b6bd" />
+
+<img width="1019" height="513" alt="image" src="https://github.com/user-attachments/assets/e1713da6-4b9f-4c12-8a80-f4c8904fa95a" />
+
+<img width="1230" height="552" alt="image" src="https://github.com/user-attachments/assets/c625dbfd-a85e-4abc-9036-534a34195b4b" />
+
+# ------------------------------------------------------------------------------
+
+# 3. 
