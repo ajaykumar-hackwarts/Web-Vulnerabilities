@@ -68,4 +68,31 @@
 
 # ------------------------------------------------------------------------------
 
-# 3. 
+
+# 3. Blind SSRF with out-of-band detection.
+
+<img width="728" height="140" alt="image" src="https://github.com/user-attachments/assets/28c93256-9181-4300-b9df-4654f59f313b" />
+
+# Goal : To make a http request to burp colloborator server. 
+
+# Ingrediants : Home, My account, view details. 
+ 
+# Solving : 
+
+- Lets view the details and see the response and we can notice that it has a referrer for the analytical purpose. 
+
+<img width="1241" height="519" alt="image" src="https://github.com/user-attachments/assets/0905f21f-5c66-4640-a169-98175abab6bc" />
+
+- Let's change the refferer header url to the burp collobrator url and see we getting the response externally. 
+
+<img width="1224" height="481" alt="image" src="https://github.com/user-attachments/assets/432d7266-ad89-4f57-b177-3beddaca2749" />
+
+- We can see it is sending the request externally and it is captured in the collaborator. And we solved the lab. 
+
+<img width="1280" height="570" alt="image" src="https://github.com/user-attachments/assets/9400c4a9-0397-47a9-87a9-5b90f2c0c154" />
+
+<img width="1295" height="573" alt="image" src="https://github.com/user-attachments/assets/caf8ccc1-4c35-49ca-9968-063d1049521e" />
+
+# ------------------------------------------------------------------------------
+
+# 4. 
