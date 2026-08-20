@@ -3,6 +3,8 @@
 
 # 1. Basic SSRF against the local server. 
 
+<img width="804" height="118" alt="image" src="https://github.com/user-attachments/assets/de43ba68-1719-40f9-bbb9-9dd006604e4f" />
+
 # Goal : To change the stock check url to access admin interface and delete carlos user. 
 
 # Ingrediants : Home, My account, view details. 
@@ -24,8 +26,6 @@
 - Hence let's delete the carlos user and solve the lab.
 
 <img width="1035" height="497" alt="image" src="https://github.com/user-attachments/assets/4591ad6b-aba4-4157-a11d-5b9d497630a3" />
-
-- Hence by deleting the carlos user we solved the lab.
 
 <img width="1248" height="503" alt="image" src="https://github.com/user-attachments/assets/7d257251-6efd-4714-b751-932f5baefa23" />
 
