@@ -545,7 +545,7 @@
 
 # ------------------------------------------------------------------------------
 
-# 12.CSRF with broken Referer validation. 
+# 12. CSRF with broken Referer validation. 
 
 <img width="775" height="182" alt="image" src="https://github.com/user-attachments/assets/caf12e33-edee-409b-a60d-64f3e71ae0dc" />
 
