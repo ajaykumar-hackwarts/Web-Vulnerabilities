@@ -193,6 +193,66 @@
 
 # ------------------------------------------------------------------------------
 
+# 6. Blind SSRF with Shellshock exploitation.
 
+<img width="750" height="176" alt="image" src="https://github.com/user-attachments/assets/f4299a8b-8531-4f77-8728-92b9a8f0614e" />
 
+# Goal :  To use the stock check feature to scan the internal 192.168.0.X range for an admin interface on port 8080 and use a shellshock exploit to exfilrate the OS user.
 
+# Ingrediants : Home, My account, view details. 
+ 
+# Solving : 
+
+- We Will firstly install the collobrator everywhere what it does is it will record all the request which goes to the external server without recorded in the internal response. 
+
+<img width="1359" height="621" alt="image" src="https://github.com/user-attachments/assets/98fbd4c3-6ce3-4df9-8a77-5bb3160dcef9" />
+
+- Then we view details and send that response to the repeater. We can notice that even without the user agent and Referer we got the positive response only. Hence both are vulnerable. 
+
+<img width="1303" height="522" alt="image" src="https://github.com/user-attachments/assets/15497143-88e6-456b-bb70-6a5c0035bacb" />
+
+<img width="1350" height="573" alt="image" src="https://github.com/user-attachments/assets/ad755719-6ecc-432d-9e18-71a4ded799be" />
+
+- We will use the shell shock payload for the user agent of the burp colloborater server and find the username. 
+
+<img width="894" height="535" alt="image" src="https://github.com/user-attachments/assets/08dfb3e8-4b5d-4347-ab32-881426936aea" />
+
+- And in the referrer we will use the given ip. We will try the different ip by using the intruder.
+
+<img width="1352" height="529" alt="image" src="https://github.com/user-attachments/assets/f4dfb79c-9c55-44c3-9f8f-fab6eca157a9" />
+
+-
+
+# ------------------------------------------------------------------------------
+
+# 7. SSRF with whitelist-based input filter. 
+
+<img width="754" height="160" alt="image" src="https://github.com/user-attachments/assets/f41ac334-dd71-401d-83a0-d0a567fbbbbb" />
+
+# Goal :   To use the stock check feature to scan the internal 192.168.0.X range for an admin interface on port 8080 and delete carlos user. 
+
+# Ingrediants : Home, My account, view details. 
+ 
+# Solving : 
+
+-  Lets check the stock and see the response. When we use only till .net it says illegal character error.
+
+  <img width="1350" height="432" alt="image" src="https://github.com/user-attachments/assets/37d44b23-1932-4425-9ab0-30481f205263" />
+
+- Lets try to access the local host url like in the previous labs. But it is not accessibile
+
+<img width="1355" height="488" alt="image" src="https://github.com/user-attachments/assets/849a6273-a0ed-46fc-a06a-582aa4ffd7f3" />
+
+- Let's try with the domanin and try to access the local host. And when we url encode the # we got a 200 response. 
+
+<img width="1304" height="556" alt="image" src="https://github.com/user-attachments/assets/c26286b0-868d-4485-8c4a-318678939f79" />
+
+- Hence by deleting the carlos user we solve the lab.
+
+<img width="1331" height="547" alt="image" src="https://github.com/user-attachments/assets/97297bd7-bd9e-481f-a635-4f3d4f4833f2" />
+
+<img width="1171" height="464" alt="image" src="https://github.com/user-attachments/assets/170367f6-0b42-4734-be22-ea98d0ee8aa9" />
+
+<img width="1305" height="527" alt="image" src="https://github.com/user-attachments/assets/3d73862b-8fa1-40d0-895c-5da00384e9ca" />
+
+# ------------------------------------------------------------------------------
