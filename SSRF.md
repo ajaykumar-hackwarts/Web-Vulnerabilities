@@ -146,3 +146,53 @@
 <img width="1235" height="543" alt="image" src="https://github.com/user-attachments/assets/83ccb02a-2c94-451c-b4a5-a74f777710bb" />
 
 # ------------------------------------------------------------------------------
+
+
+# 5.  SSRF with filter bypass via open redirection vulnerability.
+
+<img width="760" height="195" alt="image" src="https://github.com/user-attachments/assets/c2c1c4a7-09b1-4235-a66e-4d09fbafc5b0" />
+
+# Goal :  To use the stock check feature to scan the internal 192.168.0.X range for an admin interface on port 8080 and delete carlos user. 
+
+# Ingrediants : Home, My account, view details. 
+ 
+# Solving : 
+
+- Lets check the stock and see the response. We can notice that there is an extra button called next product which will do the redirection lets send this response too.  
+
+<img width="1260" height="575" alt="image" src="https://github.com/user-attachments/assets/b8923d75-4bbc-432d-8d9a-4f7c90c68d94" />
+
+<img width="1285" height="502" alt="image" src="https://github.com/user-attachments/assets/ea4d54fe-9159-403e-ac88-a8975d7eb6d6" />
+
+<img width="1269" height="501" alt="image" src="https://github.com/user-attachments/assets/0406da10-0564-452a-ab36-9bafe39d4880" />
+
+- When we follow the redirection it is going to the page whatever we given in the path attribute. 
+
+<img width="1187" height="398" alt="image" src="https://github.com/user-attachments/assets/91a45538-83b7-4e09-a50a-52eb118538ef" />
+
+- Lets change the stockapi value to access the admin panel and see the response and we can confirm that it is restricted. 
+
+<img width="1204" height="540" alt="image" src="https://github.com/user-attachments/assets/1c9be15b-0e06-4511-aacb-1cb65c359403" />
+
+- We can notice that whatever we give in the path it is redirecting to that page.
+
+ <img width="1217" height="460" alt="image" src="https://github.com/user-attachments/assets/935ba523-6339-4e6d-bcdc-f15a4ca7ba4b" />
+
+<img width="1130" height="483" alt="image" src="https://github.com/user-attachments/assets/45509e6b-bc3d-44d1-bd74-a5f9f54f3715" />
+
+- Hence we will use the redirection path here in check stock and see the response. We can able to access the admin panel. 
+
+<img width="1364" height="545" alt="image" src="https://github.com/user-attachments/assets/70fed89c-c1e0-4522-95a9-6015c560dbfd" />
+
+- Hence by deleting the carlos user we solved the lab.
+
+<img width="1319" height="539" alt="image" src="https://github.com/user-attachments/assets/1e19b6ae-d441-4b8f-ae18-ba198ceaad28" />
+
+<img width="1227" height="581" alt="image" src="https://github.com/user-attachments/assets/133ee57f-af9d-4f58-bfe7-11ee646fb873" />
+
+
+# ------------------------------------------------------------------------------
+
+
+
+
