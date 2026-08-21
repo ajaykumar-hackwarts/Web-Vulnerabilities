@@ -1,4 +1,4 @@
-<img width="1139" height="392" alt="image" src="https://github.com/user-attachments/assets/bccdd01a-d671-4109-8604-2f917691b21d" /># OS Command Injection : It's an attack where attacker executes an arbitory operating system commands on the server running on the application. 
+# OS Command Injection : It's an attack where attacker executes an arbitory operating system commands on the server running on the application. 
 
 # 1. OS command injection, simple case
 
