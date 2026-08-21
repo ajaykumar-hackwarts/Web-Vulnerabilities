@@ -1,4 +1,4 @@
-# OWASP(Open Web Application Security Project ) is global non-profit foundation that provides resources and tool to ensure the web application security. OWASP top 10 is a list the top 10 overall threats/vulnerabilities happened in the last 3-4 years. 
+# OWASP : It stands for Open Web Application Security Project. it is global non-profit foundation that provides resources and tool to ensure the web application security. OWASP top 10 is a list the top 10 overall threats/vulnerabilities happened in the last 3-4 years. 
 
 As per recent updated the OWASP Top 10(2025) is. 
 
