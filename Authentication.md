@@ -1,4 +1,4 @@
-Authentication : Checking the person is really who they claim to be.
+# Authentication : Checking the person is really who they claim to be.
 
 # 1. Username enumeration via different responses.
 
